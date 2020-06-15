@@ -2608,11 +2608,11 @@ public Action SetScoreT(int client, int args)
 						CS_SetTeamScore(CS_TEAM_T, intToUse);
 						SetTeamScore(CS_TEAM_T, intToUse);
 						g_scores[SCORE_T][SCORE_FIRST_HALF] = intToUse;
-						PrintToChatAll("\x01 \x09[\x04%s\x09] \x02Terrorists \x01score changed to \x04%d", chat_prefix, intToUse);
+						PrintToChatAll("\x01 \x01[ \x02%s \x01] \x02Terrorists \x01score changed to \x04%d", chat_prefix, intToUse);
 					}
 					else
 					{
-						PrintToChatAll("\x01 \x09[\x04%s\x09] %t", chat_prefix, "Safe Mode");
+						PrintToChatAll("\x01 \x01[ \x02%s \x01] %t", chat_prefix, "Safe Mode");
 					}
 				}
 			}
@@ -2657,11 +2657,11 @@ public Action SetScoreCT(int client, int args)
 						CS_SetTeamScore(CS_TEAM_CT, intToUse);
 						SetTeamScore(CS_TEAM_CT, intToUse);
 						g_scores[SCORE_CT][SCORE_FIRST_HALF] = intToUse;
-						PrintToChatAll("\x01 \x09[\x04%s\x09] \x0CCounter Terrorists \x01score changed to \x04%d", chat_prefix, intToUse);
+						PrintToChatAll("\x01 \x01[ \x02%s \x01] \x0CCounter Terrorists \x01score changed to \x04%d", chat_prefix, intToUse);
 					}
 					else
 					{
-						PrintToChatAll("\x01 \x09[\x04%s\x09] %t", chat_prefix, "Safe Mode");
+						PrintToChatAll("\x01 \x01[ \x02%s \x01] %t", chat_prefix, "Safe Mode");
 					}
 				}
 			}
@@ -4843,9 +4843,9 @@ void CheckReady()
 				{
 					g_setNameLimiter = false;
 					CreateTimer(20.0, setNameLimiterTrue);
-					PrintToChatAll("\x01 \x09[\x04%s\x09]\x0C %t", chat_prefix, "Logos Required");
-					PrintToChatAll("\x01 \x09[\x04%s\x09]\x0C %t", chat_prefix, "Set Logo CT");
-					PrintToChatAll("\x01 \x09[\x04%s\x09]\x0C %t", chat_prefix, "Set Logo CMD");	
+					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x0C %t", chat_prefix, "Logos Required");
+					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x0C %t", chat_prefix, "Set Logo CT");
+					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x0C %t", chat_prefix, "Set Logo CMD");	
 				}
 			}
 			else if (StrEqual(t_logo, "", false) && !StrEqual(ct_logo, "", false))
@@ -4855,9 +4855,9 @@ void CheckReady()
 				{
 					g_setNameLimiter = false;
 					CreateTimer(20.0, setNameLimiterTrue);
-					PrintToChatAll("\x01 \x09[\x04%s\x09]\x02 %t", chat_prefix, "Logos Required");
-					PrintToChatAll("\x01 \x09[\x04%s\x09]\x02 %t", chat_prefix, "Set Logo T");
-					PrintToChatAll("\x01 \x09[\x04%s\x09]\x02 %t", chat_prefix, "Set Logo CMD");	
+					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x02 %t", chat_prefix, "Logos Required");
+					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x02 %t", chat_prefix, "Set Logo T");
+					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x02 %t", chat_prefix, "Set Logo CMD");	
 				}
 
 			}
@@ -4881,9 +4881,9 @@ void CheckReady()
 				{
 					g_setNameLimiter = false;
 					CreateTimer(20.0, setNameLimiterTrue);
-					PrintToChatAll("\x01 \x09[\x04%s\x09]\x0C %t", chat_prefix, "Names Required");
-					PrintToChatAll("\x01 \x09[\x04%s\x09]\x0C %t", chat_prefix, "Set Name CT");
-					PrintToChatAll("\x01 \x09[\x04%s\x09]\x0C %t", chat_prefix, "Set Name CMD");	
+					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x0C %t", chat_prefix, "Names Required");
+					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x0C %t", chat_prefix, "Set Name CT");
+					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x0C %t", chat_prefix, "Set Name CMD");	
 				}
 			}
 			else if (StrEqual(t_logo, "none", false) && (StrEqual(t_name, DEFAULT_T_NAME, false) || StrEqual(t_name, "", false) || StrEqual(t_name, "_", false)) && (!StrEqual(ct_name, DEFAULT_CT_NAME, false) || !StrEqual(ct_name, "", false) || !StrEqual(ct_name, "_", false)))
@@ -4893,9 +4893,9 @@ void CheckReady()
 				{
 					g_setNameLimiter = false;
 					CreateTimer(20.0, setNameLimiterTrue);
-					PrintToChatAll("\x01 \x09[\x04%s\x09]\x02 %t", chat_prefix, "Names Required");
-					PrintToChatAll("\x01 \x09[\x04%s\x09]\x02 %t", chat_prefix, "Set Name T");
-					PrintToChatAll("\x01 \x09[\x04%s\x09]\x02 %t", chat_prefix, "Set Name CMD");	
+					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x02 %t", chat_prefix, "Names Required");
+					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x02 %t", chat_prefix, "Set Name T");
+					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x02 %t", chat_prefix, "Set Name CMD");	
 				}
 			}
 			else if ((!StrEqual(t_name, DEFAULT_T_NAME, false) || !StrEqual(t_name, "", false) || !StrEqual(t_name, "_", false)) && (StrEqual(ct_name, DEFAULT_CT_NAME, false) || StrEqual(ct_name, "CounterTerrorists", false) || StrEqual(ct_name, "", false) || StrEqual(ct_name, "_", false)))
@@ -4905,9 +4905,9 @@ void CheckReady()
 				{
 					g_setNameLimiter = false;
 					CreateTimer(20.0, setNameLimiterTrue);
-					PrintToChatAll("\x01 \x09[\x04%s\x09]\x0C %t", chat_prefix, "Names Required");
-					PrintToChatAll("\x01 \x09[\x04%s\x09]\x0C %t", chat_prefix, "Set Name CT");
-					PrintToChatAll("\x01 \x09[\x04%s\x09]\x0C %t", chat_prefix, "Set Name CMD");	
+					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x0C %t", chat_prefix, "Names Required");
+					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x0C %t", chat_prefix, "Set Name CT");
+					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x0C %t", chat_prefix, "Set Name CMD");	
 				}
 			}
 			else if ((StrEqual(t_name, DEFAULT_T_NAME, false) || StrEqual(t_name, "", false) || StrEqual(t_name, "_", false)) && (!StrEqual(ct_name, DEFAULT_CT_NAME, false) || !StrEqual(ct_name, "", false) || !StrEqual(ct_name, "_", false)))
@@ -4917,9 +4917,9 @@ void CheckReady()
 				{
 					g_setNameLimiter = false;
 					CreateTimer(20.0, setNameLimiterTrue);
-					PrintToChatAll("\x01 \x09[\x04%s\x09]\x02 %t", chat_prefix, "Names Required");
-					PrintToChatAll("\x01 \x09[\x04%s\x09]\x02 %t", chat_prefix, "Set Name T");
-					PrintToChatAll("\x01 \x09[\x04%s\x09]\x02 %t", chat_prefix, "Set Name CMD");	
+					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x02 %t", chat_prefix, "Names Required");
+					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x02 %t", chat_prefix, "Set Name T");
+					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x02 %t", chat_prefix, "Set Name CMD");	
 				}
 			}
 			
@@ -4959,9 +4959,9 @@ void CheckReady()
 				{
 					g_setNameLimiter = false;
 					CreateTimer(20.0, setNameLimiterTrue);
-					PrintToChatAll("\x01 \x09[\x04%s\x09]\x0C %t", chat_prefix, "Names Required");
-					PrintToChatAll("\x01 \x09[\x04%s\x09]\x0C %t", chat_prefix, "Set Name CT");
-					PrintToChatAll("\x01 \x09[\x04%s\x09]\x0C %t", chat_prefix, "Set Name CMD");	
+					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x0C %t", chat_prefix, "Names Required");
+					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x0C %t", chat_prefix, "Set Name CT");
+					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x0C %t", chat_prefix, "Set Name CMD");	
 				}
 				return;
 			}
@@ -4972,9 +4972,9 @@ void CheckReady()
 				{
 					g_setNameLimiter = false;
 					CreateTimer(20.0, setNameLimiterTrue);
-					PrintToChatAll("\x01 \x09[\x04%s\x09]\x02 %t", chat_prefix, "Names Required");
-					PrintToChatAll("\x01 \x09[\x04%s\x09]\x02 %t", chat_prefix, "Set Name T");
-					PrintToChatAll("\x01 \x09[\x04%s\x09]\x02 %t", chat_prefix, "Set Name CMD");	
+					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x02 %t", chat_prefix, "Names Required");
+					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x02 %t", chat_prefix, "Set Name T");
+					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x02 %t", chat_prefix, "Set Name CMD");	
 				}
 				return;
 			}
@@ -5919,9 +5919,9 @@ void DispInfo(int client, char[] players_unready, int time)
 		SendPanelToClient(g_m_ready_up, client, Handler_ReadySystem, time);
 		CloseHandle(g_m_ready_up);
 	} else if (!g_live) {
-		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x04 %t", chat_prefix, "Ready System");
-		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x04 %t", chat_prefix, "Match Begin Msg", GetConVarInt(wm_min_ready));
-		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x02 %t\x01%s", chat_prefix, "Info Not Ready", players_unready);
+		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x04 %t", chat_prefix, "Ready System");
+		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x04 %t", chat_prefix, "Match Begin Msg", GetConVarInt(wm_min_ready));
+		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x02 %t\x01%s", chat_prefix, "Info Not Ready", players_unready);
 	}
 }
 
@@ -8598,11 +8598,11 @@ public int VetoHandler(Handle menu, MenuAction action, int param1, int param2)
 			LogVetoEvent("{\"event\": \"veto_remove\", \"player\": \"%N\", \"team\": %d, \"selection\": \"%s\"}", client, GetClientTeam(client), map);
 			if (client == g_capt1)
 			{
-				PrintToChatAll("\x01 \x09[\x04%s\x09]\x03 %N \x01vetoed \x07%s", chat_prefix, client, map);
+				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x03 %N \x01vetoed \x07%s", chat_prefix, client, map);
 			}
 			else
 			{
-				PrintToChatAll("\x01 \x09[\x04%s\x09]\x06 %N \x01vetoed \x07%s", chat_prefix, client, map);
+				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x06 %N \x01vetoed \x07%s", chat_prefix, client, map);
 			}
 		}
 		else
@@ -8610,11 +8610,11 @@ public int VetoHandler(Handle menu, MenuAction action, int param1, int param2)
 			LogVetoEvent("{\"event\": \"veto_select\", \"player\": \"%N\", \"team\": %d, \"selection\": \"%s\"}", client, GetClientTeam(client), map);
 			if (client == g_capt1)
 			{
-				PrintToChatAll("\x01 \x09[\x04%s\x09]\x03 %N \x01chose \x07%s", chat_prefix, client, map);
+				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x03 %N \x01chose \x07%s", chat_prefix, client, map);
 			}
 			else
 			{
-				PrintToChatAll("\x01 \x09[\x04%s\x09]\x06 %N \x01chose \x07%s", chat_prefix, client, map);
+				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x06 %N \x01chose \x07%s", chat_prefix, client, map);
 			}
 		}
 		
