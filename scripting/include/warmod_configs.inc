@@ -345,7 +345,7 @@ static void RuleSet_Global(char[] WM_VERSION)
 	WriteFileLine(file, "wm_ban_on_disconnect		\"0\"		//Enable or disable players banned on disconnect if match is live");
 	WriteFileLine(file, "wm_ban_percentage			\"0.75\"	//Percentage of wm_max_players that will be banned on disconnect");
 	WriteFileLine(file, "");
-	WriteFileLine(file, "// Warmod Veto");
+	WriteFileLine(file, "// WarMod Veto");
 	WriteFileLine(file, "wm_veto					\"0\"	//Veto Style: 0 = off, 1 = Bo1, 2 = Bo2, 3 = Bo3, 5 = Bo5");
 	WriteFileLine(file, "wm_veto_knife				\"1\"	//Requires a knife round to determine who votes first: 0 = off, 1 = on");
 	WriteFileLine(file, "wm_veto_bo3				\"0\"	//Veto Style: 0 = Normal, 1 = New");
@@ -550,7 +550,7 @@ static void RuleSet_OnMapLoad(char[] WM_VERSION)
 	WriteFileLine(file, "mp_teamlogo_2 				\"\"		//Enter a team's shorthand image name to display their logo");
 	WriteFileLine(file, "wm_competition				\"WarMod BFG\"	//Name of host for a competition. eg. ESEA, Cybergamer, CEVO, ESL");
 	WriteFileLine(file, "wm_event					\"Scrim\"		//Name of event. eg. Season #, ODC #, Ladder");
-	WriteFileLine(file, "wm_chat_prefix				\"WarMod BFG\"	//Change the chat prefix. Default is WarMod_BFG");
+	WriteFileLine(file, "wm_chat_prefix				\"WarMod BFG\"	//Change the chat prefix. Default is WarMod BFG");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// Stats Site");
 	WriteFileLine(file, "wm_site_location			\"\"		//Location of where the stats site is uploaded for download. Do not have '/' at end of string. eg. www.warmod.com");
@@ -1290,7 +1290,7 @@ static void UpdateRuleSet_Global(char[] WM_VERSION)
 	WriteFileLine(file, "wm_ban_on_disconnect		\"%i\"	//Enable or disable players banned on disconnect if match is live", GetConVarInt(FindConVar("wm_ban_on_disconnect")));
 	WriteFileLine(file, "wm_ban_percentage			\"%-.2f%\"	//Percentage of wm_max_players that will be banned on disconnect", GetConVarFloat(FindConVar("wm_ban_percentage")));
 	WriteFileLine(file, "");
-	WriteFileLine(file, "// Warmod Veto");
+	WriteFileLine(file, "// WarMod Veto");
 	WriteFileLine(file, "wm_veto					\"%i\"	//Veto Style: 0 = off, 1 = Bo1, 2 = Bo2, 3 = Bo3, 5 = Bo5", GetConVarInt(FindConVar("wm_veto")));
 	WriteFileLine(file, "wm_veto_knife				\"%i\"	//Requires a knife round to determine who votes first: 0 = off, 1 = on", GetConVarInt(FindConVar("wm_veto_knife")));
 	WriteFileLine(file, "wm_veto_bo3				\"%i\"	//Veto Style: 0 = Normal, 1 = New", GetConVarInt(FindConVar("wm_veto_bo3")));
@@ -1576,7 +1576,7 @@ static void UpdateOn_Map_Load(char[] WM_VERSION)
 	GetConVarString(FindConVar("wm_event"), convarString, sizeof(convarString));
 	WriteFileLine(file, "wm_event				\"%s\"		//Name of event. eg. Season #, ODC #, Ladder", convarString);
 	GetConVarString(FindConVar("wm_chat_prefix"), convarString, sizeof(convarString));
-	WriteFileLine(file, "wm_chat_prefix			\"%s\"		//Change the chat prefix. Default is WarMod_BFG", convarString);
+	WriteFileLine(file, "wm_chat_prefix			\"%s\"		//Change the chat prefix. Default is WarMod BFG", convarString);
 	WriteFileLine(file, "");
 	if (LibraryExists("warmod_stats"))
 	{

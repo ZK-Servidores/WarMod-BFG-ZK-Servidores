@@ -510,7 +510,7 @@ public void OnPluginStart()
 	wm_rcon_only = CreateConVar("wm_rcon_only", "0", "Enable or disable admin commands to be only executed via RCON or console", FCVAR_NONE, true, 0.0, true, 1.0);
 	CreateConVar("wm_version_notify", WM_VERSION, WM_DESCRIPTION, FCVAR_SPONLY|FCVAR_REPLICATED|FCVAR_NOTIFY|FCVAR_DONTRECORD);
 	
-	wm_chat_prefix = CreateConVar("wm_chat_prefix", "WarMod_BFG", "Change the chat prefix. Default is WarMod_BFG", FCVAR_PROTECTED);
+	wm_chat_prefix = CreateConVar("wm_chat_prefix", "WarMod BFG", "Change the chat prefix. Default is WarMod BFG", FCVAR_PROTECTED);
 	wm_ready_panel = CreateConVar("wm_ready_panel", "1", "Enable Ready Panel or text based system, Text = 0, Panel = 1", FCVAR_NOTIFY, true, 0.0, true, 1.0);
 	wm_ready_tag = CreateConVar("wm_ready_tag", "1", "Enable or disable the ready & not ready clan tags", FCVAR_NOTIFY, true, 0.0, true, 1.0);
 	wm_lock_teams = CreateConVar("wm_lock_teams", "1", "Enable or disable locked teams when a match is running", FCVAR_NOTIFY, true, 0.0, true, 1.0);
@@ -719,12 +719,12 @@ public void OnMapStart()
 	if (StrContains(g_CurMap, "workshop", false) != -1)
 	{
 		GetCurrentWorkshopMap(g_MapName, sizeof(g_MapName), g_WorkShopID, sizeof(g_WorkShopID));
-		LogMessage("Current Map: %s,  Workshop ID: %s, Warmod Version: %s", g_MapName, g_WorkShopID, WM_VERSION);
+		LogMessage("Current Map: %s,  Workshop ID: %s, WarMod Version: %s", g_MapName, g_WorkShopID, WM_VERSION);
 	}
 	else
 	{
 		strcopy(g_map, sizeof(g_map), g_CurMap);
-		LogMessage("Current Map: %s, Warmod Version: %s", g_CurMap, WM_VERSION);
+		LogMessage("Current Map: %s, WarMod Version: %s", g_CurMap, WM_VERSION);
 	}
 	StringToLower(g_map, sizeof(g_map));
 		
@@ -5904,7 +5904,7 @@ void DispInfo(int client, char[] players_unready, int time)
 		char Temp[128];
 		SetGlobalTransTarget(client);
 		g_m_ready_up = CreatePanel();
-		Format(Temp, sizeof(Temp), "WarMod [BFG]- %t", "Ready System");
+		Format(Temp, sizeof(Temp), "WarMod [BFG] - %t", "Ready System");
 		SetPanelTitle(g_m_ready_up, Temp);
 		DrawPanelText(g_m_ready_up, "\n \n");
 		Format(Temp, sizeof(Temp), "%t", "Match Begin Msg", GetConVarInt(wm_min_ready));
@@ -7139,7 +7139,7 @@ stock void LogEvent(const char[]format, any:...)
 	if (g_log_live && (stats_method == 0 || stats_method == 2))
 	{
 		// standard server log files + udp stream
-		LogToGame("[WarMod_BFG] %s", event);
+		LogToGame("[WarMod BFG] %s", event);
 	}
 	
 	if ((stats_method == 1 || stats_method == 2) && g_log_file != INVALID_HANDLE)
@@ -7727,11 +7727,11 @@ public Action WMVersion(int client, int args)
 {
 	if (client == 0)
 	{
-		PrintToServer("\"wm_version\" = \"%s\"\n - [WarMod_BFG] %s", WM_VERSION, WM_DESCRIPTION);
+		PrintToServer("\"wm_version\" = \"%s\"\n - [WarMod BFG] %s", WM_VERSION, WM_DESCRIPTION);
 	}
 	else
 	{
-		PrintToConsole(client, "\"wm_version\" = \"%s\"\n - [WarMod_BFG] %s", WM_VERSION, WM_DESCRIPTION);
+		PrintToConsole(client, "\"wm_version\" = \"%s\"\n - [WarMod BFG] %s", WM_VERSION, WM_DESCRIPTION);
 	}
 	
 	return Plugin_Handled;
@@ -8326,7 +8326,7 @@ stock void LogVetoEvent(const char[]format, any:...)
 	if (stats_method == 0 || stats_method == 2)
 	{
 		// standard server log files + udp stream
-		LogToGame("[WarMod_BFG] %s", event);
+		LogToGame("[WarMod BFG] %s", event);
 	}
 	
 	if ((stats_method == 1 || stats_method == 2) && g_log_veto_file != INVALID_HANDLE)
@@ -8880,7 +8880,7 @@ static void VetoStatusDisplay(int client)
 	char Temp[128];
 	SetGlobalTransTarget(client);
 	Handle g_m_maps_left = CreatePanel();
-	Format(Temp, sizeof(Temp), "WarMod [BFG]- Veto Maps Left");
+	Format(Temp, sizeof(Temp), "WarMod [BFG] - Veto Maps Left");
 	SetPanelTitle(g_m_maps_left, Temp);
 	DrawPanelText(g_m_maps_left, "\n \n");
 	for (int i = 0; i < GetArraySize(g_MapNames); i++) {
@@ -8914,7 +8914,7 @@ public void ChangeMap() {
 		CreateTimer(3.0, Timer_DelayedChangeMap);
 		g_veto_active = false;
 	} else {
-		PrintToChatAll("[Warmod] Something went wrong, please manually change level");
+		PrintToChatAll("[WarMod] Something went wrong, please manually change level");
 		LogError("Veto ChangeMap Error: g_ChosenMap = -1");
 	}
 }
@@ -9826,11 +9826,11 @@ public Action GiveDivPickMenu(int client, char[] selectDiv)
 	KvJumpToKey(kv, "Divisions");
 	if (StrEqual(selectDiv, "Divisions", false))
 	{
-		Format(title, sizeof(title), "Warmod [BFG] Division Select");
+		Format(title, sizeof(title), "WarMod [BFG] Division Select");
 	}
 	else
 	{
-		Format(title, sizeof(title), "Warmod [BFG] Division Select %s", selectDiv);
+		Format(title, sizeof(title), "WarMod [BFG] Division Select %s", selectDiv);
 		KvJumpToKey(kv, selectDiv);
 	}
 	
