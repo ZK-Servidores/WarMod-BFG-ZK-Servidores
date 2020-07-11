@@ -7706,8 +7706,8 @@ public Action ShowPluginInfo(Handle timer, int client)
 		char min_ready[64];
 		GetConVarName(wm_min_ready, min_ready, sizeof(min_ready));
 		PrintToConsole(client, "===============================================================================");
-		PrintToConsole(client, "This server is running WarMod [BFG] | ZK Servidores™");
-		PrintToConsole(client, "Version %s", WM_VERSION);
+		PrintToConsole(client, "This server is running WarMod [BFG] Edited ZK Servidores™");
+		PrintToConsole(client, "Version Server Plugin %s", WM_VERSION);
 		PrintToConsole(client, "");
 		PrintToConsole(client, "Created by Versatile [BFG]");
 		PrintToConsole(client, "Edited by crashzk");
