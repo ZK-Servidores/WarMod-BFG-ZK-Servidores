@@ -329,12 +329,12 @@ int g_map_loaded = 0;
 Handle g_h_menu = INVALID_HANDLE;
 
 /* Plugin Info */
-#define UPDATE_URL		"https://warmod.bitbucket.io/updatefile.txt"
-#define WM_VERSION		"20.06.24.1348 + v1.0.1"
-#define WM_DESCRIPTION	"An automative service for CS:GO competition matches"
+#define UPDATE_URL			"https://warmod.bitbucket.io/updatefile.txt"
+#define WM_VERSION			"20.06.24.1348 + v1.0.2"
+#define WM_DESCRIPTION		"An automative service for CS:GO competition matches"
 
 public Plugin myinfo = {
-	name = "[BFG] WarMod | ZK Servidores™",
+	name = "[BFG] WarMod | Version ZK Servidores™",
 	author = "Versatile_BFG, crashzk",
 	description = WM_DESCRIPTION,
 	version = WM_VERSION,
