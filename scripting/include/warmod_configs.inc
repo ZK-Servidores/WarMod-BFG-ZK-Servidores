@@ -501,9 +501,12 @@ static void RuleSet_Practice(char[] WM_VERSION)
 	WriteFileLine(file, "mp_autokick		\"0\"		//Kick idle/team-killing/team-damaging players");
 	WriteFileLine(file, "mp_startmoney		\"16000\"			//amount of money each player gets when they reset");
 	WriteFileLine(file, "wm_round_money		\"0\"		//Enable or disable a client's team mates money to be displayed at the start of a round (to him only)");
-	WriteFileLine(file, "sv_infinite_ammo		\"2\"		//Player's active weapon will never run out of ammo.");
-	WriteFileLine(file, "sv_showimpacts		\"2\"			//Shows client (red) and server (blue) bullet impact point");
-	WriteFileLine(file, "sv_cheats			\"1\"			//Allow cheats on server");
+	WriteFileLine(file, "sv_infinite_ammo	\"2\"	//Player's active weapon will never run out of ammo");	
+	WriteFileLine(file, "sv_showimpacts		\"1\"			//This command can be used to show bullet impacts");
+	WriteFileLine(file, "sv_showimpacts_time 	\"10\"		//This command can be used to show bullet impacts");	
+	WriteFileLine(file, "sv_grenade_trajectory	\"1\"	//This command, if enabled, shows the trajectory of grenades (as colored lines)");
+	WriteFileLine(file, "sv_grenade_trajectory_time	\"10\"	//This command sets the length of time, in seconds, that grenade trajectories display for after having been drawn");	
+	WriteFileLine(file, "sv_cheats	\"1\"	//Allow cheats on server");
 	WriteFileLine(file, "mp_buy_anywhere		\"1\"		//When set, players can buy anywhere, not only in buyzones");
 	WriteFileLine(file, "mp_roundtime_defuse		\"9999\"		//How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead");
 	WriteFileLine(file, "bot_quota			\"0\"		//Determines the total number of bots in the game.");
@@ -1021,15 +1024,15 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Knife On 3\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Knife on 3...\"");
+	WriteFileLine(file, "		\"en\"			\"Round Knife on 3...\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Knife On 2\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Knife on 2...\"");
+	WriteFileLine(file, "		\"en\"			\"Round Knife on 2...\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Knife On 1\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Knife on 1...\"");
+	WriteFileLine(file, "		\"en\"			\"Round Knife on 1...\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Knife\"");
 	WriteFileLine(file, "	{");
@@ -1203,14 +1206,14 @@ static void CreateVetoMapListFile()
 	Handle file = OpenFile(cfgFile, "w");
 
 	WriteFileLine(file, "de_dust2");
-	WriteFileLine(file, "de_inferno");
 	WriteFileLine(file, "de_mirage");
-	WriteFileLine(file, "de_train");
-	WriteFileLine(file, "de_overpass");
-	WriteFileLine(file, "de_cache");
+	WriteFileLine(file, "de_inferno");
 	WriteFileLine(file, "de_cbble");
-	WriteFileLine(file, "de_vertigo");
-	WriteFileLine(file, "de_nuke", false); // no newline at the end
+	WriteFileLine(file, "de_cache");
+	WriteFileLine(file, "de_overpass");
+	WriteFileLine(file, "de_nuke");
+	WriteFileLine(file, "de_train");
+	WriteFileLine(file, "de_vertigo", false); // no newline at the end
 	CloseHandle(file);
 }
 
@@ -1287,7 +1290,7 @@ static void UpdateRuleSet_Global(char[] WM_VERSION)
 	WriteFileLine(file, "wm_auto_ready				\"%i\"	//Enable or disable the ready system being automatically enabled on map change", GetConVarInt(FindConVar("wm_auto_ready")));
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// WarMod Ban");
-	WriteFileLine(file, "wm_ban_on_disconnect		\"%i\"	//Enable or disable players banned on disconnect if match is live", GetConVarInt(FindConVar("wm_ban_on_disconnect")));
+	WriteFileLine(file, "wm_ban_on_disconnect		\"%i\"		//Enable or disable players banned on disconnect if match is live", GetConVarInt(FindConVar("wm_ban_on_disconnect")));
 	WriteFileLine(file, "wm_ban_percentage			\"%-.2f%\"	//Percentage of wm_max_players that will be banned on disconnect", GetConVarFloat(FindConVar("wm_ban_percentage")));
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// WarMod Veto");
@@ -1470,9 +1473,12 @@ static void UpdatePractice(char[] WM_VERSION)
 	WriteFileLine(file, "mp_autokick		\"0\"		//Kick idle/team-killing/team-damaging players");
 	WriteFileLine(file, "mp_startmoney		\"16000\"			//amount of money each player gets when they reset");
 	WriteFileLine(file, "wm_round_money		\"0\"		//Enable or disable a client's team mates money to be displayed at the start of a round (to him only)");
-	WriteFileLine(file, "sv_infinite_ammo		\"2\"		//Player's active weapon will never run out of ammo.");
-	WriteFileLine(file, "sv_showimpacts		\"2\"			//Shows client (red) and server (blue) bullet impact point");
-	WriteFileLine(file, "sv_cheats			\"1\"			//Allow cheats on server");
+	WriteFileLine(file, "sv_infinite_ammo	\"2\"	//Player's active weapon will never run out of ammo");	
+	WriteFileLine(file, "sv_showimpacts		\"1\"			//This command can be used to show bullet impacts");
+	WriteFileLine(file, "sv_showimpacts_time 	\"10\"		//This command can be used to show bullet impacts");	
+	WriteFileLine(file, "sv_grenade_trajectory	\"1\"	//This command, if enabled, shows the trajectory of grenades (as colored lines)");
+	WriteFileLine(file, "sv_grenade_trajectory_time	\"10\"	//This command sets the length of time, in seconds, that grenade trajectories display for after having been drawn");	
+	WriteFileLine(file, "sv_cheats	\"1\"	//Allow cheats on server");
 	WriteFileLine(file, "mp_buy_anywhere		\"1\"		//When set, players can buy anywhere, not only in buyzones");
 	WriteFileLine(file, "mp_roundtime_defuse		\"9999\"		//How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead");
 	WriteFileLine(file, "bot_quota			\"0\"		//Determines the total number of bots in the game.");
