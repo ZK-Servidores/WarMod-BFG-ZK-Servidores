@@ -852,7 +852,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Available Commands\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Available client commands\"");
+	WriteFileLine(file, "		\"en\"			\"Available commands\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"No Permission\"");
 	WriteFileLine(file, "	{");
