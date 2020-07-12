@@ -5338,7 +5338,7 @@ static void LiveText() {
 		LiveOn3Text = false;
 		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Live");
 		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Good Luck");
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t \x03WarMod [BFG]", chat_prefix, "Powered By");
+		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t \x03WarMod [BFG] | ZK Servidores™", chat_prefix, "Powered By");
 		
 		if (!GetConVarBool(wm_random_team_names)) {
 			CreateTimer(1.0, SetTagClientDefault);
@@ -5360,12 +5360,12 @@ static void LiveText() {
 			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 \x02%t", chat_prefix, "Zeus");
 			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 \x02%t", chat_prefix, "Knife");
 			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Good Luck");
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t \x03WarMod [BFG]", chat_prefix, "Powered By");
+			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t \x03WarMod [BFG] | ZK Servidores™", chat_prefix, "Powered By");
 		} else {
 			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 \x02%t", chat_prefix, "Knife");
 			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 \x02%t", chat_prefix, "Knife");
 			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Good Luck");
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t \x03WarMod [BFG]", chat_prefix, "Powered By");
+			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t \x03WarMod [BFG] | ZK Servidores™", chat_prefix, "Powered By");
 		}
 		
 		if (!GetConVarBool(wm_random_team_names)) {
