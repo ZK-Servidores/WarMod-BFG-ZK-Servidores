@@ -310,7 +310,7 @@ static void RuleSet_Global(char[] WM_VERSION)
 	WriteFileLine(file, "//Damage Printer");
 	WriteFileLine(file, "wm_damageprint_auto_color		\"1\"	//Whether colors are automatically inserted for damage values, changing depending on if the damage resulted in a kill");
 	WriteFileLine(file, "wm_damageprint_enabled			\"1\"	//Whether to enabled damage print to client on round end");
-	WriteFileLine(file, "wm_damageprint_format			\"--> ({DMG_TO} dmg / {HITS_TO} hits) to ({DMG_FROM} dmg / {HITS_FROM} hits) from {NAME} ({HEALTH} HP)\"	//Format of the damage output string. Avaliable tags are in the default, color tags such as {LIGHT_RED} and {GREEN} also work.");
+	WriteFileLine(file, "wm_damageprint_format			\"--> ({DMG_TO} DMG / {HITS_TO} HITS) to ({DMG_FROM} DMG / {HITS_FROM} HITS) from {NAME} ({HEALTH} HP)\"	//Format of the damage output string. Avaliable tags are in the default, color tags such as {LIGHT_RED} and {GREEN} also work.");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "//WarMod Knife");
 	WriteFileLine(file, "wm_auto_knife				\"1\"	//Enable or disable the knife round before going live");
@@ -352,8 +352,8 @@ static void RuleSet_Global(char[] WM_VERSION)
 	WriteFileLine(file, "wm_veto_random				\"0\"	//After the vetoing is done, will a map be picked at random?");
 	WriteFileLine(file, "wm_veto_select				\"1\"	//On last two maps of Veto Bo1 will it be select map to play: 0 = No, 1 = Yes");
 	WriteFileLine(file, "wm_captain_from_file		\"0\"	//Get team captains from file? 0 = No, 1 = Yes");
-	WriteFileLine(file, "wm_pugsetup_maplist_file		\"warmod/veto_maps_list.txt\"	//Veto Map List to read from. Located in cfg folder");
-	WriteFileLine(file, "wm_pugsetup_randomize_maps		\"1\"	//When maps are shown in the map vote/veto, should their order be randomized?");
+	WriteFileLine(file, "wm_pugsetup_maplist_file	\"warmod/veto_maps_list.txt\"	//Veto Map List to read from. Located in cfg folder");
+	WriteFileLine(file, "wm_pugsetup_randomize_maps	\"1\"	//When maps are shown in the map vote/veto, should their order be randomized?");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "exec gamemode_competitive_server.cfg", false);// no newline at the end
 	CloseHandle(file);
@@ -532,7 +532,7 @@ static void RuleSet_OnMapLoad(char[] WM_VERSION)
 	WriteFileLine(file, "sm_updater 		\"1\"		//Determines update functionality. (1 = Notify, 2 = Download, 3 = Include source code)");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "//WarMod Configs");
-	WriteFileLine(file, "wm_warmod_safemode			\"0\"		//This disables features that usually break on a CS:GO update");
+	WriteFileLine(file, "wm_warmod_safemode			\"0\"							//This disables features that usually break on a CS:GO update");
 	WriteFileLine(file, "wm_match_config			\"warmod/ruleset_default.cfg\"	//Sets the match config to load on Live on 3");
 	WriteFileLine(file, "wm_default_config			\"warmod/ruleset_default.cfg\"	//Sets the match config to load when the default command is called");
 	WriteFileLine(file, "wm_overtime_config			\"warmod/ruleset_overtime.cfg\"	//Sets the match config to load when the overtime command is called");
@@ -541,23 +541,23 @@ static void RuleSet_OnMapLoad(char[] WM_VERSION)
 	WriteFileLine(file, "wm_reset_config			\"warmod/on_match_end.cfg\"		//Sets the config to load at the end/reset of a match");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// WarMod Stats");
-	WriteFileLine(file, "wm_save_dir				\"warmod\"	//Directory to store SourceTV demos and WarMod logs");
-	WriteFileLine(file, "wm_prefix_logs				\"1\"		//Enable or disable the prefixing of \"_\" to uncompleted match SourceTV demos and WarMod logs");
-	WriteFileLine(file, "wm_stats_enabled			\"1\"		//Enable or disable statistical logging");
-	WriteFileLine(file, "wm_stats_method			\"2\"		//Sets the stats logging method: 0 = UDP stream/server logs, 1 = WarMod logs, 2 = both");
-	WriteFileLine(file, "wm_stats_trace				\"0\"		//Enable or disable updating all player positions, every wm_stats_trace_delay seconds");
-	WriteFileLine(file, "wm_stats_trace_delay		\"5\"		//The ammount of time between sending player position updates");
-	WriteFileLine(file, "mp_teamname_1 				\"\"		//A non-empty string overrides the first team's name");
-	WriteFileLine(file, "mp_teamname_2 				\"\"		//A non-empty string overrides the second team's name");
-	WriteFileLine(file, "mp_teamlogo_1 				\"\"		//Enter a team's shorthand image name to display their logo");
-	WriteFileLine(file, "mp_teamlogo_2 				\"\"		//Enter a team's shorthand image name to display their logo");
+	WriteFileLine(file, "wm_save_dir				\"warmod\"		//Directory to store SourceTV demos and WarMod logs");
+	WriteFileLine(file, "wm_prefix_logs				\"1\"			//Enable or disable the prefixing of \"_\" to uncompleted match SourceTV demos and WarMod logs");
+	WriteFileLine(file, "wm_stats_enabled			\"1\"			//Enable or disable statistical logging");
+	WriteFileLine(file, "wm_stats_method			\"2\"			//Sets the stats logging method: 0 = UDP stream/server logs, 1 = WarMod logs, 2 = both");
+	WriteFileLine(file, "wm_stats_trace				\"0\"			//Enable or disable updating all player positions, every wm_stats_trace_delay seconds");
+	WriteFileLine(file, "wm_stats_trace_delay		\"5\"			//The ammount of time between sending player position updates");
+	WriteFileLine(file, "mp_teamname_1 				\"\"			//A non-empty string overrides the first team's name");
+	WriteFileLine(file, "mp_teamname_2 				\"\"			//A non-empty string overrides the second team's name");
+	WriteFileLine(file, "mp_teamlogo_1 				\"\"			//Enter a team's shorthand image name to display their logo");
+	WriteFileLine(file, "mp_teamlogo_2 				\"\"			//Enter a team's shorthand image name to display their logo");
 	WriteFileLine(file, "wm_competition				\"WarMod BFG\"	//Name of host for a competition. eg. ESEA, Cybergamer, CEVO, ESL");
 	WriteFileLine(file, "wm_event					\"Scrim\"		//Name of event. eg. Season #, ODC #, Ladder");
 	WriteFileLine(file, "wm_chat_prefix				\"WarMod BFG\"	//Change the chat prefix. Default is WarMod BFG");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// Stats Site");
 	WriteFileLine(file, "wm_site_location			\"\"		//Location of where the stats site is uploaded for download. Do not have '/' at end of string. eg. www.warmod.com");
-	WriteFileLine(file, "wm_site_data				\"warmod.bitbucket.org/stats\"		//Location of where the sites images, css and js files are. Do not have '/' at end of string. eg. warmod.bitbucket.org/stats");
+	WriteFileLine(file, "wm_site_data				\"warmod.bitbucket.org/stats\"	//Location of where the sites images, css and js files are. Do not have '/' at end of string. eg. warmod.bitbucket.org/stats");
 	WriteFileLine(file, "wm_demo_location			\"\"		//Location of where the demo is uploaded for download. eg. www.warmod.com/demos/");
 	WriteFileLine(file, "wm_forums_location			\"\"		//Location of where the community forums are. eg. www.warmod.com/forums/");
 	WriteFileLine(file, "");
@@ -1547,7 +1547,7 @@ static void UpdateOn_Map_Load(char[] WM_VERSION)
 	}
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// WarMod Configs");
-	WriteFileLine(file, "wm_warmod_safemode			\"%i\"		//This disables features that usually break on a CS:GO update", GetConVarInt(FindConVar("wm_warmod_safemode")));
+	WriteFileLine(file, "wm_warmod_safemode			\"%i\"	//This disables features that usually break on a CS:GO update", GetConVarInt(FindConVar("wm_warmod_safemode")));
 	GetConVarString(FindConVar("wm_match_config"), convarString, sizeof(convarString));
 	WriteFileLine(file, "wm_match_config			\"%s\"	//Sets the match config to load on Live on 3", convarString);
 	GetConVarString(FindConVar("wm_default_config"), convarString, sizeof(convarString));
@@ -1628,7 +1628,7 @@ static void UpdateOn_Map_Load(char[] WM_VERSION)
 	}
 	else
 	{
-		WriteFileLine(file, "wm_autodemoupload_ftptargetstats		\"stats\"		//The ftp target to use for stats site uploads");
+		WriteFileLine(file, "wm_autodemoupload_ftptargetstats		\"stats\"	//The ftp target to use for stats site uploads");
 	}
 	WriteFileLine(file, "wm_autodemoupload_completed		\"%i\"			//Only upload demos when match is completed.", GetConVarInt(FindConVar("wm_autodemoupload_completed")));
 	WriteFileLine(file, "");
