@@ -370,15 +370,15 @@
 	}
 	"Knife On 3"
 	{
-		"pt"			"Knife on 3..."
+		"pt"			"Round Knife on 3..."
 	}
 	"Knife On 2"
 	{
-		"pt"			"Knife on 2..."
+		"pt"			"Round Knife on 2..."
 	}
 	"Knife On 1"
 	{
-		"pt"			"Knife on 1..."
+		"pt"			"Round Knife on 1..."
 	}
 	"Knife"
 	{

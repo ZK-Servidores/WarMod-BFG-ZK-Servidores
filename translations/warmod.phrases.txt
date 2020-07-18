@@ -370,15 +370,15 @@
 	}
 	"Knife On 3"
 	{
-		"en"			"Knife on 3..."
+		"en"			"Round Knife on 3..."
 	}
 	"Knife On 2"
 	{
-		"en"			"Knife on 2..."
+		"en"			"Round Knife on 2..."
 	}
 	"Knife On 1"
 	{
-		"en"			"Knife on 1..."
+		"en"			"Round Knife on 1..."
 	}
 	"Knife"
 	{
