@@ -1,4 +1,4 @@
-# WarMod [BFG] - ZK Servidores™
+# WarMod [BFG] | ZK Servidores™
 An automative service for CS:GO competition matches.
 
 Modified from **WarMod [BFG] v20.06.24.1348**.
