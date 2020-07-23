@@ -5,7 +5,7 @@ Modified from **WarMod [BFG] v20.06.24.1348**.
 
 ## Players Commands
 **CVARS** | **Description** | **Commands** |
-:--------: | -------- |
+:--------: | -------- | :--------: |
 **sm_ready** | Mark the player as ready. | !ready, !r |
 **sm_notready** | Marks the player as not ready. | !notready, !nr |
 **sm_stay** | Choose to stay on the same team after winning the knife round. | !stay |
@@ -18,7 +18,7 @@ Modified from **WarMod [BFG] v20.06.24.1348**.
 To use admins commands you must have the `ADMFLAG_CUSTOM1` privilege.
 
 **CVARS** | **Description** | **Commands** |
-:--------: | -------- |
+:--------: | -------- | :--------: |
 **sm_forcestart** | Force start of the game even without the players ready. | !forcestart, !fs |
 
 ## Credits
