@@ -400,30 +400,33 @@ public void OnPluginStart()
 	
 	RegConsoleCmd("sm_ready", ReadyUp, "Readies up the client");
 	RegConsoleCmd("sm_r", ReadyUp, "Readies up the client");
-	RegConsoleCmd("sm_rdy", ReadyUp, "Readies up the client");
+	
+	RegConsoleCmd("sm_notready", ReadyDown, "Readies down the client");
+	RegConsoleCmd("sm_nr", ReadyDown, "Readies down the client");
 	RegConsoleCmd("sm_unready", ReadyDown, "Readies down the client");
 	RegConsoleCmd("sm_ur", ReadyDown, "Readies down the client");
-	RegConsoleCmd("sm_urdy", ReadyDown, "Readies down the client");
+	
 	RegConsoleCmd("sm_info", ReadyInfoPriv, "Shows ready info");
 	RegConsoleCmd("sm_i", ReadyInfoPriv, "Shows ready info");
+	
 	RegConsoleCmd("sm_score", ShowScore, "Shows score to client");
 	RegConsoleCmd("sm_s", ShowScore, "Shows score to client");
+	
 	RegConsoleCmd("sm_stay", Stay, "Stay command for knife round");
+	RegConsoleCmd("sm_ficar", Stay, "Stay command for knife round");
 	RegConsoleCmd("sm_switch", Switch, "Switch command for knife round");
 	RegConsoleCmd("sm_swap", Switch, "Switch command for knife round");
+	RegConsoleCmd("sm_trocar", Switch, "Switch command for knife round");
+	
 	RegConsoleCmd("sm_pause", Pause, "Pauses the match");
 	RegConsoleCmd("sm_unpause", Unpause, "Resumes the match");
 	
 	RegConsoleCmd("sm_playout", PlayOut_Offer, "Sets the match to be in play out mode");
 	RegConsoleCmd("sm_pl", PlayOut_Offer, "Sets the match to be in play out mode");
-	RegConsoleCmd("sm_hardprac", PlayOut_Offer, "Sets the match to be in play out mode");
-	RegConsoleCmd("sm_hp", PlayOut_Offer, "Sets the match to be in play out mode");
 	
 	RegConsoleCmd("sm_overtime", OverTime_Offer, "Sets the match to be in overtime mode");
 	RegConsoleCmd("sm_ot", OverTime_Offer, "Sets the match to be in overtime mode");
-	
-	RegConsoleCmd("sm_normal", Default_Offer, "Sets the match to be in default mode");
-	RegConsoleCmd("sm_norm", Default_Offer, "Sets the match to be in default mode");
+
 	RegConsoleCmd("sm_default", Default_Offer, "Sets the match to be in default mode");
 	RegConsoleCmd("sm_def", Default_Offer, "Sets the match to be in default mode");
 	
@@ -461,7 +464,7 @@ public void OnPluginStart()
 	RegAdminCmd("prac", Practice, ADMFLAG_CUSTOM1, "Puts server into a practice mode state");
 	RegAdminCmd("warmup", WarmUp, ADMFLAG_CUSTOM1, "Puts server into a warm up state");
 	
-	RegAdminCmd("pwd", ChangePassword, ADMFLAG_PASSWORD, "Set or display the sv_password console variable");
+	RegAdminCmd("password", ChangePassword, ADMFLAG_PASSWORD, "Set or display the sv_password console variable");
 	RegAdminCmd("pw", ChangePassword, ADMFLAG_PASSWORD, "Set or display the sv_password console variable");
 	
 	RegAdminCmd("active", ActiveToggle, ADMFLAG_CUSTOM1, "Toggle the wm_active console variable");
@@ -478,19 +481,24 @@ public void OnPluginStart()
 	
 	RegAdminCmd("forceallready", ForceAllReady, ADMFLAG_CUSTOM1, "Forces all players to become ready");
 	RegAdminCmd("far", ForceAllReady, ADMFLAG_CUSTOM1, "Forces all players to become ready");
+	
 	RegAdminCmd("forceallunready", ForceAllUnready, ADMFLAG_CUSTOM1, "Forces all players to become unready");
+	RegAdminCmd("forceallnotready", ForceAllUnready, ADMFLAG_CUSTOM1, "Forces all players to become unready");
 	RegAdminCmd("faur", ForceAllUnready, ADMFLAG_CUSTOM1, "Forces all players to become unready");
+	RegAdminCmd("fanr", ForceAllUnready, ADMFLAG_CUSTOM1, "Forces all players to become unready");
+	
 	RegAdminCmd("forceallspectate", ForceAllSpectate, ADMFLAG_CUSTOM1, "Forces all players to become a spectator");
 	RegAdminCmd("fas", ForceAllSpectate, ADMFLAG_CUSTOM1, "Forces all players to become a spectator");
 	
-	RegAdminCmd("lo3", ForceStart, ADMFLAG_CUSTOM1, "Starts the match regardless of player and ready count");
 	RegAdminCmd("forcestart", ForceStart, ADMFLAG_CUSTOM1, "Starts the match regardless of player and ready count");
 	RegAdminCmd("fs", ForceStart, ADMFLAG_CUSTOM1, "Starts the match regardless of player and ready count");
+	
 	RegAdminCmd("forceend", ForceEnd, ADMFLAG_CUSTOM1, "Ends the match regardless of status");
 	RegAdminCmd("fe", ForceEnd, ADMFLAG_CUSTOM1, "Ends the match regardless of status");
 	
 	RegAdminCmd("readyon", ReadyOn, ADMFLAG_CUSTOM1, "Turns on or restarts the ReadyUp System");
 	RegAdminCmd("ron", ReadyOn, ADMFLAG_CUSTOM1, "Turns on or restarts the ReadyUp System");
+	
 	RegAdminCmd("readyoff", ReadyOff, ADMFLAG_CUSTOM1, "Turns off the ReadyUp System if enabled");
 	RegAdminCmd("roff", ReadyOff, ADMFLAG_CUSTOM1, "Turns off the ReadyUp System if enabled");
 	
