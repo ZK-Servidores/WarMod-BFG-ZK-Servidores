@@ -329,9 +329,9 @@ int g_map_loaded = 0;
 Handle g_h_menu = INVALID_HANDLE;
 
 /* Plugin Info */
-#define UPDATE_URL			"https://warmod.bitbucket.io/updatefile.txt"
-#define WM_VERSION			"20.06.24.1348 + v1.1"
-#define WM_DESCRIPTION		"An automative service for CS:GO competition matches"
+#define UPDATE_URL		"https://warmod.bitbucket.io/updatefile.txt"
+#define WM_VERSION		"20.06.24.1348 + v1.1"
+#define WM_DESCRIPTION	"An automative service for CS:GO competition matches"
 
 public Plugin myinfo = {
 	name = "[BFG] WarMod | Version ZK Servidores™",
@@ -9680,8 +9680,7 @@ stock void AddTeamLogosToDownloadTable()
 		PrintToServer("[SM] Loading team logo: %s", filename);
 		Format(fullpath, sizeof(fullpath), "resource/flash/econ/tournaments/teams/%s", filename);
 		AddFileToDownloadsTable(fullpath);
-	}
-	
+	}	
 	CloseHandle(dir);
 }
 
