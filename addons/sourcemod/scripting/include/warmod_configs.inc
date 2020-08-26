@@ -569,11 +569,11 @@ static void RuleSet_OnMapLoad(char[] WM_VERSION)
 	WriteFileLine(file, "// FTP Upload");
 	WriteFileLine(file, "wm_autodemoupload_enable				\"0\"			//Automatically upload demos when finished recording");
 	WriteFileLine(file, "wm_autodemoupload_bzip2				\"9\"			//Compression level. If set > 0 demos will be compressed before uploading (Requires bzip2 extension)");
-	WriteFileLine(file, "wm_autodemoupload_delete				\"1\"			//Delete the demo (and the bz2) if upload was successful");
+	WriteFileLine(file, "wm_autodemoupload_delete				\"0\"			//Delete the demo (and the bz2) if upload was successful");
 	WriteFileLine(file, "wm_autodemoupload_ftptargetdemo		\"demos\"		//The ftp target to use for demo uploads");
 	WriteFileLine(file, "wm_autodemoupload_ftptargetlog			\"logs\"		//The ftp target to use for log uploads");
 	WriteFileLine(file, "wm_autodemoupload_ftptargetstats		\"stats\"		//The ftp target to use for stats site uploads");
-	WriteFileLine(file, "wm_autodemoupload_completed			\"1\"			//Only upload demos when match is completed");
+	WriteFileLine(file, "wm_autodemoupload_completed			\"0\"			//Only upload demos when match is completed");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// Voice Communications");
 	WriteFileLine(file, "sm_deadtalk			\"0\"			//Controls how dead communicate 0 - Off, 1 - Dead players ignore teams, 2 - Dead players talk to living teammates");
@@ -698,11 +698,11 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Ready\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"You have been marked as ready\"");
+	WriteFileLine(file, "		\"en\"			\"You have been marked as Ready\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Not Ready\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"You have been marked as not ready\"");
+	WriteFileLine(file, "		\"en\"			\"You have been marked as NotReady\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Score Overtime\"");
 	WriteFileLine(file, "	{");
@@ -714,11 +714,11 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Knife Round Cancelled\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Knife Round cancelled - Not Live\"");
+	WriteFileLine(file, "		\"en\"			\"Round Knife Cancelled - Not Live\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Knife Round Inactive\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Knife Round is not active\"");
+	WriteFileLine(file, "		\"en\"			\"Round Knife is not active\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Ready System Enabled\"");
 	WriteFileLine(file, "	{");
@@ -738,11 +738,11 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Console Ready\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Console cannot be marked as ready\"");
+	WriteFileLine(file, "		\"en\"			\"Console cannot be marked as Ready\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Console Not Ready\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Console cannot be marked as not ready\"");
+	WriteFileLine(file, "		\"en\"			\"Console cannot be marked as NotReady\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Not on Team\"");
 	WriteFileLine(file, "	{");
@@ -750,23 +750,23 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Already Ready\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"You have already been marked as ready\"");
+	WriteFileLine(file, "		\"en\"			\"You have already been marked as Ready\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Already Not Ready\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"You have already been marked as not ready\"");
+	WriteFileLine(file, "		\"en\"			\"You have already been marked as NotReady\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Forced Ready\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Forced all players ready\"");
+	WriteFileLine(file, "		\"en\"			\"Forced all players Ready\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Forced Not Ready\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Forced all players unready\"");
+	WriteFileLine(file, "		\"en\"			\"Forced all players NotReady\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Forced Spectate\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Forced all players to spectate\"");
+	WriteFileLine(file, "		\"en\"			\"Forced all players to Spectate\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Match Not In Progress\"");
 	WriteFileLine(file, "	{");
@@ -800,7 +800,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Grenades Blocked\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Grenades in warmup are disabled\"");
+	WriteFileLine(file, "		\"en\"			\"Grenades in warmup are disabled!\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Ready System\"");
 	WriteFileLine(file, "	{");
@@ -855,7 +855,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Available Commands\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Available commands\"");
+	WriteFileLine(file, "		\"en\"			\"Available Commands\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"No Permission\"");
 	WriteFileLine(file, "	{");
@@ -886,7 +886,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Names Required\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Match will not LO3 until both team names have been set\"");
+	WriteFileLine(file, "		\"en\"			\"Match is not live until both team names have been set\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Pause Freeze Time\"");
 	WriteFileLine(file, "	{");
@@ -956,11 +956,11 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Knife Vote Team\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"are voting to stay or switch teams\"");
+	WriteFileLine(file, "		\"en\"			\"are voting to stay or swap teams\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Knife Vote\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Please type !stay or !switch\"");
+	WriteFileLine(file, "		\"en\"			\"Please type !stay or !swap\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Knife Stay\"");
 	WriteFileLine(file, "	{");
@@ -968,7 +968,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Knife Switch\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"have voted to switch teams\"");
+	WriteFileLine(file, "		\"en\"			\"have voted to swap teams\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Set Name CT\"");
 	WriteFileLine(file, "	{");
@@ -988,7 +988,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Logos Required\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Match will not LO3 until both team logos have been set\"");
+	WriteFileLine(file, "		\"en\"			\"Match is not live until both team logos have been set\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Set Logo CT\"");
 	WriteFileLine(file, "	{");
@@ -1092,7 +1092,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Admin_Menu ForceAllUnready\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Force All Unready\"");
+	WriteFileLine(file, "		\"en\"			\"Force All NotReady\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Admin_Menu ForceAllSpectate\"");
 	WriteFileLine(file, "	{");
@@ -1157,7 +1157,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	\"Veto Offer\"");
 	WriteFileLine(file, "	{");
 	WriteFileLine(file, "		\"#format\"		\"{1:i}\"");
-	WriteFileLine(file, "		\"en\"			\"have asked for a veto Bo{1}. Please type !veto to start\"");
+	WriteFileLine(file, "		\"en\"			\"have asked for a veto BO{1}. Please type !veto to start\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Veto Captain\"");
 	WriteFileLine(file, "	{");
@@ -1624,23 +1624,23 @@ static void UpdateOn_Map_Load(char[] WM_VERSION)
 	if (LibraryExists("warmod_stats"))
 	{
 		GetConVarString(FindConVar("wm_autodemoupload_ftptargetstats"), convarString, sizeof(convarString));
-		WriteFileLine(file, "wm_autodemoupload_ftptargetstats		\"%s\"		//The ftp target to use for stats site uploads.", convarString);
+		WriteFileLine(file, "wm_autodemoupload_ftptargetstats	\"%s\"		//The ftp target to use for stats site uploads.", convarString);
 	}
 	else
 	{
-		WriteFileLine(file, "wm_autodemoupload_ftptargetstats		\"stats\"	//The ftp target to use for stats site uploads");
+		WriteFileLine(file, "wm_autodemoupload_ftptargetstats	\"stats\"	//The ftp target to use for stats site uploads");
 	}
-	WriteFileLine(file, "wm_autodemoupload_completed		\"%i\"			//Only upload demos when match is completed.", GetConVarInt(FindConVar("wm_autodemoupload_completed")));
+	WriteFileLine(file, "wm_autodemoupload_completed	\"%i\"			//Only upload demos when match is completed.", GetConVarInt(FindConVar("wm_autodemoupload_completed")));
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// Voice Communications");
 	WriteFileLine(file, "");
 	if (LibraryExists("basecomm"))
 	{
-		WriteFileLine(file, "sm_deadtalk			\"%i\"			//Controls how dead communicate. 0 - Off. 1 - Dead players ignore teams. 2 - Dead players talk to living teammates.", GetConVarInt(FindConVar("sm_deadtalk")));
+		WriteFileLine(file, "sm_deadtalk		\"%i\"			//Controls how dead communicate. 0 - Off. 1 - Dead players ignore teams. 2 - Dead players talk to living teammates.", GetConVarInt(FindConVar("sm_deadtalk")));
 	}
 	else
 	{
-		WriteFileLine(file, "sm_deadtalk			\"0\"			//Controls how dead communicate. 0 - Off. 1 - Dead players ignore teams. 2 - Dead players talk to living teammates.");
+		WriteFileLine(file, "sm_deadtalk		\"0\"			//Controls how dead communicate. 0 - Off. 1 - Dead players ignore teams. 2 - Dead players talk to living teammates.");
 	}
 	WriteFileLine(file, "");
 	WriteFileLine(file, "exec warmod/ruleset_warmup.cfg", false);// no newline at the end

@@ -330,11 +330,11 @@ Handle g_h_menu = INVALID_HANDLE;
 
 /* Plugin Info */
 #define UPDATE_URL		"https://warmod.bitbucket.io/updatefile.txt"
-#define WM_VERSION		"20.06.24.1348 + v1.1"
+#define WM_VERSION		"20.06.24.1348 + v1.2"
 #define WM_DESCRIPTION	"An automative service for CS:GO competition matches"
 
 public Plugin myinfo = {
-	name = "[BFG] WarMod | Version ZK Servidores™",
+	name = "[BFG] WarMod | ZK Servidores™",
 	author = "Versatile_BFG, crashzk",
 	description = WM_DESCRIPTION,
 	version = WM_VERSION,
@@ -400,11 +400,13 @@ public void OnPluginStart()
 	
 	RegConsoleCmd("sm_ready", ReadyUp, "Readies up the client");
 	RegConsoleCmd("sm_r", ReadyUp, "Readies up the client");
+	RegConsoleCmd("sm_pronto", ReadyUp, "Readies up the client");
 	
 	RegConsoleCmd("sm_notready", ReadyDown, "Readies down the client");
 	RegConsoleCmd("sm_nr", ReadyDown, "Readies down the client");
 	RegConsoleCmd("sm_unready", ReadyDown, "Readies down the client");
 	RegConsoleCmd("sm_ur", ReadyDown, "Readies down the client");
+	RegConsoleCmd("sm_aquecendo", ReadyDown, "Readies down the client");
 	
 	RegConsoleCmd("sm_info", ReadyInfoPriv, "Shows ready info");
 	RegConsoleCmd("sm_i", ReadyInfoPriv, "Shows ready info");
@@ -431,16 +433,16 @@ public void OnPluginStart()
 	RegConsoleCmd("sm_def", Default_Offer, "Sets the match to be in default mode");
 	
 	/* Veto Cmds */
-	RegConsoleCmd("sm_vetobo1", Veto_Bo1, "Ask for a Bo1 Veto");
-	RegConsoleCmd("sm_vetobo2", Veto_Bo2, "Ask for a Bo2 Veto");
-	RegConsoleCmd("sm_vetobo3", Veto_Bo3, "Ask for a Bo3 Veto");
-	RegConsoleCmd("sm_vetobo5", Veto_Bo5, "Ask for a Bo5 Veto");
+	RegConsoleCmd("sm_vetobo1", Veto_Bo1, "Ask for a BO1 Veto");
+	RegConsoleCmd("sm_vetobo2", Veto_Bo2, "Ask for a BO2 Veto");
+	RegConsoleCmd("sm_vetobo3", Veto_Bo3, "Ask for a BO3 Veto");
+	RegConsoleCmd("sm_vetobo5", Veto_Bo5, "Ask for a BO5 Veto");
+	RegConsoleCmd("sm_veto1", Veto_Bo1, "Ask for a BO1 Veto");
+	RegConsoleCmd("sm_veto2", Veto_Bo2, "Ask for a BO2 Veto");
+	RegConsoleCmd("sm_veto3", Veto_Bo3, "Ask for a BO3 Veto");
+	RegConsoleCmd("sm_veto5", Veto_Bo5, "Ask for a BO5 Veto");
 	RegConsoleCmd("sm_veto", Veto_Setup, "Ask for Veto");
-	RegConsoleCmd("sm_veto1", Veto_Bo1, "Ask for a Bo1 Veto");
-	RegConsoleCmd("sm_veto2", Veto_Bo2, "Ask for a Bo2 Veto");
-	RegConsoleCmd("sm_veto3", Veto_Bo3, "Ask for a Bo3 Veto");
-	RegConsoleCmd("sm_veto5", Veto_Bo5, "Ask for a Bo5 Veto");
-	RegConsoleCmd("sm_vetomaps", Veto_Bo3_Maps, "Veto Bo3 Maps");
+	RegConsoleCmd("sm_vetomaps", Veto_Bo3_Maps, "Veto BO3 Maps");
 	
 	/* Admin Commands */	
 	RegAdminCmd("notlive", NotLive, ADMFLAG_CUSTOM1, "Declares half not live and restarts the round");
@@ -456,13 +458,17 @@ public void OnPluginStart()
 	
 	RegAdminCmd("t", ChangeT, ADMFLAG_CUSTOM1, "Team starting terrorists - Designed for score purposes");
 	RegAdminCmd("ct", ChangeCT, ADMFLAG_CUSTOM1, "Team starting counter-terrorists - Designed for score purposes");
+	
 	RegAdminCmd("sst", SetScoreT, ADMFLAG_CUSTOM1, "Setting terrorists score");
 	RegAdminCmd("ssct", SetScoreCT, ADMFLAG_CUSTOM1, "Setting counter-terrorists scores");
 	
 	RegAdminCmd("aswap", SwapAll, ADMFLAG_CUSTOM1, "Swap all players to the opposite team");
 	
 	RegAdminCmd("prac", Practice, ADMFLAG_CUSTOM1, "Puts server into a practice mode state");
+	RegAdminCmd("treino", Practice, ADMFLAG_CUSTOM1, "Puts server into a practice mode state");
+	
 	RegAdminCmd("warmup", WarmUp, ADMFLAG_CUSTOM1, "Puts server into a warm up state");
+	RegAdminCmd("aquecimento", WarmUp, ADMFLAG_CUSTOM1, "Puts server into a warm up state");
 	
 	RegAdminCmd("password", ChangePassword, ADMFLAG_PASSWORD, "Set or display the sv_password console variable");
 	RegAdminCmd("pw", ChangePassword, ADMFLAG_PASSWORD, "Set or display the sv_password console variable");
@@ -476,8 +482,10 @@ public void OnPluginStart()
 	RegAdminCmd("roundknife", KnifeOn3, ADMFLAG_CUSTOM1, "Remove all weapons except knife and lo3");
 	RegAdminCmd("rk", KnifeOn3, ADMFLAG_CUSTOM1, "Remove all weapons except knife and lo3");
 	
+	RegAdminCmd("cancelroundknife", CancelKnife, ADMFLAG_CUSTOM1, "Declares knife not live and restarts round");
 	RegAdminCmd("cancelknife", CancelKnife, ADMFLAG_CUSTOM1, "Declares knife not live and restarts round");
 	RegAdminCmd("ck", CancelKnife, ADMFLAG_CUSTOM1, "Declares knife not live and restarts round");
+	RegAdminCmd("crk", CancelKnife, ADMFLAG_CUSTOM1, "Declares knife not live and restarts round");
 	
 	RegAdminCmd("forceallready", ForceAllReady, ADMFLAG_CUSTOM1, "Forces all players to become ready");
 	RegAdminCmd("far", ForceAllReady, ADMFLAG_CUSTOM1, "Forces all players to become ready");
@@ -7146,7 +7154,7 @@ stock void LogEvent(const char[]format, any:...)
 	if (g_log_live && (stats_method == 0 || stats_method == 2))
 	{
 		// standard server log files + udp stream
-		LogToGame("[WarMod BFG] %s", event);
+		LogToGame("WarMod [BFG] %s", event);
 	}
 	
 	if ((stats_method == 1 || stats_method == 2) && g_log_file != INVALID_HANDLE)
@@ -7692,13 +7700,13 @@ public Action DisplayHelp(int client, int args)
 {
 	if (client == 0)
 	{
-		PrintHintTextToAll("%t: !ready !unready !info !!score", "Available Commands");
+		PrintHintTextToAll("%t: !ready !notready !info !score", "Available Commands");
 	}
 	else
 	{
 		if (IsClientConnected(client) && IsClientInGame(client))
 		{
-			PrintHintText(client, "%t: !ready !unready !info !score", "Available Commands");
+			PrintHintText(client, "%t: !ready !notready !info !score", "Available Commands");
 		}
 	}
 	return Plugin_Handled;
@@ -7720,8 +7728,8 @@ public Action ShowPluginInfo(Handle timer, int client)
 		PrintToConsole(client, "Edited by crashzk");
 		PrintToConsole(client, "");
 		PrintToConsole(client, "Messagemode Commands:				Aliases:");
-		PrintToConsole(client, "  !ready - Mark yourself as ready 		  !rdy !r");
-		PrintToConsole(client, "  !unready - Mark yourself as not ready 	  !unrdy !ur");
+		PrintToConsole(client, "  !ready - Mark yourself as ready 		  !r, !pronto");
+		PrintToConsole(client, "  !notready - Mark yourself as not ready 	  !unrdy !ur");
 		PrintToConsole(client, "  !info - Display the Ready System if enabled 	  !i");
 		PrintToConsole(client, "  !scores - Display the match score if live 	  !score !s");
 		PrintToConsole(client, "");
@@ -7734,11 +7742,11 @@ public Action WMVersion(int client, int args)
 {
 	if (client == 0)
 	{
-		PrintToServer("\"wm_version\" = \"%s\"\n - [WarMod BFG] %s", WM_VERSION, WM_DESCRIPTION);
+		PrintToServer("\"wm_version\" = \"%s\"\n - WarMod [BFG] %s", WM_VERSION, WM_DESCRIPTION);
 	}
 	else
 	{
-		PrintToConsole(client, "\"wm_version\" = \"%s\"\n - [WarMod BFG] %s", WM_VERSION, WM_DESCRIPTION);
+		PrintToConsole(client, "\"wm_version\" = \"%s\"\n - WarMod [BFG] %s", WM_VERSION, WM_DESCRIPTION);
 	}
 	
 	return Plugin_Handled;
@@ -8333,7 +8341,7 @@ stock void LogVetoEvent(const char[]format, any:...)
 	if (stats_method == 0 || stats_method == 2)
 	{
 		// standard server log files + udp stream
-		LogToGame("[WarMod BFG] %s", event);
+		LogToGame("WarMod [BFG] %s", event);
 	}
 	
 	if ((stats_method == 1 || stats_method == 2) && g_log_veto_file != INVALID_HANDLE)

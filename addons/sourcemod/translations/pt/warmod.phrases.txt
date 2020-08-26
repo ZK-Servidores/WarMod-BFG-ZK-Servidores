@@ -2,27 +2,27 @@
 {
 	"Safe Mode"
 	{
-		"pt"			"Safe Mode Enabled - Feature is disabled!"
+		"pt"			"Modo Safe Ativado - Recurso desativado!"
 	}
 	"Practice Mode Active"
 	{
-		"pt"			"Practice Mode - Activated"
+		"pt"			"Modo Practice - Ativado"
 	}
 	"Match Reset"
 	{
-		"pt"			"Match Reset - Game is not live!"
+		"pt"			"Match Reset - Jogo não está live!"
 	}
 	"Half Reset"
 	{
-		"pt"			"Match Half Reset - Game is not live!"
+		"pt"			"Match Half Reset - Jogo não está live!"
 	}
 	"Half Time"
 	{
-		"pt"			"Half Time! Please swap teams..."
+		"pt"			"Half Time! Por favor, troque de time..."
 	}
 	"Half Time Auto Swap"
 	{
-		"pt"			"Half Time! Swapping teams..."
+		"pt"			"Half Time! Trocando times..."
 	}
 	"Full Time"
 	{
@@ -76,11 +76,11 @@
 	}
 	"Set Active"
 	{
-		"pt"			"Set to Active"
+		"pt"			"Definido como ativo"
 	}
 	"Set Inactive"
 	{
-		"pt"			"Set to Inactive"
+		"pt"			"Definido como inativo"
 	}
 	"Console Ready"
 	{
@@ -88,7 +88,7 @@
 	}
 	"Console Not Ready"
 	{
-		"pt"			"O console não pode ser marcado como NotReady."
+		"pt"			"Console não pode ser marcado como NotReady."
 	}
 	"Not on Team"
 	{
@@ -104,19 +104,19 @@
 	}
 	"Forced Ready"
 	{
-		"pt"			"Forced all players Ready."
+		"pt"			"Forçou todos playes a Ready."
 	}
 	"Forced Not Ready"
 	{
-		"pt"			"Forced all players NotReady."
+		"pt"			"Forçou todos playes a NotReady."
 	}
 	"Forced Spectate"
 	{
-		"pt"			"Forced all players to Spectate."
+		"pt"			"Forçou todos playes para Spectador."
 	}
 	"Match Not In Progress"
 	{
-		"pt"			"A partida não está em andamento!"
+		"pt"			"Partida não está em andamento!"
 	}
 	"T Winning"
 	{
@@ -125,7 +125,7 @@
 	}
 	"Tied"
 	{
-		"pt"			"As pontuações estão empatadas"
+		"pt"			"Placar empatado"
 	}
 	"CT Winning"
 	{
@@ -201,7 +201,7 @@
 	}
 	"Available Commands"
 	{
-		"pt"			"Comandos disponíveis"
+		"pt"			"Comandos Disponíveis"
 	}
 	"No Permission"
 	{
@@ -219,7 +219,7 @@
 	}
 	"WarMod Rcon Only"
 	{
-		"pt"			"Os comandos do administrador foram restritos apenas ao RCON."
+		"pt"			"Comandos do administrador estão restritos para apenas RCON."
 	}
 	"Set Password"
 	{
@@ -232,15 +232,15 @@
 	}
 	"Names Required"
 	{
-		"pt"			"Match will not LO3 until both team names have been set."
+		"pt"			"Match is not live until both team names have been set."
 	}
 	"Pause Freeze Time"
 	{
-		"pt"			"O jogo será interrompido no FreezeTime."
+		"pt"			"O jogo será pausado no FreezeTime."
 	}
 	"Pause Round End"
 	{
-		"pt"			"O jogo será interrompido no fim do round."
+		"pt"			"O jogo será pausado no fim do round."
 	}
 	"Pause Limit"
 	{
@@ -252,7 +252,7 @@
 	}
 	"Pause Offer"
 	{
-		"pt"			"pediram uma pause! Digite !pause para pausar a partida."
+		"pt"			"pediram um pause! Digite !pause para pausar a partida."
 	}
 	"Pause Not Enabled"
 	{
@@ -334,7 +334,7 @@
 	}
 	"Logos Required"
 	{
-		"pt"			"Match will not LO3 until both team logos have been set."
+		"pt"			"Match is not live until both team logos have been set."
 	}
 	"Set Logo CT"
 	{
@@ -398,7 +398,7 @@
 	}
 	"Admin_Menu WarMod Commands"
 	{
-		"pt"			"WarMod Commands"
+		"pt"			"Comandos WarMod"
 	}
 	"Admin_Menu Enable ReadyUp"
 	{
@@ -410,15 +410,15 @@
 	}
 	"Admin_Menu Knife"
 	{
-		"pt"			"Force Round Knife"
+		"pt"			"Forçar Round Faca"
 	}
 	"Admin_Menu Force Start"
 	{
-		"pt"			"Force Start"
+		"pt"			"Forçar Start"
 	}
 	"Admin_Menu Force End"
 	{
-		"pt"			"Force End"
+		"pt"			"Forçar End"
 	}
 	"Admin_Menu Cancel Half"
 	{
@@ -446,15 +446,15 @@
 	}
 	"Admin_Menu Activate WarMod"
 	{
-		"pt"			"Activate WarMod"
+		"pt"			"Ativar WarMod"
 	}
 	"Admin_Menu Deactivate WarMod"
 	{
-		"pt"			"Deactivate WarMod"
+		"pt"			"Desativar WarMod"
 	}
 	"Warm Up Active"
 	{
-		"pt"			"Warm Up - Active"
+		"pt"			"Warm Up - Ativo"
 	}
 	"FTP Upload Failed"
 	{
