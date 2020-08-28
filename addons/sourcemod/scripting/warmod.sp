@@ -7729,7 +7729,7 @@ public Action ShowPluginInfo(Handle timer, int client)
 		PrintToConsole(client, "");
 		PrintToConsole(client, "Messagemode Commands:				Aliases:");
 		PrintToConsole(client, "  !ready - Mark yourself as ready 		  !r, !pronto");
-		PrintToConsole(client, "  !notready - Mark yourself as not ready 	  !unrdy !ur");
+		PrintToConsole(client, "  !notready - Mark yourself as not ready 	  !nt, !unrdy, !ur, !aquecendo");
 		PrintToConsole(client, "  !info - Display the Ready System if enabled 	  !i");
 		PrintToConsole(client, "  !scores - Display the match score if live 	  !score !s");
 		PrintToConsole(client, "");

@@ -201,7 +201,7 @@
 	}
 	"Available Commands"
 	{
-		"pt"			"Comandos Disponíveis"
+		"pt"			"Comandos disponíveis"
 	}
 	"No Permission"
 	{
