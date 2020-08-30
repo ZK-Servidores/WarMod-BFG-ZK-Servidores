@@ -483,9 +483,9 @@ public void OnPluginStart()
 	RegAdminCmd("rk", KnifeOn3, ADMFLAG_CUSTOM1, "Remove all weapons except knife and lo3");
 	
 	RegAdminCmd("cancelroundknife", CancelKnife, ADMFLAG_CUSTOM1, "Declares knife not live and restarts round");
+	RegAdminCmd("crk", CancelKnife, ADMFLAG_CUSTOM1, "Declares knife not live and restarts round");
 	RegAdminCmd("cancelknife", CancelKnife, ADMFLAG_CUSTOM1, "Declares knife not live and restarts round");
 	RegAdminCmd("ck", CancelKnife, ADMFLAG_CUSTOM1, "Declares knife not live and restarts round");
-	RegAdminCmd("crk", CancelKnife, ADMFLAG_CUSTOM1, "Declares knife not live and restarts round");
 	
 	RegAdminCmd("forceallready", ForceAllReady, ADMFLAG_CUSTOM1, "Forces all players to become ready");
 	RegAdminCmd("far", ForceAllReady, ADMFLAG_CUSTOM1, "Forces all players to become ready");
