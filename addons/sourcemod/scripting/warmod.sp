@@ -1246,7 +1246,7 @@ public Action ReadyToggle(int client, int args)
 		{
 			PrintToServer("[%s] %T", chat_prefix, "Ready System Enabled", LANG_SERVER);
 		}
-		// check if anyone is ready
+		// Check if anyone is ready
 		CheckReady();
 	}
 	else
@@ -1969,9 +1969,9 @@ public Action ForceAllReady(int client, int args)
 	
 	if (g_ready_enabled)
 	{
-		// force all players to ready
+		// Force all players to ready
 		ReadyChangeAll(client, true, true);
-		// check if there is enough players
+		// Check if there is enough players
 		CheckReady();
 		
 		if (client != 0)
