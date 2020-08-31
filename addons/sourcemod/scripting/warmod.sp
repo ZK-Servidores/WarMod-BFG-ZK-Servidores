@@ -314,9 +314,9 @@ ConVar wm_ban_percentage;
 ConVar sv_kick_ban_duration;
 
 /* Random Team Names & Logos */
-static char g_teamName[][] = {	"Cloud9", 	"compLexity", 	"Team Dignitas", 	"fnatic", 	"Keyd Stars", 	"mousesports", 	"Natus Vincere", 	"Ninjas in Pyjamas", 	"Virtus.Pro"};
-static char g_teamTag[][] = {	"Cloud9", 	"compLexity", 	"Dignitas", 		"fnatic", 	"Keyd Stars", 	"mousesports", 	"Na`Vi", 			"NiP", 					"Virtus.Pro"};
-static char g_teamLogo[][] = {	"c9", 		"col", 			"dig", 				"fntc",		"keyd",			"mss", 			"navi", 			"nip", 					"vp"};
+static char g_teamName[][] = {	"Astralis",		"BIG",		"BOOM Esports",	"Chaos Esports Club",	"Cloud9", 	"compLexity Gaming", 	"Team Dignitas", 	"DETONA Gaming",	"ENCE eSports",	"Evil Geniuses",	"FaZe Clan",	"fnatic", 	"FURIA Esports",	"G2 Esports",	"g3nerationX",	"Imperial e-Sports",	"Isurus Gaming",	"Keyd Stars",	"Team Liquid",	"MIBR", 	"mousesports", 	"Natus Vincere", 	"Ninjas in Pyjamas",	"paiN Gaming",	"RED Canids",	"Team One",		"Team Vitality",	"Ninjas in Pyjamas", 	"Virtus.Pro",	"W7M Gaming"};
+static char g_teamTag[][] = {	"Astralis",		"BIG",		"BOOM",			"Chaos",				"Cloud9",	"COL",					"Dignitas", 		"DETONA",			"ENCE",			"EG",				"FaZe",			"fnatic", 	"FURIA",			"G2",			"G3X",			"Imperial",			 	"Isurus",			"Keyd Stars",	"Liquid",		"MIBR",		"mousesports", 	"Na`Vi",			"NiP", 					"paiN", 		"RED Canids", 	"Team One", 	"Vitality", 		"NiP", 					"Virtus.Pro",	"W7M"};
+static char g_teamLogo[][] = {	"astrv1", 		"bigv1",	"boomv1",		"chaosv1",				"cld9v1",	"colv1", 				"digv1", 			"dtnav1",			"encv1",		"egv1",				"fazev1",		"fntcv1",	"furiav1",			"g2v1",			"g3xv1",		"impev1",				"isursv1",			"keydv1",		"lquidv1",		"mibrv1",	"mousev1", 		"naviv1", 			"nipv1", 				"painv1",		"redcv1",		"tmonev1",		"vitalv1",			"nipv1",				"vpv1",			"w7mv1"};
 int g_teamNumber_ct = 0;
 int g_teamNumber_t = 0;
 bool g_tag_set = false;
