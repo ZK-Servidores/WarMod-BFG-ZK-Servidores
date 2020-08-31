@@ -9690,6 +9690,39 @@ stock void AddTeamLogosToDownloadTable()
 		AddFileToDownloadsTable(fullpath);
 	}	
 	CloseHandle(dir);
+	
+	// Check for Panorama UI Images
+	Handle dir = OpenDirectory("materials/panorama/images/tournaments/teams/");
+	if (dir == null)
+	{
+		char dirName[PLATFORM_MAX_PATH];
+		Format(dirName, sizeof(dirName), "materials/panorama/images/");
+		CreateDirectory(dirName, 511);
+		Format(dirName, sizeof(dirName), "materials/panorama/images/tournaments/");
+		CreateDirectory(dirName, 511);
+		Format(dirName, sizeof(dirName), "materials/panorama/images/tournaments/teams/");
+		CreateDirectory(dirName, 511);
+		LogError("[SM] Unable to read directory: 'materials/panorama/images/tournaments/teams/'");
+		return;
+	}
+	
+	//FileType type;
+	//char filename[PLATFORM_MAX_PATH];
+	//fullpath[PLATFORM_MAX_PATH];
+	
+	while (ReadDirEntry(dir, filename, sizeof(filename), type))
+	{
+		if (type != FileType_File)
+			continue;
+		
+		if (!StrEqual(filename[strlen(filename) - 4], ".svg") && !StrEqual(filename[strlen(filename) - 4], ".png"))
+			continue;
+		
+		PrintToServer("[SM] Loading team logo: %s", filename);
+		Format(fullpath, sizeof(fullpath), "materials/panorama/images/tournaments/teams/%s", filename);
+		AddFileToDownloadsTable(fullpath);
+	}	
+	CloseHandle(dir);
 }
 
 public Action SetLogo(int client, int args)
