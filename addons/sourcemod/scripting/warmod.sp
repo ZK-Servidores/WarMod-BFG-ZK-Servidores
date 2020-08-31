@@ -9692,7 +9692,7 @@ stock void AddTeamLogosToDownloadTable()
 	CloseHandle(dir);
 	
 	// Check for Panorama UI Images
-	Handle dir = OpenDirectory("materials/panorama/images/tournaments/teams/");
+	dir = OpenDirectory("materials/panorama/images/tournaments/teams/");
 	if (dir == null)
 	{
 		char dirName[PLATFORM_MAX_PATH];
