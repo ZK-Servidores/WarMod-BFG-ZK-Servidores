@@ -314,9 +314,9 @@ ConVar wm_ban_percentage;
 ConVar sv_kick_ban_duration;
 
 /* Random Team Names & Logos */
-static char g_teamName[][] = {	"Astralis",		"BIG",		"BOOM Esports",	"Chaos Esports Club",	"Cloud9", 	"compLexity Gaming", 	"Team Dignitas", 	"DETONA Gaming",	"ENCE eSports",	"Evil Geniuses",	"FaZe Clan",	"fnatic", 	"FURIA Esports",	"G2 Esports",	"g3nerationX",	"Imperial e-Sports",	"Isurus Gaming",	"Keyd Stars",	"Team Liquid",	"MIBR", 	"mousesports", 	"Natus Vincere", 	"Ninjas in Pyjamas",	"paiN Gaming",	"RED Canids",	"Team One",		"Team Vitality",	"Ninjas in Pyjamas", 	"Virtus.Pro",	"W7M Gaming"};
-static char g_teamTag[][] = {	"Astralis",		"BIG",		"BOOM",			"Chaos",				"Cloud9",	"COL",					"Dignitas", 		"DETONA",			"ENCE",			"EG",				"FaZe",			"fnatic", 	"FURIA",			"G2",			"G3X",			"Imperial",			 	"Isurus",			"Keyd Stars",	"Liquid",		"MIBR",		"mousesports", 	"Na`Vi",			"NiP", 					"paiN", 		"RED Canids", 	"Team One", 	"Vitality", 		"NiP", 					"Virtus.Pro",	"W7M"};
-static char g_teamLogo[][] = {	"astrv1", 		"bigv1",	"boomv1",		"chaosv1",				"cld9v1",	"colv1", 				"digv1", 			"dtnav1",			"encv1",		"egv1",				"fazev1",		"fntcv1",	"furiav1",			"g2v1",			"g3xv1",		"impev1",				"isursv1",			"keydv1",		"lquidv1",		"mibrv1",	"mousev1", 		"naviv1", 			"nipv1", 				"painv1",		"redcv1",		"tmonev1",		"vitalv1",			"nipv1",				"vpv1",			"w7mv1"};
+static char g_teamName[][] = {	"Astralis",		"BIG",		"BOOM Esports",	"Chaos Esports Club",	"Cloud9", 	"compLexity Gaming", 	"Team Dignitas", 	"DETONA Gaming",	"Evil Geniuses",	"ENCE eSports",	"FaZe Clan",	"fnatic", 	"FURIA Esports",	"G2 Esports",	"g3nerationX",	"Imperial e-Sports",	"Isurus Gaming",	"Keyd Stars",	"Team Liquid",	"MIBR", 	"mousesports", 	"Natus Vincere", 	"Ninjas in Pyjamas",	"paiN Gaming",	"RED Canids",	"Team One",		"Team Vitality",	"Virtus.Pro",	"W7M Gaming"};
+static char g_teamTag[][] = { 	"Astralis",		"BIG",		"BOOM",			"Chaos",				"Cloud9",	"COL",					"Dignitas", 		"DETONA",			"EG",				"ENCE",			"FaZe",			"fnatic", 	"FURIA",			"G2",			"G3X",			"Imperial",			 	"Isurus",			"Keyd Stars",	"Liquid",		"MIBR",		"mousesports", 	"Na`Vi",			"NiP", 					"paiN", 		"RED Canids", 	"Team One", 	"Vitality", 		"Virtus.Pro",	"W7M"};
+static char g_teamLogo[][] = { 	"astr1", 		"big1",		"boom1",		"chs1",					"cld91",	"col1", 				"dig1", 			"dtna1",			"eg1",				"enc1",			"faze1",		"fnt1",		"fria1",			"g21",			"g3x1",			"impe1",				"isur1",			"keyd1",		"liqu1",		"mibr1",	"mous1", 		"navi1", 			"nip1", 				"pain1",		"redc1",		"tone1",		"vita1",			"vp1",			"w7m1"};
 int g_teamNumber_ct = 0;
 int g_teamNumber_t = 0;
 bool g_tag_set = false;
@@ -330,7 +330,7 @@ Handle g_h_menu = INVALID_HANDLE;
 
 /* Plugin Info */
 #define UPDATE_URL		"https://warmod.bitbucket.io/updatefile.txt"
-#define WM_VERSION		"20.06.24.1348 + v1.2"
+#define WM_VERSION		"20.06.24.1348 + v1.2.1"
 #define WM_DESCRIPTION	"An automative service for CS:GO competition matches"
 
 public Plugin myinfo = {
@@ -387,13 +387,15 @@ public void OnPluginStart()
 	AddCommandListener(MatchRestore, "mp_backup_restore_load_file");
 	
 	RegConsoleCmd("score", ConsoleScore);
-	RegConsoleCmd("wm_version", WMVersion);
+	RegConsoleCmd("s", ConsoleScore);
+	RegConsoleCmd("version", WMVersion);
 	RegConsoleCmd("buy", RestrictBuy);
 	RegConsoleCmd("jointeam", ChooseTeam);
 	RegConsoleCmd("spectate", ChooseTeam);
-	RegConsoleCmd("wm_readylist", ReadyList);
-	RegConsoleCmd("wmrl", ReadyList);
-	RegConsoleCmd("wm_cash", AskTeamMoney);
+	RegConsoleCmd("readylist", ReadyList);
+	RegConsoleCmd("rl", ReadyList);
+	RegConsoleCmd("cash", AskTeamMoney);
+	RegConsoleCmd("money", AskTeamMoney);
 	
 	RegConsoleCmd("sm_name", SetName, "Sets the name for the team. Only active when wm_require_names 1 and at start of match");
 	RegConsoleCmd("sm_logo", SetLogo, "Sets the logo and name for the team. Only active when wm_require_logos 1 and at start of match");

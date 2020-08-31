@@ -1,4 +1,7 @@
 # Changelog
+## 1.2.1
+- Fixed team logos not appearing in the score;
+
 ## 1.2
 - Added support for team logos in `.svg`;
 - Updated **Logos & Names** of teams;
