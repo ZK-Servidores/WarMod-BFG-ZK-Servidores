@@ -35,7 +35,7 @@ All admins commands are in the `!admin` menu in the **WarMod Commands** category
 - Updated cvars generated in `gamemode_competitive_server.cfg`;
 - Fixed errors in translations;
 
-To view all changes go to [Changelog](#/blob/master/CHANGELOG.md)
+To view all changes go to [Changelog](https://github.com/zkservidores-clientes/WarMod-BFG-ZK-Servidores/blob/master/CHANGELOG.md)
 
 ## Credits
 - [Versalite [BFG]](https://forums.alliedmods.net/showthread.php?t=225474) - Fork of the orignal plugin;
