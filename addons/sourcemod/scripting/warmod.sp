@@ -314,9 +314,9 @@ ConVar wm_ban_percentage;
 ConVar sv_kick_ban_duration;
 
 /* Random Team Names & Logos */
-static char g_teamName[][] = {"3DMAX", "Astana Dragons", "Bravado Gaming", "Cloud9", "Counter Logic Gaming", "Clan Mystik", "compLexity", "Copenhagen Wolves", "dAT Team", "Team Dignitas", "Epsilon eSports", "ESC Gaming", "Flipsid3 Tactics", "fnatic", "HellRaisers", "iBUYPOWER", "Team Wolf", "Keyd Stars", "London Conspiracy", "Team LDLC.com", "LGB eSports", "mousesports", "MyXMG", "Natus Vincere", "Ninjas in Pyjamas", "Team EnVyUs", "PENTA Sports", "Planetkey Dynamics", "Reason Gaming", "Team SoloMid", "Titan", "Vox Eminor", "VeryGames", "Virtus.Pro"};
-static char g_teamTag[][] = {"3DMAX", "Astana Dragons", "Bravado", "Cloud9", "CLG", "Clan Mystik", "compLexity", "CPH Wolves", "dAT Team", "Dignitas", "Epsilon", "ESC", "Flipsid3", "fnatic", "HellRaisers", "iBUYPOWER", "Team Wolf", "Keyd Stars", "Ldn-Con", "Team LDLC", "LGB", "mousesports", "MyXMG", "Na`Vi", "NiP", "Team EnVyUs", "PENTA", "Planetkey", "Reason", "TSM", "Titan", "Vox Eminor", "VeryGames", "Virtus.Pro"};
-static char g_teamLogo[][] = {"3dm", "ad", "bravg", "c9", "clg", "cm", "col", "cw", "dat", "dig", "eps", "esc", "flip", "fntc", "hlr", "ibp", "indw", "keyd", "lc", "ldlc", "lgb", "mss", "myxmg", "navi", "nip", "nv", "penta", "pkd", "rgg", "tsm", "tit", "ve", "vg", "vp"};
+static char g_teamName[][] = {	"Cloud9", 	"compLexity", 	"Team Dignitas", 	"fnatic", 	"HellRaisers", 	"iBUYPOWER", 	"Keyd Stars", 	"mousesports", 	"Natus Vincere", 	"Ninjas in Pyjamas", 	"Virtus.Pro"};
+static char g_teamTag[][] = {	"Cloud9", 	"compLexity", 	"Dignitas", 		"fnatic", 	"HellRaisers", 	"iBUYPOWER", 	"Keyd Stars", 	"mousesports", 	"Na`Vi", 			"NiP", 					"Virtus.Pro"};
+static char g_teamLogo[][] = {	"c9", 		"col", 			"dig", 				"fntc",		"hlr", 			"ibp", 			"keyd", 		"mss", 			"navi", 			"nip", 					"vp"};
 int g_teamNumber_ct = 0;
 int g_teamNumber_t = 0;
 bool g_tag_set = false;
