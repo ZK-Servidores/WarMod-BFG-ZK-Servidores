@@ -30,7 +30,7 @@ All admins commands are in the `!admin` menu in the **WarMod Commands** category
 
 ## Changelog
 ### 1.2.2
-- Corrigido traduções Português-BR;
+- Corrigido traduções;
 - Corrigido alguns logos de times não aparacer no score;
 
 ### 1.2.1
