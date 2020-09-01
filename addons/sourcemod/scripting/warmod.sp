@@ -314,9 +314,9 @@ ConVar wm_ban_percentage;
 ConVar sv_kick_ban_duration;
 
 /* Random Team Names & Logos */
-static char g_teamName[][] = {	"Astralis",		"BIG",		"BOOM Esports",	"Chaos Esports Club",	"Cloud9", 	"compLexity Gaming", 	"Team Dignitas", 	"DETONA Gaming",	"Evil Geniuses",	"ENCE eSports",	"FaZe Clan",	"fnatic", 	"FURIA Esports",	"G2 Esports",	"g3nerationX",	"Imperial e-Sports",	"Isurus Gaming",	"Keyd Stars",	"Team Liquid",	"MIBR", 	"mousesports", 	"Natus Vincere", 	"Ninjas in Pyjamas",	"paiN Gaming",	"RED Canids",	"Team One",		"Team Vitality",	"Virtus.Pro",	"W7M Gaming"};
-static char g_teamTag[][] = { 	"Astralis",		"BIG",		"BOOM",			"Chaos",				"Cloud9",	"COL",					"Dignitas", 		"DETONA",			"EG",				"ENCE",			"FaZe",			"fnatic", 	"FURIA",			"G2",			"G3X",			"Imperial",			 	"Isurus",			"Keyd Stars",	"Liquid",		"MIBR",		"mousesports", 	"Na`Vi",			"NiP", 					"paiN", 		"RED Canids", 	"Team One", 	"Vitality", 		"Virtus.Pro",	"W7M"};
-static char g_teamLogo[][] = { 	"astr1", 		"big1",		"boom1",		"chs1",					"cld91",	"col1", 				"dig1", 			"dtna1",			"eg1",				"enc1",			"faze1",		"fnt1",		"fria1",			"g21",			"g3x1",			"impe1",				"isur1",			"keyd1",		"liqu1",		"mibr1",	"mous1", 		"navi1", 			"nip1", 				"pain1",		"redc1",		"tone1",		"vita1",			"vp1",			"w7m1"};
+static char g_teamName[][] = {"3DMAX", "Astana Dragons", "Bravado Gaming", "Cloud9", "Counter Logic Gaming", "Clan Mystik", "compLexity", "Copenhagen Wolves", "dAT Team", "Team Dignitas", "Epsilon eSports", "ESC Gaming", "Flipsid3 Tactics", "fnatic", "HellRaisers", "iBUYPOWER", "Team Wolf", "Keyd Stars", "London Conspiracy", "Team LDLC.com", "LGB eSports", "mousesports", "MyXMG", "Natus Vincere", "Ninjas in Pyjamas", "Team EnVyUs", "PENTA Sports", "Planetkey Dynamics", "Reason Gaming", "Team SoloMid", "Titan", "Vox Eminor", "VeryGames", "Virtus.Pro"};
+static char g_teamTag[][] = {"3DMAX", "Astana Dragons", "Bravado", "Cloud9", "CLG", "Clan Mystik", "compLexity", "CPH Wolves", "dAT Team", "Dignitas", "Epsilon", "ESC", "Flipsid3", "fnatic", "HellRaisers", "iBUYPOWER", "Team Wolf", "Keyd Stars", "Ldn-Con", "Team LDLC", "LGB", "mousesports", "MyXMG", "Na`Vi", "NiP", "Team EnVyUs", "PENTA", "Planetkey", "Reason", "TSM", "Titan", "Vox Eminor", "VeryGames", "Virtus.Pro"};
+static char g_teamLogo[][] = {"3dm", "ad", "bravg", "c9", "clg", "cm", "col", "cw", "dat", "dig", "eps", "esc", "flip", "fntc", "hlr", "ibp", "indw", "keyd", "lc", "ldlc", "lgb", "mss", "myxmg", "navi", "nip", "nv", "penta", "pkd", "rgg", "tsm", "tit", "ve", "vg", "vp"};
 int g_teamNumber_ct = 0;
 int g_teamNumber_t = 0;
 bool g_tag_set = false;
@@ -330,7 +330,7 @@ Handle g_h_menu = INVALID_HANDLE;
 
 /* Plugin Info */
 #define UPDATE_URL		"https://warmod.bitbucket.io/updatefile.txt"
-#define WM_VERSION		"20.06.24.1348 + v1.2.1"
+#define WM_VERSION		"20.06.24.1348 + v1.2.2-BETA"
 #define WM_DESCRIPTION	"An automative service for CS:GO competition matches"
 
 public Plugin myinfo = {
@@ -9707,10 +9707,6 @@ stock void AddTeamLogosToDownloadTable()
 		LogError("[SM] Unable to read directory: 'materials/panorama/images/tournaments/teams/'");
 		return;
 	}
-	
-	//FileType type;
-	//char filename[PLATFORM_MAX_PATH];
-	//fullpath[PLATFORM_MAX_PATH];
 	
 	while (ReadDirEntry(dir, filename, sizeof(filename), type))
 	{

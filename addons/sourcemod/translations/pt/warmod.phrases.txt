@@ -10,11 +10,11 @@
 	}
 	"Match Reset"
 	{
-		"pt"			"Match Reset - Jogo não está live!"
+		"pt"			"Match Reset - Jogo não está valendo!"
 	}
 	"Half Reset"
 	{
-		"pt"			"Match Half Reset - Jogo não está live!"
+		"pt"			"Match Half Reset - Jogo não está valendo!"
 	}
 	"Half Time"
 	{
@@ -60,11 +60,11 @@
 	}
 	"Knife Round Cancelled"
 	{
-		"pt"			"Round Knife Cancelled - Not Live"
+		"pt"			"Round Faca Cancelado - Não esta valendo"
 	}
 	"Knife Round Inactive"
 	{
-		"pt"			"Round Knife is not active"
+		"pt"			"Round Faca - Desaativado"
 	}
 	"Ready System Enabled"
 	{
@@ -121,7 +121,7 @@
 	"T Winning"
 	{
 		"#format"		"{1:s}"
-		"pt"			"{1} estão ganhando"
+		"pt"			"{1} está ganhando"
 	}
 	"Tied"
 	{
@@ -130,7 +130,7 @@
 	"CT Winning"
 	{
 		"#format"		"{1:s}"
-		"pt"			"{1} estão ganhando"
+		"pt"			"{1} está ganhando"
 	}
 	"Change Teams Midgame"
 	{
@@ -232,7 +232,7 @@
 	}
 	"Names Required"
 	{
-		"pt"			"Match is not live until both team names have been set."
+		"pt"			"Partida não está valendo até que os nomes dos dois times tenham sido definidos."
 	}
 	"Pause Freeze Time"
 	{
