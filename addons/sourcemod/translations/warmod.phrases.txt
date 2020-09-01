@@ -260,7 +260,7 @@
 	}
 	"Unpause Notice"
 	{
-		"en"			"Match is now Paused. Please type !unpause to unpause the match"
+		"en"			"Match is now paused. Please type !unpause to unpause the match"
 	}
 	"Unpause Offer"
 	{

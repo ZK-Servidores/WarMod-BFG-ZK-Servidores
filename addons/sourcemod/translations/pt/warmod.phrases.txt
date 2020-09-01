@@ -64,7 +64,7 @@
 	}
 	"Knife Round Inactive"
 	{
-		"pt"			"Round Faca - Desaativado"
+		"pt"			"Round Faca - Desativado"
 	}
 	"Ready System Enabled"
 	{
@@ -188,12 +188,12 @@
 	"Change T Name"
 	{
 		"#format"		"{1:s}"
-		"pt"			"Terrorists name set to '{1}'"
+		"pt"			"Nome dos terroristas definido como '{1}'"
 	}
 	"Change CT Name"
 	{
 		"#format"		"{1:s}"
-		"pt"			"Counter-Terrorists name set to '{1}'"
+		"pt"			"Nome dos contra-terroristas definido como '{1}'"
 	}
 	"Console"
 	{
@@ -260,11 +260,11 @@
 	}
 	"Unpause Notice"
 	{
-		"pt"			"Match is now Paused! Please type !unpause to unpause the match."
+		"pt"			"Partida está pausada! Digite !unpause para despausar a partida."
 	}
 	"Unpause Offer"
 	{
-		"pt"			"have asked to unpause the game! Please type !unpause to unpause the match."
+		"pt"			"pediram para despausar o jogo! Digite !unpause para despausar a partida."
 	}
 	"Unpaused Match"
 	{
@@ -318,39 +318,39 @@
 	}
 	"Set Name CT"
 	{
-		"pt"			"CT's please set team name"
+		"pt"			"CTs, por favor, defina o nome do time"
 	}
 	"Set Name T"
 	{
-		"pt"			"T's please set team name"
+		"pt"			"Ts, por favor, defina o nome do time"
 	}
 	"Set Name Both"
 	{
-		"pt"			"Teams please set team name"
+		"pt"			"Times, por favor, defina o nome do time"
 	}
 	"Set Name CMD"
 	{
-		"pt"			"To set team name please type !name TeamName"
+		"pt"			"Para definir o nome do time digite !name TEAMNAME"
 	}
 	"Logos Required"
 	{
-		"pt"			"Match is not live until both team logos have been set."
+		"pt"			"Partida não esta valendo até que os logos de ambas os times sejam definidos."
 	}
 	"Set Logo CT"
 	{
-		"pt"			"CT's please set team logo"
+		"pt"			"CTs, defina o logo do time"
 	}
 	"Set Logo T"
 	{
-		"pt"			"T's please set team logo"
+		"pt"			"Ts, defina o logo do time"
 	}
 	"Set Logo Both"
 	{
-		"pt"			"Teams please set team logos"
+		"pt"			"Times, por favor, defina o logo do time"
 	}
 	"Set Logo CMD"
 	{
-		"pt"			"To set team logo please type !logo"
+		"pt"			"Para definir o logo do time, digite !logo"
 	}
 	"Live"
 	{
@@ -430,7 +430,7 @@
 	}
 	"Admin_Menu Cancel Knife"
 	{
-		"pt"			"Cancelar Round Knife"
+		"pt"			"Cancelar Round Faca"
 	}
 	"Admin_Menu ForceAllReady"
 	{
@@ -515,7 +515,7 @@
 	}
 	"Non-player"
 	{
-		"pt"			"You must be on Terrorists or Counter-Terrorists to use this command."
+		"pt"			"Você precisar estar de Terroristas ou Contra-Terroristas para usar este comando."
 	}
 	"Default Offer"
 	{

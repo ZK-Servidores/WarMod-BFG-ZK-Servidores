@@ -914,7 +914,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Unpause Notice\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Match is now Paused. Please type !unpause to unpause the match\"");
+	WriteFileLine(file, "		\"en\"			\"Match is now paused. Please type !unpause to unpause the match\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Unpause Offer\"");
 	WriteFileLine(file, "	{");
