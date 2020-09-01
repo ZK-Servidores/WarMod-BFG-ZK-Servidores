@@ -30,7 +30,7 @@ All admins commands are in the `!admin` menu in the **WarMod Commands** category
 
 ## Changelog
 ### 1.2.2 [WIP]
-- Added new Logos & Teams;
+- Added new Logos & Names of teams;
 - Fixed translations;
 - Fixed some team logos not appearing in the score;
 
