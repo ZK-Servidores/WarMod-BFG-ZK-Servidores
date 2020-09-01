@@ -29,6 +29,10 @@ To use admins commands you must have the `ADMFLAG_CUSTOM1` privilege.
 All admins commands are in the `!admin` menu in the **WarMod Commands** category.
 
 ## Changelog
+### 1.2.2
+- Corrigido traduções Português-BR;
+- Corrigido alguns logos de times não aparacer no score;
+
 ### 1.2.1
 - Fixed team logos not appearing in the score;
 
