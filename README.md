@@ -3,7 +3,7 @@ An automative service for CS:GO competition matches.
 
 Modified from **WarMod [BFG] v20.06.24.1348**.
 
-## Players Commands
+## Commands
 **CVARS** | **Description** | **Commands** |
 :--------: | -------- | :--------: |
 **sm_ready** | Mark the player as ready. | !ready, !r, !pronto |
@@ -15,7 +15,7 @@ Modified from **WarMod [BFG] v20.06.24.1348**.
 **sm_overtime** |  Asks to play overtime if the match is a draw. | !overtime, !ot |
 **sm_veto** |  Ask veto to choose a map to play. ***(Types of veto works according to what is configured on the server)*** | !veto, !veto1, !veto2, !veto3, !veto5, !vetomaps,|
 
-## Admin Commands
+## Admin commands
 To use admins commands you must have the `ADMFLAG_CUSTOM1` privilege.
 
 **CVARS** | **Description** | **Commands** |
