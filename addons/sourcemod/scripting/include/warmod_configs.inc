@@ -128,7 +128,7 @@ static void Gamemode_Competitive_Server(char[] WM_VERSION)
 	Handle file = OpenFile(cfgFile, "w");
 
 	WriteFileLine(file, "// WarMod [BFG] - Gamemode Competitive Server Config");
-	WriteFileLine(file, "// Created via [BFG] WarMod | ZK Servidores™ v%s", WM_VERSION);
+	WriteFileLine(file, "// Created via [BFG] WarMod | ZK Servidores™ %s", WM_VERSION);
 	WriteFileLine(file, "// This config is the base for all the CS:GO server commands");
 	WriteFileLine(file, "// Only edit this file for NON-warmod commands");
 	WriteFileLine(file, "// This is a modified version of the ESL 5v5 ladder config");
@@ -250,7 +250,7 @@ static void Gamemode_Competitive_Server(char[] WM_VERSION)
 	WriteFileLine(file, "sv_spawn_afk_bomb_drop_time 15                 	// Players that spawn and don't move for longer than sv_spawn_afk_bomb_drop_time (default 15 seconds) will automatically drop the bomb.");
 	WriteFileLine(file, "sv_steamgroup_exclusive 0                     	// If set, only members of Steam group will be able to join the server when it's empty, public people will be able to join the server only if it has players.");
 	WriteFileLine(file, "sv_voiceenable 1");
-	WriteFileLine(file, "sv_coaching_enabled 1			// To enable coaches.  To coach a team, type either 'coach t' or 'coach ct'.", false); // no newline at the end
+	WriteFileLine(file, "sv_coaching_enabled 0			// To enable coaches.  To coach a team, type either 'coach t' or 'coach ct'.", false); // no newline at the end
 	CloseHandle(file);
 }
 
@@ -261,7 +261,7 @@ static void RuleSet_Global(char[] WM_VERSION)
 	Handle file = OpenFile(cfgFile, "w");
 
 	WriteFileLine(file, "// WarMod [BFG] - Global Ruleset Config");
-	WriteFileLine(file, "// Created via [BFG] WarMod | ZK Servidores™ v%s", WM_VERSION);
+	WriteFileLine(file, "// Created via [BFG] WarMod | ZK Servidores™ %s", WM_VERSION);
 	WriteFileLine(file, "// This config is executed by all other rulesets");
 	WriteFileLine(file, "// It holds the majority of commands, so that each ruleset can use as a base configuration");
 	WriteFileLine(file, "//Remove prac commands");
@@ -777,7 +777,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Info Not Ready\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Unready:\"");
+	WriteFileLine(file, "		\"en\"			\"NotReady:\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Info Exit\"");
 	WriteFileLine(file, "	{");
@@ -846,7 +846,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Names Required\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Match will not lo3 until both team names have been set\"");
+	WriteFileLine(file, "		\"en\"			\"Match will not LO3 until both team names have been set\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Pause Freeze Time\"");
 	WriteFileLine(file, "	{");
@@ -862,11 +862,11 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Pause Non-player\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"You must be on T or CT to use /pause\"");
+	WriteFileLine(file, "		\"en\"			\"You must be on T or CT to use !pause\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Pause Offer\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"have asked for a Pause. Please type /pause to pause the match\"");
+	WriteFileLine(file, "		\"en\"			\"have asked for a Pause. Please type !pause to pause the match\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Pause Not Enabled\"");
 	WriteFileLine(file, "	{");
@@ -874,11 +874,11 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Unpause Notice\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Match is now Paused. Please type /unpause to unpause the match\"");
+	WriteFileLine(file, "		\"en\"			\"Match is now Paused. Please type !unpause to unpause the match\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Unpause Offer\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"have asked to unpause the game. Please type /unpause to unpause the match\"");
+	WriteFileLine(file, "		\"en\"			\"have asked to unpause the game. Please type !unpause to unpause the match\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Unpaused Match\"");
 	WriteFileLine(file, "	{");
@@ -886,7 +886,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Unpause Non-player\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"You must be on T or CT to use /unpause\"");
+	WriteFileLine(file, "		\"en\"			\"You must be on T or CT to use !unpause\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Pause Not Confirmed\"");
 	WriteFileLine(file, "	{");
@@ -916,11 +916,11 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Knife Vote Team\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"are voting to stay or switch teams\"");
+	WriteFileLine(file, "		\"en\"			\"are voting to stay or swap teams\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Knife Vote\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Please type /stay or /switch\"");
+	WriteFileLine(file, "		\"en\"			\"Please type !stay or !swap\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Knife Stay\"");
 	WriteFileLine(file, "	{");
@@ -928,7 +928,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Knife Switch\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"have voted to switch teams\"");
+	WriteFileLine(file, "		\"en\"			\"have voted to swap teams\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Set Name CT\"");
 	WriteFileLine(file, "	{");
@@ -944,11 +944,11 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Set Name CMD\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"To set team name please type /name TeamName\"");
+	WriteFileLine(file, "		\"en\"			\"To set team name please type !name TeamName\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Logos Required\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Match will not lo3 until both team logos have been set\"");
+	WriteFileLine(file, "		\"en\"			\"Match will not LO3 until both team logos have been set\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Set Logo CT\"");
 	WriteFileLine(file, "	{");
@@ -964,7 +964,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Set Logo CMD\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"To set team logo please type /logo\"");
+	WriteFileLine(file, "		\"en\"			\"To set team logo please type !logo\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Live\"");
 	WriteFileLine(file, "	{");

@@ -616,7 +616,7 @@ public void OnPluginStart()
 	/* Damage Printer */
 	wm_damageprint_auto_color = CreateConVar("wm_damageprint_auto_color", "1", "Whether colors are automatically inserted for damage values, changing depending on if the damage resulted in a kill");
 	wm_damageprint_enabled = CreateConVar("wm_damageprint_enabled", "0", "Whether to enabled damage print to client on round end");
-	wm_damageprint_format = CreateConVar("wm_damageprint_format", "--> ({DMG_TO} dmg / {HITS_TO} hits) to ({DMG_FROM} dmg / {HITS_FROM} hits) from {NAME} ({HEALTH} HP)", "Format of the damage output string. Avaliable tags are in the default, color tags such as {LIGHT_RED} and {GREEN} also work.");
+	wm_damageprint_format = CreateConVar("wm_damageprint_format", "--> ({DMG_TO} DMG / {HITS_TO} HITS) to ({DMG_FROM} DMG / {HITS_FROM} HITS) from {NAME} ({HEALTH} HP)", "Format of the damage output string. Avaliable tags are in the default, color tags such as {LIGHT_RED} and {GREEN} also work.");
 	
 	g_MapNames = CreateArray(PLATFORM_MAX_PATH);
 	
