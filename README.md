@@ -23,7 +23,7 @@ To use admins commands you must have the `ADMFLAG_CUSTOM1` privilege.
 **sm_forcestart** | Force start of the game even without the players ready. | !forcestart, !fs |
 **sm_forceend** | Forces the game to end no matter what the reason. | !forceend, !fe |
 **sm_roundknife** | Remove all weapons except knife for a round knife before the live players choose the team. | !roundknife, !rk |
-**sm_cancelknife** | Cancels the knife round and the restart round. | !cancelknife, !cancelroundknife, !ck, !crk |
+**sm_cancelknife** | Cancels the knife round and the restart round. | !cancelknife, !ck |
 **sm_warmup** | Force warmup for everyone. ***(Must be used after !forceend)*** | !warmup, !aquecimento |
 
 All admins commands are in the `!admin` menu in the **WarMod Commands** category.
