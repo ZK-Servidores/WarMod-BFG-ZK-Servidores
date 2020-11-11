@@ -128,7 +128,7 @@ static void Gamemode_Competitive_Server(char[] WM_VERSION)
 	Handle file = OpenFile(cfgFile, "w");
 
 	WriteFileLine(file, "// WarMod [BFG] - Gamemode Competitive Server Config");
-	WriteFileLine(file, "// Created via [BFG] WarMod v%s", WM_VERSION);
+	WriteFileLine(file, "// Created via [BFG] WarMod | ZK Servidores™ v%s", WM_VERSION);
 	WriteFileLine(file, "// This config is the base for all the CS:GO server commands");
 	WriteFileLine(file, "// Only edit this file for NON-warmod commands");
 	WriteFileLine(file, "// This is a modified version of the ESL 5v5 ladder config");
@@ -172,7 +172,7 @@ static void Gamemode_Competitive_Server(char[] WM_VERSION)
 	WriteFileLine(file, "");
 	WriteFileLine(file, "mp_afterroundmoney 0				// amount of money awared to every player after each round");
 	WriteFileLine(file, "mp_autokick 0					// Kick idle/team-killing players");
-	WriteFileLine(file, "mp_autoteambalance 0");
+	WriteFileLine(file, "mp_autoteambalance 1");
 	WriteFileLine(file, "mp_buytime 15                           	// How many seconds after round start players can buy items for.");
 	WriteFileLine(file, "mp_c4timer 40                           	// How long from when the C4 is armed until it blows");
 	WriteFileLine(file, "mp_death_drop_defuser 1				// Drop defuser on player death");
@@ -261,7 +261,7 @@ static void RuleSet_Global(char[] WM_VERSION)
 	Handle file = OpenFile(cfgFile, "w");
 
 	WriteFileLine(file, "// WarMod [BFG] - Global Ruleset Config");
-	WriteFileLine(file, "// Created via [BFG] WarMod v%s", WM_VERSION);
+	WriteFileLine(file, "// Created via [BFG] WarMod | ZK Servidores™ v%s", WM_VERSION);
 	WriteFileLine(file, "// This config is executed by all other rulesets");
 	WriteFileLine(file, "// It holds the majority of commands, so that each ruleset can use as a base configuration");
 	WriteFileLine(file, "//Remove prac commands");
@@ -344,7 +344,7 @@ static void RuleSet_Default(char[] WM_VERSION)
 	Handle file = OpenFile(cfgFile, "w");
 
 	WriteFileLine(file, "// WarMod [BFG] - Default Ruleset Config");
-	WriteFileLine(file, "// Created via [BFG] WarMod for Warmod v%s", WM_VERSION);
+	WriteFileLine(file, "// Created via [BFG] WarMod | ZK Servidores™ %s", WM_VERSION);
 	WriteFileLine(file, "// Exec global config");
 	WriteFileLine(file, "exec warmod/ruleset_global.cfg");
 	WriteFileLine(file, "");
@@ -371,7 +371,7 @@ static void RuleSet_PlayOut(char[] WM_VERSION)
 	Handle file = OpenFile(cfgFile, "w");
 
 	WriteFileLine(file, "// WarMod [BFG] - PlayOut Ruleset Config");
-	WriteFileLine(file, "// Created via [BFG] WarMod v%s", WM_VERSION);
+	WriteFileLine(file, "// Created via [BFG] WarMod | ZK Servidores™ %s", WM_VERSION);
 	WriteFileLine(file, "// Exec global config");
 	WriteFileLine(file, "exec warmod/ruleset_global.cfg");
 	WriteFileLine(file, "");
@@ -398,7 +398,7 @@ static void RuleSet_OverTime(char[] WM_VERSION)
 	Handle file = OpenFile(cfgFile, "w");
 
 	WriteFileLine(file, "// WarMod [BFG] - OverTime Ruleset Config");
-	WriteFileLine(file, "// Created via [BFG] WarMod v%s", WM_VERSION);
+	WriteFileLine(file, "// Created via [BFG] WarMod | ZK Servidores™ %s", WM_VERSION);
 	WriteFileLine(file, "// Exec global config");
 	WriteFileLine(file, "exec warmod/ruleset_global.cfg");
 	WriteFileLine(file, "");
@@ -426,7 +426,7 @@ static void RuleSet_WarmUp(char[] WM_VERSION)
 	Handle file = OpenFile(cfgFile, "w");
 
 	WriteFileLine(file, "// WarMod [BFG] - WarmUp Ruleset Config");
-	WriteFileLine(file, "// Created via [BFG] WarMod v%s", WM_VERSION);
+	WriteFileLine(file, "// Created via [BFG] WarMod | ZK Servidores™ %s", WM_VERSION);
 	WriteFileLine(file, "// Exec global config");
 	WriteFileLine(file, "exec warmod/ruleset_global.cfg");
 	WriteFileLine(file, "");
@@ -463,7 +463,7 @@ static void RuleSet_Practice(char[] WM_VERSION)
 	Handle file = OpenFile(cfgFile, "w");
 
 	WriteFileLine(file, "// WarMod [BFG] - Practice Config");
-	WriteFileLine(file, "// Created via [BFG] WarMod v%s", WM_VERSION);
+	WriteFileLine(file, "// Created via [BFG] WarMod | ZK Servidores™ %s", WM_VERSION);
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// Change WarmUp commands");
 	WriteFileLine(file, "wm_warmup_respawn		\"0\"		//Enable or disable the respawning of players in warmup");
@@ -492,7 +492,7 @@ static void RuleSet_OnMapLoad(char[] WM_VERSION)
 	Handle file = OpenFile(cfgFile, "w");
 
 	WriteFileLine(file, "// WarMod [BFG] - On Map Load Config");
-	WriteFileLine(file, "// Created via [BFG] WarMod v%s", WM_VERSION);
+	WriteFileLine(file, "// Created via [BFG] WarMod | ZK Servidores™ %s", WM_VERSION);
 	WriteFileLine(file, "// This config file is executed on every map change, including when the server first starts");
 	WriteFileLine(file, "// Note: Plugins have been loaded by now");
 	WriteFileLine(file, "");
@@ -566,7 +566,7 @@ static void RuleSet_Knife(char[] WM_VERSION)
 	Handle file = OpenFile(cfgFile, "w");
 
 	WriteFileLine(file, "// WarMod [BFG] - Knife Ruleset Config");
-	WriteFileLine(file, "// Updated via [BFG] WarMod Config Updater for Warmod v%s", WM_VERSION);
+	WriteFileLine(file, "// Updated via [BFG] WarMod | ZK Servidores™ %s - Config Updater", WM_VERSION);
 	WriteFileLine(file, "// Exec global config");
 	WriteFileLine(file, "exec warmod/ruleset_global.cfg");
 	WriteFileLine(file, "");
@@ -590,7 +590,7 @@ static void RuleSet_OnMatchEnd(char[] WM_VERSION)
 	Handle file = OpenFile(cfgFile, "w");
 
 	WriteFileLine(file, "// WarMod [BFG] - On Match End Config");
-	WriteFileLine(file, "// Created via [BFG] WarMod v%s", WM_VERSION);
+	WriteFileLine(file, "// Created via [BFG] WarMod | ZK Servidores™ %s", WM_VERSION);
 	WriteFileLine(file, "// This config is executed at the end or reset of a match");
 	WriteFileLine(file, "mp_teamname_1 			\"\"		//A non-empty string overrides the first team's name");
 	WriteFileLine(file, "mp_teamname_2 			\"\"		//A non-empty string overrides the second team's name");
@@ -1210,7 +1210,7 @@ static void UpdateRuleSet_Global(char[] WM_VERSION)
 	Handle file = OpenFile(cfgFile, "w");
 
 	WriteFileLine(file, "// WarMod [BFG] - Global Ruleset Config");
-	WriteFileLine(file, "// Updated via [BFG] WarMod Config Updater for Warmod v%s", WM_VERSION);
+	WriteFileLine(file, "// Updated via [BFG] WarMod | ZK Servidores™ %s - Config Updater", WM_VERSION);
 	WriteFileLine(file, "// This config is executed by all other rulesets");
 	WriteFileLine(file, "// It holds the majority of commands, so that each ruleset can use a base configuration");
 	WriteFileLine(file, "//Remove prac commands");
@@ -1297,7 +1297,7 @@ static void UpdateRuleSet_Default(char[] WM_VERSION)
 	Handle file = OpenFile(cfgFile, "w");
 
 	WriteFileLine(file, "// WarMod [BFG] - Default Ruleset Config");
-	WriteFileLine(file, "// Updated via [BFG] WarMod Config Updater for Warmod v%s", WM_VERSION);
+	WriteFileLine(file, "// Updated via [BFG] WarMod | ZK Servidores™ %s - Config Updater", WM_VERSION);
 	WriteFileLine(file, "// Exec global config");
 	WriteFileLine(file, "exec warmod/ruleset_global.cfg");
 	WriteFileLine(file, "");
@@ -1329,7 +1329,7 @@ static void UpdateRuleSet_PlayOut(char[] WM_VERSION)
 	Handle file = OpenFile(cfgFile, "w");
 
 	WriteFileLine(file, "// WarMod [BFG] - PlayOut Ruleset Config");
-	WriteFileLine(file, "// Updated via [BFG] WarMod Config Updater for Warmod v%s", WM_VERSION);
+	WriteFileLine(file, "// Updated via [BFG] WarMod | ZK Servidores™ %s - Config Updater", WM_VERSION);
 	WriteFileLine(file, "// Exec global config");
 	WriteFileLine(file, "exec warmod/ruleset_global.cfg");
 	WriteFileLine(file, "");
@@ -1362,7 +1362,7 @@ static void UpdateRuleSet_OverTime(char[] WM_VERSION)
 	Handle file = OpenFile(cfgFile, "w");
 
 	WriteFileLine(file, "// WarMod [BFG] - OverTime Ruleset Config");
-	WriteFileLine(file, "// Updated via [BFG] WarMod Config Updater for Warmod v%s", WM_VERSION);
+	WriteFileLine(file, "// Updated via [BFG] WarMod | ZK Servidores™ %s - Config Updater", WM_VERSION);
 	WriteFileLine(file, "// Exec global config");
 	WriteFileLine(file, "exec warmod/ruleset_global.cfg");
 	WriteFileLine(file, "");
@@ -1392,7 +1392,7 @@ static void UpdateWarmUp(char[] WM_VERSION)
 	Handle file = OpenFile(cfgFile, "w");
 
 	WriteFileLine(file, "// WarMod [BFG] - WarmUp Ruleset Config");
-	WriteFileLine(file, "// Updated via [BFG] WarMod Config Updater for Warmod v%s", WM_VERSION);
+	WriteFileLine(file, "// Updated via [BFG] WarMod | ZK Servidores™ %s - Config Updater", WM_VERSION);
 	WriteFileLine(file, "// Exec global config");
 	WriteFileLine(file, "exec warmod/ruleset_global.cfg");
 	WriteFileLine(file, "");
@@ -1430,7 +1430,7 @@ static void UpdatePractice(char[] WM_VERSION)
 	Handle file = OpenFile(cfgFile, "w");
 
 	WriteFileLine(file, "// WarMod [BFG] - Practice Config");
-	WriteFileLine(file, "// Updated via [BFG] WarMod Config Updater for Warmod v%s", WM_VERSION);
+	WriteFileLine(file, "// Updated via [BFG] WarMod | ZK Servidores™ %s - Config Updater", WM_VERSION);
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// Change WarmUp commands");
 	WriteFileLine(file, "wm_warmup_respawn		\"0\"		//Enable or disable the respawning of players in warmup");
@@ -1463,7 +1463,7 @@ static void UpdateRuleSet_Knife(char[] WM_VERSION)
 	Handle file = OpenFile(cfgFile, "w");
 
 	WriteFileLine(file, "// WarMod [BFG] - Knife Ruleset Config");
-	WriteFileLine(file, "// Updated via [BFG] WarMod Config Updater for Warmod v%s", WM_VERSION);
+	WriteFileLine(file, "// Updated via [BFG] WarMod | ZK Servidores™ %s - Config Updater", WM_VERSION);
 	WriteFileLine(file, "// Exec global config");
 	WriteFileLine(file, "exec warmod/ruleset_global.cfg");
 	WriteFileLine(file, "");
@@ -1493,7 +1493,7 @@ static void UpdateOn_Map_Load(char[] WM_VERSION)
 	Handle file = OpenFile(cfgFile, "w");
 
 	WriteFileLine(file, "// WarMod [BFG] - On Map Load Config");
-	WriteFileLine(file, "// Updated via [BFG] WarMod Config Updater for Warmod v%s", WM_VERSION);
+	WriteFileLine(file, "// Updated via [BFG] WarMod | ZK Servidores™ %s - Config Updater", WM_VERSION);
 	WriteFileLine(file, "// This config file is executed on every map change, including when the server first starts");
 	WriteFileLine(file, "// Note: Plugins have been loaded by now");
 	WriteFileLine(file, "");
