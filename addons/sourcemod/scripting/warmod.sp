@@ -447,12 +447,9 @@ public void OnPluginStart()
 	RegConsoleCmd("sm_veto5", Veto_Bo5, "Ask for a Bo5 Veto");
 	RegConsoleCmd("sm_vetomaps", Veto_Bo3_Maps, "Veto Bo3 Maps");
 	
-	/* admin commands */
-	
+	/* admin commands */	
 	RegAdminCmd("notlive", NotLive, ADMFLAG_CUSTOM1, "Declares half not live and restarts the round");
 	RegAdminCmd("nl", NotLive, ADMFLAG_CUSTOM1, "Declares half not live and restarts the round");
-	RegAdminCmd("cancelhalf", NotLive, ADMFLAG_CUSTOM1, "Declares half not live and restarts the round");
-	RegAdminCmd("ch", NotLive, ADMFLAG_CUSTOM1, "Declares half not live and restarts the round");
 	
 	RegAdminCmd("cancelmatch", CancelMatch, ADMFLAG_CUSTOM1, "Declares match not live and restarts round");
 	RegAdminCmd("cm", CancelMatch, ADMFLAG_CUSTOM1, "Declares match not live and restarts round");
@@ -462,13 +459,18 @@ public void OnPluginStart()
 	
 	RegAdminCmd("t", ChangeT, ADMFLAG_CUSTOM1, "Team starting terrorists - Designed for score purposes");
 	RegAdminCmd("ct", ChangeCT, ADMFLAG_CUSTOM1, "Team starting counter-terrorists - Designed for score purposes");
+	
 	RegAdminCmd("sst", SetScoreT, ADMFLAG_CUSTOM1, "Setting terrorists score");
 	RegAdminCmd("ssct", SetScoreCT, ADMFLAG_CUSTOM1, "Setting counter-terrorists scores");
 	
 	RegAdminCmd("aswap", SwapAll, ADMFLAG_CUSTOM1, "Swap all players to the opposite team");
 	
+	RegAdminCmd("practice", Practice, ADMFLAG_CUSTOM1, "Puts server into a practice mode state");
 	RegAdminCmd("prac", Practice, ADMFLAG_CUSTOM1, "Puts server into a practice mode state");
+	RegAdminCmd("treino", Practice, ADMFLAG_CUSTOM1, "Puts server into a practice mode state");
+	
 	RegAdminCmd("warmup", WarmUp, ADMFLAG_CUSTOM1, "Puts server into a warm up state");
+	RegAdminCmd("aquecimento", WarmUp, ADMFLAG_CUSTOM1, "Puts server into a warm up state");
 	
 	RegAdminCmd("pwd", ChangePassword, ADMFLAG_PASSWORD, "Set or display the sv_password console variable");
 	RegAdminCmd("pw", ChangePassword, ADMFLAG_PASSWORD, "Set or display the sv_password console variable");
@@ -487,19 +489,22 @@ public void OnPluginStart()
 	
 	RegAdminCmd("forceallready", ForceAllReady, ADMFLAG_CUSTOM1, "Forces all players to become ready");
 	RegAdminCmd("far", ForceAllReady, ADMFLAG_CUSTOM1, "Forces all players to become ready");
+	
 	RegAdminCmd("forceallunready", ForceAllUnready, ADMFLAG_CUSTOM1, "Forces all players to become unready");
 	RegAdminCmd("faur", ForceAllUnready, ADMFLAG_CUSTOM1, "Forces all players to become unready");
+	
 	RegAdminCmd("forceallspectate", ForceAllSpectate, ADMFLAG_CUSTOM1, "Forces all players to become a spectator");
 	RegAdminCmd("fas", ForceAllSpectate, ADMFLAG_CUSTOM1, "Forces all players to become a spectator");
 	
-	RegAdminCmd("lo3", ForceStart, ADMFLAG_CUSTOM1, "Starts the match regardless of player and ready count");
 	RegAdminCmd("forcestart", ForceStart, ADMFLAG_CUSTOM1, "Starts the match regardless of player and ready count");
 	RegAdminCmd("fs", ForceStart, ADMFLAG_CUSTOM1, "Starts the match regardless of player and ready count");
+	
 	RegAdminCmd("forceend", ForceEnd, ADMFLAG_CUSTOM1, "Ends the match regardless of status");
 	RegAdminCmd("fe", ForceEnd, ADMFLAG_CUSTOM1, "Ends the match regardless of status");
 	
 	RegAdminCmd("readyon", ReadyOn, ADMFLAG_CUSTOM1, "Turns on or restarts the ReadyUp System");
 	RegAdminCmd("ron", ReadyOn, ADMFLAG_CUSTOM1, "Turns on or restarts the ReadyUp System");
+	
 	RegAdminCmd("readyoff", ReadyOff, ADMFLAG_CUSTOM1, "Turns off the ReadyUp System if enabled");
 	RegAdminCmd("roff", ReadyOff, ADMFLAG_CUSTOM1, "Turns off the ReadyUp System if enabled");
 	
@@ -575,33 +580,33 @@ public void OnPluginStart()
 	wm_warmup_respawn = CreateConVar("wm_warmup_respawn", "0", "Enable or disable the respawning of players in warmup", FCVAR_NOTIFY, true, 0.0, true, 1.0);
 	
 	/* Knife Convars */
-	wm_auto_knife = CreateConVar("wm_auto_knife", "0", "Enable or disable the knife round before going live", FCVAR_NOTIFY, true, 0.0, true, 1.0);
-	wm_knife_auto_start = CreateConVar("wm_knife_auto_start", "0", "Enable or disable after knife round to be forced lived", FCVAR_NOTIFY, true, 0.0, true, 1.0);
+	wm_auto_knife = CreateConVar("wm_auto_knife", "1", "Enable or disable the knife round before going live", FCVAR_NOTIFY, true, 0.0, true, 1.0);
+	wm_knife_auto_start = CreateConVar("wm_knife_auto_start", "1", "Enable or disable after knife round to be forced lived", FCVAR_NOTIFY, true, 0.0, true, 1.0);
 	wm_knife_hegrenade = CreateConVar("wm_knife_hegrenade", "0", "Enable or disable giving a player a hegrenade on Knife on 3", FCVAR_NOTIFY, true, 0.0, true, 1.0);
 	wm_knife_flashbang = CreateConVar("wm_knife_flashbang", "0", "Sets how many flashbangs to give a player on Knife on 3", FCVAR_NOTIFY, true, 0.0, true, 2.0);
 	wm_knife_smokegrenade = CreateConVar("wm_knife_smokegrenade", "0", "Enable or disable giving a player a smokegrenade on Knife on 3", FCVAR_NOTIFY, true, 0.0, true, 1.0);
 	wm_knife_zeus = CreateConVar("wm_knife_zeus", "0", "Enable or disable giving a player a zeus on Knife on 3", FCVAR_NOTIFY, true, 0.0, true, 1.0);
 	wm_knife_armor = CreateConVar("wm_knife_armor", "1", "Enable or disable giving a player Armor on Knife on 3", FCVAR_NOTIFY, true, 0.0, true, 1.0);
-	wm_knife_helmet = CreateConVar("wm_knife_helmet", "0", "Enable or disable giving a player a Helmet on Knife on 3 [requires armor active]", FCVAR_NOTIFY, true, 0.0, true, 1.0);
+	wm_knife_helmet = CreateConVar("wm_knife_helmet", "1", "Enable or disable giving a player a Helmet on Knife on 3 [requires armor active]", FCVAR_NOTIFY, true, 0.0, true, 1.0);
 	wm_name_fix = CreateConVar("wm_name_fix", "0", "Fix name swap after knife round", FCVAR_NOTIFY, true, 0.0, true, 1.0);
 	
 	/* FTP Upload Convars */
-	wm_autodemoupload_enable = CreateConVar("wm_autodemoupload_enable", "1", "Automatically upload demos when finished recording.", FCVAR_NOTIFY, true, 0.0, true, 1.0);
+	wm_autodemoupload_enable = CreateConVar("wm_autodemoupload_enable", "0", "Automatically upload demos when finished recording.", FCVAR_NOTIFY, true, 0.0, true, 1.0);
 	wm_autodemoupload_bzip2 = CreateConVar("wm_autodemoupload_bzip2", "9", "Compression level. If set > 0 demos will be compressed before uploading. (Requires bzip2 extension.)", FCVAR_NOTIFY, true, 0.0, true, 9.0);
 	wm_autodemoupload_delete = CreateConVar("wm_autodemoupload_delete", "0", "Delete the demo (and the bz2) if upload was successful.", FCVAR_NOTIFY, true, 0.0, true, 1.0);
 	wm_autodemoupload_ftptargetdemo = CreateConVar("wm_autodemoupload_ftptargetdemo", "demos", "The ftp target to use for demo uploads.");
 	wm_autodemoupload_ftptargetlog = CreateConVar("wm_autodemoupload_ftptargetlog", "logs", "The ftp target to use for log uploads.");
-	wm_autodemoupload_completed  = CreateConVar("wm_autodemoupload_completed", "1", "Only upload demos when match is completed.", FCVAR_NOTIFY, true, 0.0, true, 1.0);
+	wm_autodemoupload_completed  = CreateConVar("wm_autodemoupload_completed", "0", "Only upload demos when match is completed.", FCVAR_NOTIFY, true, 0.0, true, 1.0);
 	
 	/* Pause Convars */
 	sv_pausable = FindConVar("sv_pausable");
 	sv_matchpause_auto_5v5 = FindConVar("sv_matchpause_auto_5v5");
 	wm_auto_pause = CreateConVar("wm_auto_pause", "0", "Will pause server if team players equals less than half of wm_max_players: 0 = off, 1 = on", FCVAR_NOTIFY, true, 0.0, true, 1.0);
-	wm_pause_confirm = CreateConVar("wm_pause_confirm", "1", "Wait for other team to confirm pause: 0 = off, 1 = on", FCVAR_NOTIFY, true, 0.0, true, 1.0);
+	wm_pause_confirm = CreateConVar("wm_pause_confirm", "0", "Wait for other team to confirm pause: 0 = off, 1 = on", FCVAR_NOTIFY, true, 0.0, true, 1.0);
 	wm_unpause_confirm = CreateConVar("wm_unpause_confirm", "1", "Wait for other team to confirm unpause: 0 = off, 1 = on", FCVAR_NOTIFY, true, 0.0, true, 1.0);
 	wm_auto_unpause = CreateConVar("wm_auto_unpause", "1", "Sets auto unpause: 0 = off, 1 = on", FCVAR_NOTIFY, true, 0.0, true, 1.0);
-	wm_auto_unpause_delay = CreateConVar("wm_auto_unpause_delay", "180", "Sets the seconds to wait before auto unpause", FCVAR_NOTIFY, true, 0.0);
-	wm_pause_limit = CreateConVar("wm_pause_limit", "1", "Sets max pause count per team per half", FCVAR_NOTIFY, true, 0.0);
+	wm_auto_unpause_delay = CreateConVar("wm_auto_unpause_delay", "60", "Sets the seconds to wait before auto unpause", FCVAR_NOTIFY, true, 0.0);
+	wm_pause_limit = CreateConVar("wm_pause_limit", "5", "Sets max pause count per team per half", FCVAR_NOTIFY, true, 0.0);
 	
 	/* Veto Convars */
 	wm_pugsetup_maplist_file = CreateConVar("wm_pugsetup_maplist_file", "warmod/veto_maps_list.txt", "Veto Map List to read from", FCVAR_NOTIFY);
@@ -615,7 +620,7 @@ public void OnPluginStart()
 	
 	/* Damage Printer */
 	wm_damageprint_auto_color = CreateConVar("wm_damageprint_auto_color", "1", "Whether colors are automatically inserted for damage values, changing depending on if the damage resulted in a kill");
-	wm_damageprint_enabled = CreateConVar("wm_damageprint_enabled", "0", "Whether to enabled damage print to client on round end");
+	wm_damageprint_enabled = CreateConVar("wm_damageprint_enabled", "1", "Whether to enabled damage print to client on round end");
 	wm_damageprint_format = CreateConVar("wm_damageprint_format", "--> ({DMG_TO} DMG / {HITS_TO} HITS) to ({DMG_FROM} DMG / {HITS_FROM} HITS) from {NAME} ({HEALTH} HP)", "Format of the damage output string. Avaliable tags are in the default, color tags such as {LIGHT_RED} and {GREEN} also work.");
 	
 	g_MapNames = CreateArray(PLATFORM_MAX_PATH);
