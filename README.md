@@ -1,7 +1,7 @@
 # WarMod [BFG] | ZK Servidores™
 An automative service for CS:GO competition matches.
 
-Modified from **[WarMod [BFG] v20.06.24.1348](https://forums.alliedmods.net/showthread.php?t=225474)**.
+Modified from **[WarMod [BFG] v20.07.15.1214](https://bitbucket.org/warmod/warmod.bitbucket.org/src)**.
 
 ## Commands
 **CVARS** | **Description** | **Commands** |
@@ -29,20 +29,8 @@ To use admins commands you must have the `ADMFLAG_CUSTOM1` privilege.
 All admins commands are in the `!admin` menu in the **WarMod Commands** category.
 
 ## Changelog
-### 1.2.3
+### 4.2.6
 - Development;
-
-### 1.2.2
-- Added new Logos & Names of teams;
-- Fixed translations;
-- Fixed some team logos not appearing in the score;
-
-### 1.2.1
-- Fixed team logos not appearing in the score;
-
-### 1.2
-- Added support for team logos in `.svg`;
-- Updated **Logos & Names** of teams;
 - Updated cvars generated in `gamemode_competitive_server.cfg`;
 - Fixed errors in translations;
 
