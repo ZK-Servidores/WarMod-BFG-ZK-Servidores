@@ -45,7 +45,7 @@ enum Zip_AppendStatus
  *
  * @return the handle to the new zipfile
  */
-native Handle:Zip_Open(const String:filename[], Zip_AppendStatus:append);
+native Handle Zip_Open(const char[] filename, Zip_AppendStatus append);
 
 /**
 * Add a file to the specified zip archive and compress it
@@ -55,12 +55,12 @@ native Handle:Zip_Open(const String:filename[], Zip_AppendStatus:append);
 *
 * @return true on success or false on error
 */
-native bool:Zip_AddFile(Handle:handle, const String:filename[]);
+native bool Zip_AddFile(Handle handle, const char[] filename);
 
 /**
  * Do not edit below this line!
  */
-public Extension:__ext_zip = 
+public Extension __ext_zip = 
 {
     name = "Zip",
     file = "smzip.ext",

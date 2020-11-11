@@ -18,20 +18,21 @@
 
 bool SQL_DEBUG = false;
 
+
 int g_player_list[MAXPLAYERS + 1];
 bool g_cancel_list[MAXPLAYERS + 1];
 int g_scores[2][2];
 int g_scores_overtime[2][256][2];
 int g_overtime_count = 0;
 
-/* Miscellaneous */
+/* miscellaneous */
 char g_map[64];
 char date[32];
 char startHour[4];
 char startMin[4];
 float g_match_start;
 
-/* SQL & Last Match Settings */
+/* SQL and Last Match settings */
 Handle hDatabase = INVALID_HANDLE;
 ConVar wm_upload_results;
 ConVar wm_table_name;
@@ -63,13 +64,13 @@ int match_id;
 // Offsets
 int g_iAccount = -1;
 
-/* Stats */
+/* stats */
 bool g_log_warmod_dir = false;
 char g_log_filename[128];
 Handle g_log_file = INVALID_HANDLE;
 char g_log_veto_filename[128];
 Handle g_log_veto_file = INVALID_HANDLE;
-char weapon_list[][] = {"ak47", "m4a1_silencer", "m4a1_silencer_off", "m4a1", "galilar", "famas", "awp", "p250", "cz75a", "glock", "hkp2000", "usp_silencer", "usp_silencer_off", "ump45", "p90", "bizon", "mp7", "nova", "knife", "elite", "fiveseven", "deagle", "revolver", "tec9", "ssg08", "scar20", "aug", "sg556", "g3sg1", "mac10", "mp9", "mp5sd", "mag7", "negev", "m249", "sawedoff", "incgrenade", "flashbang", "smokegrenade", "hegrenade", "molotov", "decoy", "taser"};
+char weapon_list[][] = {"ak47", "m4a1_silencer", "m4a1_silencer_off", "m4a1", "galilar", "famas", "awp", "p250", "cz75a", "glock", "hkp2000", "usp_silencer", "usp_silencer_off", "ump45", "p90", "bizon", "mp7", "mp5sd", "nova", "knife", "elite", "fiveseven", "deagle", "revolver", "tec9", "ssg08", "scar20", "aug", "sg556", "g3sg1", "mac10", "mp9", "mag7", "negev", "m249", "sawedoff", "incgrenade", "flashbang", "smokegrenade", "hegrenade", "molotov", "decoy", "taser"};
 int weapon_stats[MAXPLAYERS + 1][NUM_WEAPONS][LOG_HIT_NUM];
 int clutch_stats[MAXPLAYERS + 1][CLUTCH_NUM];
 int assist_stats[MAXPLAYERS + 1][ASSIST_NUM];
@@ -88,7 +89,7 @@ char g_competition[255];
 char g_event[255];
 char g_server[255];
 
-/* Forwards */
+/* forwards */
 Handle g_f_on_lo3 = INVALID_HANDLE;
 Handle g_f_on_round_end = INVALID_HANDLE;
 Handle g_f_on_half_time = INVALID_HANDLE;
@@ -97,7 +98,7 @@ Handle g_f_on_reset_match = INVALID_HANDLE;
 Handle g_f_on_end_match = INVALID_HANDLE;
 Handle g_f_livewire_log_event = INVALID_HANDLE;
 
-/* Cvars */
+/* cvars */
 ConVar wm_active;
 ConVar wm_stats_enabled;
 ConVar wm_stats_method;
@@ -153,14 +154,15 @@ ConVar mp_teamflag_2;
 ConVar wm_ready_tag;
 ConVar wm_ready_panel;
 
+
 ConVar mp_startmoney;
 ConVar hostname;
 
-/* Ready System */
+/* ready system */
 Handle g_m_ready_up = INVALID_HANDLE;
 bool g_ready_enabled = false;
 
-/* Switches */
+/* switches */
 bool g_active = true;
 bool g_start = false;
 bool g_match = false;
@@ -191,7 +193,7 @@ bool g_knife_vote = false;
 bool captain_file_checked_t = false;
 bool captain_file_checked_ct = false;
 
-/* FTP Auto Upload Code [By Thrawn from tAutoDemoUpload] */
+/* FTP Auto upload code [By Thrawn from tAutoDemoUpload] */
 ConVar wm_autodemoupload_enable;
 ConVar wm_autodemoupload_bzip2;
 ConVar wm_autodemoupload_ftptargetdemo;
@@ -206,22 +208,22 @@ bool g_bRecording = false;
 ConVar wm_autodemoupload_completed;
 bool g_MatchComplete = false;
 
-/* Warmod Safemode */
+/* Warmod safemode */
 ConVar wm_warmod_safemode;
 
-/* Modes */
+/* modes */
 int g_overtime_mode = 0;
 
-/* Chat Prefix */
+/* chat prefix */
 char chat_prefix[64];
 
-/* Teams */
+/* teams */
 char g_t_name[64];
 char g_t_name_escaped[64]; // pre-escaped for warmod logs
 char g_ct_name[64];
 char g_ct_name_escaped[64]; // pre-escaped for warmod logs
 
-/* Clan Tag */
+/* clan tag */
 char g_clanTags[MAXPLAYERS +1 ][MAX_NAME_LENGTH];
 bool g_clanTagsChecked[MAXPLAYERS + 1] = false;
 
@@ -238,7 +240,8 @@ bool playout_offer_ct = false;
 bool playout_offer_t = false;
 Handle g_h_stored_timer_pl = INVALID_HANDLE;
 
-/* Pause & Unpause */
+
+/* Pause and Unpause */
 bool g_pause_freezetime = false;
 bool g_pause_offered_t = false;
 bool g_pause_offered_ct = false;
@@ -313,10 +316,10 @@ ConVar wm_ban_on_disconnect;
 ConVar wm_ban_percentage;
 ConVar sv_kick_ban_duration;
 
-/* Random Team Names & Logos */
-static char g_teamName[][] = {	"Astralis",	"BIG",	"Chaos Esports Club",	"Cloud9", 	"compLexity Gaming", 	"ENCE eSports",	"FaZe Clan",	"FURIA Esports",	"fnatic", 	"Gambit Youngsters",	"G2 Esports",	"HellRaisers", 	"iBUYPOWER",	"Immortals", 	"Keyd Stars", 	"Luminosity Gaming",	"MIBR",	"mousesports", 	"Natus Vincere", 	"Ninjas in Pyjamas", 	"SK Gaming",	"Team Dignitas",	"Team Liquid",	"Team One e-Sports",	"Team Vitality",	"Virtus.Pro"};
-static char g_teamTag[][] = {	"Astralis",	"BIG",	"Chaos",				"Cloud9", 	"compLexity", 			"ENCE",			"FaZe",			"FURIA",			"fnatic", 	"Gambit",				"G2",			"HellRaisers", 	"iBUYPOWER", 	"Immortals", 	"Keyd Stars", 	"LG",					"MIBR",	"mousesports", 	"Na`Vi", 			"NiP", 					"SK|",			"Dignitas", 		"Liquid",		"TeamOne",				"Vitality",			"Virtus.Pro"};
-static char g_teamLogo[][] = {	"astr",		"big",	"chaos",				"c9", 		"col", 					"ence",			"faze",			"furi",				"fntc",		"gamb",					"g2",			"hlr", 			"ibp", 			"imt", 			"keyd", 		"lumi",					"mibr",	"mss", 			"navi", 			"nip", 					"sk",			"dig", 				"liq",			"t1",					"vita",				"vp"};
+/* Random Team Names and Logos */
+static char g_teamName[][] = {"3DMAX", "Astana Dragons", "Bravado Gaming", "Cloud9", "Counter Logic Gaming", "Clan Mystik", "compLexity", "Copenhagen Wolves", "dAT Team", "Team Dignitas", "Epsilon eSports", "ESC Gaming", "Flipsid3 Tactics", "fnatic", "HellRaisers", "iBUYPOWER", "Team Wolf", "Keyd Stars", "London Conspiracy", "Team LDLC.com", "LGB eSports", "mousesports", "MyXMG", "Natus Vincere", "Ninjas in Pyjamas", "Team EnVyUs", "PENTA Sports", "Planetkey Dynamics", "Reason Gaming", "Team SoloMid", "Titan", "Vox Eminor", "VeryGames", "Virtus.Pro"};
+static char g_teamTag[][] = {"3DMAX", "Astana Dragons", "Bravado", "Cloud9", "CLG", "Clan Mystik", "compLexity", "CPH Wolves", "dAT Team", "Dignitas", "Epsilon", "ESC", "Flipsid3", "fnatic", "HellRaisers", "iBUYPOWER", "Team Wolf", "Keyd Stars", "Ldn-Con", "Team LDLC", "LGB", "mousesports", "MyXMG", "Na`Vi", "NiP", "Team EnVyUs", "PENTA", "Planetkey", "Reason", "TSM", "Titan", "Vox Eminor", "VeryGames", "Virtus.Pro"};
+static char g_teamLogo[][] = {"3dm", "ad", "bravg", "c9", "clg", "cm", "col", "cw", "dat", "dig", "eps", "esc", "flip", "fntc", "hlr", "ibp", "indw", "keyd", "lc", "ldlc", "lgb", "mss", "myxmg", "navi", "nip", "nv", "penta", "pkd", "rgg", "tsm", "tit", "ve", "vg", "vp"};
 int g_teamNumber_ct = 0;
 int g_teamNumber_t = 0;
 bool g_tag_set = false;
@@ -324,21 +327,24 @@ ConVar wm_random_team_names;
 
 bool g_first_load = true;
 int g_map_loaded = 0;
-
-/* Admin Menu */
+/* admin menu */
 Handle g_h_menu = INVALID_HANDLE;
 
-/* Plugin Info */
-#define UPDATE_URL		"https://warmod.bitbucket.io/updatefile.txt"
-#define WM_VERSION		"20.06.24.1348 + v1.2.3"
-#define WM_DESCRIPTION	"An automative service for CS:GO competition matches"
+/* Bug Fixes */
+ConVar mp_halftime_duration;
+ConVar mp_win_panel_display_time;
+
+/* Plugin info */
+#define UPDATE_URL				"https://warmod.bitbucket.io/updatefile.txt"
+#define WM_VERSION				"20.07.15.1214 + 4.2.6"
+#define WM_DESCRIPTION			"An automative service for CS:GO competition matches"
 
 public Plugin myinfo = {
 	name = "[BFG] WarMod | ZK Servidores™",
-	author = "Versatile_BFG, crashzk",
+	author = "Versatile_BFG, abnerfs, crashzk",
 	description = WM_DESCRIPTION,
 	version = WM_VERSION,
-	url = "https://github.com/zkservidores-clientes"
+	url = "https://www.facebook.com/BFG-Software-107461914353371"
 };
 
 public APLRes AskPluginLoad2(Handle myself, bool late, char[] error, int err_max)
@@ -352,7 +358,7 @@ public APLRes AskPluginLoad2(Handle myself, bool late, char[] error, int err_max
 
 public void OnPluginStart()
 {
-	//Auto Update
+	//auto update
 	if (LibraryExists("updater"))
 	{
 		Updater_AddPlugin(UPDATE_URL);
@@ -387,41 +393,36 @@ public void OnPluginStart()
 	AddCommandListener(MatchRestore, "mp_backup_restore_load_file");
 	
 	RegConsoleCmd("score", ConsoleScore);
-	RegConsoleCmd("s", ConsoleScore);
-	RegConsoleCmd("version", WMVersion);
+	RegConsoleCmd("wm_version", WMVersion);
 	RegConsoleCmd("buy", RestrictBuy);
 	RegConsoleCmd("jointeam", ChooseTeam);
 	RegConsoleCmd("spectate", ChooseTeam);
-	RegConsoleCmd("readylist", ReadyList);
-	RegConsoleCmd("rl", ReadyList);
-	RegConsoleCmd("cash", AskTeamMoney);
-	RegConsoleCmd("money", AskTeamMoney);
+	RegConsoleCmd("wm_readylist", ReadyList);
+	RegConsoleCmd("wmrl", ReadyList);
+	RegConsoleCmd("wm_cash", AskTeamMoney);
 	
 	RegConsoleCmd("sm_name", SetName, "Sets the name for the team. Only active when wm_require_names 1 and at start of match");
 	RegConsoleCmd("sm_logo", SetLogo, "Sets the logo and name for the team. Only active when wm_require_logos 1 and at start of match");
 	
+	RegConsoleCmd("sm_pronto", ReadyUp, "Readies up the client");
 	RegConsoleCmd("sm_ready", ReadyUp, "Readies up the client");
 	RegConsoleCmd("sm_r", ReadyUp, "Readies up the client");
-	RegConsoleCmd("sm_pronto", ReadyUp, "Readies up the client");
-	
+	RegConsoleCmd("sm_rdy", ReadyUp, "Readies up the client");
+	RegConsoleCmd("sm_aquecendo", ReadyDown, "Readies down the client");
 	RegConsoleCmd("sm_notready", ReadyDown, "Readies down the client");
 	RegConsoleCmd("sm_nr", ReadyDown, "Readies down the client");
 	RegConsoleCmd("sm_unready", ReadyDown, "Readies down the client");
 	RegConsoleCmd("sm_ur", ReadyDown, "Readies down the client");
-	RegConsoleCmd("sm_aquecendo", ReadyDown, "Readies down the client");
-	
+	RegConsoleCmd("sm_urdy", ReadyDown, "Readies down the client");
 	RegConsoleCmd("sm_info", ReadyInfoPriv, "Shows ready info");
 	RegConsoleCmd("sm_i", ReadyInfoPriv, "Shows ready info");
-	
 	RegConsoleCmd("sm_score", ShowScore, "Shows score to client");
 	RegConsoleCmd("sm_s", ShowScore, "Shows score to client");
-	
 	RegConsoleCmd("sm_stay", Stay, "Stay command for knife round");
 	RegConsoleCmd("sm_ficar", Stay, "Stay command for knife round");
 	RegConsoleCmd("sm_switch", Switch, "Switch command for knife round");
-	RegConsoleCmd("sm_swap", Switch, "Switch command for knife round");
 	RegConsoleCmd("sm_trocar", Switch, "Switch command for knife round");
-	
+	RegConsoleCmd("sm_swap", Switch, "Switch command for knife round");
 	RegConsoleCmd("sm_pause", Pause, "Pauses the match");
 	RegConsoleCmd("sm_unpause", Unpause, "Resumes the match");
 	
@@ -430,23 +431,24 @@ public void OnPluginStart()
 	
 	RegConsoleCmd("sm_overtime", OverTime_Offer, "Sets the match to be in overtime mode");
 	RegConsoleCmd("sm_ot", OverTime_Offer, "Sets the match to be in overtime mode");
-
+	
 	RegConsoleCmd("sm_default", Default_Offer, "Sets the match to be in default mode");
 	RegConsoleCmd("sm_def", Default_Offer, "Sets the match to be in default mode");
 	
-	/* Veto Cmds */
-	RegConsoleCmd("sm_vetobo1", Veto_Bo1, "Ask for a BO1 Veto");
-	RegConsoleCmd("sm_vetobo2", Veto_Bo2, "Ask for a BO2 Veto");
-	RegConsoleCmd("sm_vetobo3", Veto_Bo3, "Ask for a BO3 Veto");
-	RegConsoleCmd("sm_vetobo5", Veto_Bo5, "Ask for a BO5 Veto");
-	RegConsoleCmd("sm_veto1", Veto_Bo1, "Ask for a BO1 Veto");
-	RegConsoleCmd("sm_veto2", Veto_Bo2, "Ask for a BO2 Veto");
-	RegConsoleCmd("sm_veto3", Veto_Bo3, "Ask for a BO3 Veto");
-	RegConsoleCmd("sm_veto5", Veto_Bo5, "Ask for a BO5 Veto");
+	/* Veto cmds */
+	RegConsoleCmd("sm_vetobo1", Veto_Bo1, "Ask for a Bo1 Veto");
+	RegConsoleCmd("sm_vetobo2", Veto_Bo2, "Ask for a Bo2 Veto");
+	RegConsoleCmd("sm_vetobo3", Veto_Bo3, "Ask for a Bo3 Veto");
+	RegConsoleCmd("sm_vetobo5", Veto_Bo5, "Ask for a Bo5 Veto");
 	RegConsoleCmd("sm_veto", Veto_Setup, "Ask for Veto");
-	RegConsoleCmd("sm_vetomaps", Veto_Bo3_Maps, "Veto BO3 Maps");
+	RegConsoleCmd("sm_veto1", Veto_Bo1, "Ask for a Bo1 Veto");
+	RegConsoleCmd("sm_veto2", Veto_Bo2, "Ask for a Bo2 Veto");
+	RegConsoleCmd("sm_veto3", Veto_Bo3, "Ask for a Bo3 Veto");
+	RegConsoleCmd("sm_veto5", Veto_Bo5, "Ask for a Bo5 Veto");
+	RegConsoleCmd("sm_vetomaps", Veto_Bo3_Maps, "Veto Bo3 Maps");
 	
-	/* Admin Commands */	
+	/* admin commands */
+	
 	RegAdminCmd("notlive", NotLive, ADMFLAG_CUSTOM1, "Declares half not live and restarts the round");
 	RegAdminCmd("nl", NotLive, ADMFLAG_CUSTOM1, "Declares half not live and restarts the round");
 	RegAdminCmd("cancelhalf", NotLive, ADMFLAG_CUSTOM1, "Declares half not live and restarts the round");
@@ -460,19 +462,15 @@ public void OnPluginStart()
 	
 	RegAdminCmd("t", ChangeT, ADMFLAG_CUSTOM1, "Team starting terrorists - Designed for score purposes");
 	RegAdminCmd("ct", ChangeCT, ADMFLAG_CUSTOM1, "Team starting counter-terrorists - Designed for score purposes");
-	
 	RegAdminCmd("sst", SetScoreT, ADMFLAG_CUSTOM1, "Setting terrorists score");
 	RegAdminCmd("ssct", SetScoreCT, ADMFLAG_CUSTOM1, "Setting counter-terrorists scores");
 	
 	RegAdminCmd("aswap", SwapAll, ADMFLAG_CUSTOM1, "Swap all players to the opposite team");
 	
 	RegAdminCmd("prac", Practice, ADMFLAG_CUSTOM1, "Puts server into a practice mode state");
-	RegAdminCmd("treino", Practice, ADMFLAG_CUSTOM1, "Puts server into a practice mode state");
-	
 	RegAdminCmd("warmup", WarmUp, ADMFLAG_CUSTOM1, "Puts server into a warm up state");
-	RegAdminCmd("aquecimento", WarmUp, ADMFLAG_CUSTOM1, "Puts server into a warm up state");
 	
-	RegAdminCmd("password", ChangePassword, ADMFLAG_PASSWORD, "Set or display the sv_password console variable");
+	RegAdminCmd("pwd", ChangePassword, ADMFLAG_PASSWORD, "Set or display the sv_password console variable");
 	RegAdminCmd("pw", ChangePassword, ADMFLAG_PASSWORD, "Set or display the sv_password console variable");
 	
 	RegAdminCmd("active", ActiveToggle, ADMFLAG_CUSTOM1, "Toggle the wm_active console variable");
@@ -484,37 +482,30 @@ public void OnPluginStart()
 	RegAdminCmd("roundknife", KnifeOn3, ADMFLAG_CUSTOM1, "Remove all weapons except knife and lo3");
 	RegAdminCmd("rk", KnifeOn3, ADMFLAG_CUSTOM1, "Remove all weapons except knife and lo3");
 	
-	RegAdminCmd("cancelroundknife", CancelKnife, ADMFLAG_CUSTOM1, "Declares knife not live and restarts round");
-	RegAdminCmd("crk", CancelKnife, ADMFLAG_CUSTOM1, "Declares knife not live and restarts round");
 	RegAdminCmd("cancelknife", CancelKnife, ADMFLAG_CUSTOM1, "Declares knife not live and restarts round");
 	RegAdminCmd("ck", CancelKnife, ADMFLAG_CUSTOM1, "Declares knife not live and restarts round");
 	
 	RegAdminCmd("forceallready", ForceAllReady, ADMFLAG_CUSTOM1, "Forces all players to become ready");
 	RegAdminCmd("far", ForceAllReady, ADMFLAG_CUSTOM1, "Forces all players to become ready");
-	
 	RegAdminCmd("forceallunready", ForceAllUnready, ADMFLAG_CUSTOM1, "Forces all players to become unready");
-	RegAdminCmd("forceallnotready", ForceAllUnready, ADMFLAG_CUSTOM1, "Forces all players to become unready");
 	RegAdminCmd("faur", ForceAllUnready, ADMFLAG_CUSTOM1, "Forces all players to become unready");
-	RegAdminCmd("fanr", ForceAllUnready, ADMFLAG_CUSTOM1, "Forces all players to become unready");
-	
 	RegAdminCmd("forceallspectate", ForceAllSpectate, ADMFLAG_CUSTOM1, "Forces all players to become a spectator");
 	RegAdminCmd("fas", ForceAllSpectate, ADMFLAG_CUSTOM1, "Forces all players to become a spectator");
 	
+	RegAdminCmd("lo3", ForceStart, ADMFLAG_CUSTOM1, "Starts the match regardless of player and ready count");
 	RegAdminCmd("forcestart", ForceStart, ADMFLAG_CUSTOM1, "Starts the match regardless of player and ready count");
 	RegAdminCmd("fs", ForceStart, ADMFLAG_CUSTOM1, "Starts the match regardless of player and ready count");
-	
 	RegAdminCmd("forceend", ForceEnd, ADMFLAG_CUSTOM1, "Ends the match regardless of status");
 	RegAdminCmd("fe", ForceEnd, ADMFLAG_CUSTOM1, "Ends the match regardless of status");
 	
 	RegAdminCmd("readyon", ReadyOn, ADMFLAG_CUSTOM1, "Turns on or restarts the ReadyUp System");
 	RegAdminCmd("ron", ReadyOn, ADMFLAG_CUSTOM1, "Turns on or restarts the ReadyUp System");
-	
 	RegAdminCmd("readyoff", ReadyOff, ADMFLAG_CUSTOM1, "Turns off the ReadyUp System if enabled");
 	RegAdminCmd("roff", ReadyOff, ADMFLAG_CUSTOM1, "Turns off the ReadyUp System if enabled");
 	
 	RegAdminCmd("updatecfgs", UpdateCFGs, ADMFLAG_CUSTOM1, "Updates configs with the latest format");
 	
-	// Server Commands
+	// server commands
 	RegServerCmd("wm_status", WarMod_Status);
 	RegServerCmd("wm_forceteam", ForceTeam, "Force the SteamID64 client to a team");
 	RegServerCmd("wm_clear_forceteam_all", ClearForceTeamAll, "Clears the list for forced teams");
@@ -528,7 +519,7 @@ public void OnPluginStart()
 	wm_rcon_only = CreateConVar("wm_rcon_only", "0", "Enable or disable admin commands to be only executed via RCON or console", FCVAR_NONE, true, 0.0, true, 1.0);
 	CreateConVar("wm_version_notify", WM_VERSION, WM_DESCRIPTION, FCVAR_SPONLY|FCVAR_REPLICATED|FCVAR_NOTIFY|FCVAR_DONTRECORD);
 	
-	wm_chat_prefix = CreateConVar("wm_chat_prefix", "WarMod BFG", "Change the chat prefix. Default is WarMod BFG", FCVAR_PROTECTED);
+	wm_chat_prefix = CreateConVar("wm_chat_prefix", "WarMod_BFG", "Change the chat prefix. Default is WarMod_BFG", FCVAR_PROTECTED);
 	wm_ready_panel = CreateConVar("wm_ready_panel", "1", "Enable Ready Panel or text based system, Text = 0, Panel = 1", FCVAR_NOTIFY, true, 0.0, true, 1.0);
 	wm_ready_tag = CreateConVar("wm_ready_tag", "1", "Enable or disable the ready & not ready clan tags", FCVAR_NOTIFY, true, 0.0, true, 1.0);
 	wm_lock_teams = CreateConVar("wm_lock_teams", "1", "Enable or disable locked teams when a match is running", FCVAR_NOTIFY, true, 0.0, true, 1.0);
@@ -665,6 +656,11 @@ public void OnPluginStart()
 	HookConVarChange(hostname, Cvar_Changed);
 	
 	HookConVarChange(FindConVar("mp_restartgame"), Event_Round_Restart);
+
+	mp_win_panel_display_time = FindConVar("mp_win_panel_display_time");
+	mp_halftime_duration = FindConVar("mp_halftime_duration");
+	HookConVarChange(mp_win_panel_display_time, Cvar_Changed_Win_Panel_Display_Time);
+	HookConVarChange(mp_halftime_duration, Cvar_Changed_Halftime_Duration);
 	
 	HookEvent("round_start", Event_Round_Start);
 	HookEvent("round_end", Event_Round_End);
@@ -737,12 +733,12 @@ public void OnMapStart()
 	if (StrContains(g_CurMap, "workshop", false) != -1)
 	{
 		GetCurrentWorkshopMap(g_MapName, sizeof(g_MapName), g_WorkShopID, sizeof(g_WorkShopID));
-		LogMessage("Current Map: %s,  Workshop ID: %s, WarMod Version: %s", g_MapName, g_WorkShopID, WM_VERSION);
+		LogMessage("Current Map: %s,  Workshop ID: %s, Warmod Version: %s", g_MapName, g_WorkShopID, WM_VERSION);
 	}
 	else
 	{
 		strcopy(g_map, sizeof(g_map), g_CurMap);
-		LogMessage("Current Map: %s, WarMod Version: %s", g_CurMap, WM_VERSION);
+		LogMessage("Current Map: %s, Warmod Version: %s", g_CurMap, WM_VERSION);
 	}
 	StringToLower(g_map, sizeof(g_map));
 		
@@ -778,7 +774,7 @@ public void OnMapStart()
 		StartSQL(0);
 	}
 	
-	// Reset Any Matches
+	// reset any matches
 	ResetMatch(true, false);
 	g_bRecording = false;
 	
@@ -817,7 +813,7 @@ public void OnAdminMenuReady(Handle topmenu)
 		return;
 	}
 	
-	// Add Menu Items
+	// add menu items
 	AddToTopMenu(g_h_menu, "forcestart", TopMenuObject_Item, MenuHandler, new_menu, "forcestart", ADMFLAG_CUSTOM1);
 	AddToTopMenu(g_h_menu, "readyup", TopMenuObject_Item, MenuHandler, new_menu, "readyup", ADMFLAG_CUSTOM1);
 	AddToTopMenu(g_h_menu, "knife", TopMenuObject_Item, MenuHandler, new_menu, "knife", ADMFLAG_CUSTOM1);
@@ -918,7 +914,7 @@ public void OnClientDisconnect(int client)
 			GetClientAuthId(client, AuthId_Steam2, authid, sizeof(authid));
 			
 			ServerCommand("sm_addban %i %s %s", GetConVarInt(sv_kick_ban_duration), authid, reason);
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Banned player reason", authid, GetConVarInt(sv_kick_ban_duration), reason);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Banned player reason", authid, GetConVarInt(sv_kick_ban_duration), reason);
 			g_disconnect[client] = false;
 		}
 	}
@@ -1067,7 +1063,7 @@ void ResetMatch(bool silent, bool complete) {
 		// message display to players
 		for (int x = 1; x <= 3; x++)
 		{
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Match Reset");
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Match Reset");
 		}
 		// restart round
 		ServerCommand("mp_restartgame 1");
@@ -1134,7 +1130,7 @@ void ResetHalf(bool silent)
 		// display message for players
 		for (int x = 1; x <= 3; x++)
 		{
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Half Reset");
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Half Reset");
 		}
 		// restart round
 		ServerCommand("mp_restartgame 1");
@@ -1248,7 +1244,7 @@ public Action ReadyToggle(int client, int args)
 		{
 			PrintToServer("[%s] %T", chat_prefix, "Ready System Enabled", LANG_SERVER);
 		}
-		// Check if anyone is ready
+		// check if anyone is ready
 		CheckReady();
 	}
 	else
@@ -1285,7 +1281,7 @@ public Action ActiveToggle(int client, int args)
 		SetConVarBool(wm_active, false);
 		if (client != 0)
 		{
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Set Inactive");
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Set Inactive");
 		}
 		else
 		{
@@ -1298,7 +1294,7 @@ public Action ActiveToggle(int client, int args)
 		SetConVarBool(wm_active, true);
 		if (client != 0)
 		{
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Set Active");
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Set Active");
 		}
 		else
 		{
@@ -1327,11 +1323,11 @@ static void AutoPause()
 			{
 				Format(name, sizeof(name), g_ct_name);
 			}
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Auto Pause Notice", LANG_SERVER, name);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Auto Pause Notice", LANG_SERVER, name);
 			if (GameRules_GetProp("m_bFreezePeriod") == 1)
 			{
-				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Auto Unpause Notice", LANG_SERVER, name);
-				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Unpause Notice", LANG_SERVER);
+				PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Auto Unpause Notice", LANG_SERVER, name);
+				PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Unpause Notice", LANG_SERVER);
 				ServerCommand("mp_pause_match 1");
 				g_auto_pause = false;
 			}
@@ -1351,11 +1347,11 @@ static void AutoPause()
 			{
 				Format(name, sizeof(name), g_t_name);
 			}
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Auto Pause Notice", LANG_SERVER, name);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Auto Pause Notice", LANG_SERVER, name);
 			if (GameRules_GetProp("m_bFreezePeriod") == 1)
 			{
-				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Auto Unpause Notice", LANG_SERVER, name);
-				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Unpause Notice", LANG_SERVER);
+				PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Auto Unpause Notice", LANG_SERVER, name);
+				PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Unpause Notice", LANG_SERVER);
 				ServerCommand("mp_pause_match 1");
 				g_auto_pause = false;
 			}
@@ -1388,7 +1384,7 @@ public Action Pause(int client, int args)
 				g_pause_offered_ct = false;
 				g_ct_pause_count++;
 				
-				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Pause Freeze Time", LANG_SERVER);
+				PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Pause Freeze Time", LANG_SERVER);
 				g_pause_freezetime = true;
 				
 				if (FreezeTime)
@@ -1397,10 +1393,10 @@ public Action Pause(int client, int args)
 					if (g_pause_freezetime == true)
 					{
 						g_pause_freezetime = false;
-						PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Unpause Notice", LANG_SERVER);
+						PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Unpause Notice", LANG_SERVER);
 						if (GetConVarBool(wm_auto_unpause))
 						{
-							PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %i %T", chat_prefix, GetConVarInt(wm_auto_unpause_delay), "Unpause Timer", LANG_SERVER);
+							PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %i %T", chat_prefix, GetConVarInt(wm_auto_unpause_delay), "Unpause Timer", LANG_SERVER);
 							g_h_stored_timer = CreateTimer(GetConVarFloat(wm_auto_unpause_delay), UnPauseTimer);
 						}
 						ServerCommand("mp_pause_match 1");
@@ -1418,7 +1414,7 @@ public Action Pause(int client, int args)
 				g_pause_offered_t = false;
 				g_t_pause_count++;
 				
-				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Pause Round End", LANG_SERVER);
+				PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Pause Round End", LANG_SERVER);
 				g_pause_freezetime = true;
 				
 				
@@ -1428,10 +1424,10 @@ public Action Pause(int client, int args)
 					if (g_pause_freezetime == true)
 					{
 						g_pause_freezetime = false;
-						PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Unpause Notice", LANG_SERVER);
+						PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Unpause Notice", LANG_SERVER);
 						if (GetConVarBool(wm_auto_unpause))
 						{
-							PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %i %T", chat_prefix, GetConVarInt(wm_auto_unpause_delay), "Unpause Timer", LANG_SERVER);
+							PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %i %T", chat_prefix, GetConVarInt(wm_auto_unpause_delay), "Unpause Timer", LANG_SERVER);
 							g_h_stored_timer = CreateTimer(GetConVarFloat(wm_auto_unpause_delay), UnPauseTimer);
 						}
 						ServerCommand("mp_pause_match 1");
@@ -1441,26 +1437,26 @@ public Action Pause(int client, int args)
 			}
 			else if (GetClientTeam(client) == 2 && g_t_pause_count == GetConVarInt(wm_pause_limit))
 			{
-				PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Pause Limit", LANG_SERVER);
+				PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Pause Limit", LANG_SERVER);
 			}
 			else if (GetClientTeam(client) == 3 && g_ct_pause_count == GetConVarInt(wm_pause_limit))
 			{
-				PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Pause Limit", LANG_SERVER);
+				PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Pause Limit", LANG_SERVER);
 			}
 			else if (GetClientTeam(client) < 2 )
 			{
-				PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Pause Non-player", LANG_SERVER);
+				PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Pause Non-player", LANG_SERVER);
 			}
 			else if (GetClientTeam(client) == 3 && g_ct_pause_count != GetConVarInt(wm_pause_limit) && g_pause_offered_ct == false)
 			{
 				g_pause_offered_ct = true;
-				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %s %T", chat_prefix, g_ct_name, "Pause Offer", LANG_SERVER);
+				PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %s %T", chat_prefix, g_ct_name, "Pause Offer", LANG_SERVER);
 				g_h_stored_timer_p = CreateTimer(30.0, PauseTimeout);
 			}
 			else if (GetClientTeam(client) == 2 && g_t_pause_count != GetConVarInt(wm_pause_limit) && g_pause_offered_t == false)
 			{
 				g_pause_offered_t = true;
-				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %s %T", chat_prefix, g_t_name, "Pause Offer", LANG_SERVER);
+				PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %s %T", chat_prefix, g_t_name, "Pause Offer", LANG_SERVER);
 				g_h_stored_timer_p = CreateTimer(30.0, PauseTimeout);
 			}
 		}
@@ -1476,8 +1472,8 @@ public Action Pause(int client, int args)
 			EscapeString(authid, sizeof(authid));
 			
 			g_ct_pause_count++;
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %s - %s has paused the match", chat_prefix, player_name, g_ct_name);
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Pause Freeze Time", LANG_SERVER);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %s - %s has paused the match", chat_prefix, player_name, g_ct_name);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Pause Freeze Time", LANG_SERVER);
 			g_pause_freezetime = true;
 			
 			
@@ -1489,10 +1485,10 @@ public Action Pause(int client, int args)
 				if (g_pause_freezetime == true)
 				{
 					g_pause_freezetime = false;
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Unpause Notice", LANG_SERVER);
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Unpause Notice", LANG_SERVER);
 					if (GetConVarBool(wm_auto_unpause))
 					{
-						PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %i %T", chat_prefix, GetConVarInt(wm_auto_unpause_delay), "Unpause Timer", LANG_SERVER);
+						PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %i %T", chat_prefix, GetConVarInt(wm_auto_unpause_delay), "Unpause Timer", LANG_SERVER);
 						g_h_stored_timer = CreateTimer(GetConVarFloat(wm_auto_unpause_delay), UnPauseTimer);
 					}
 					ServerCommand("mp_pause_match 1");
@@ -1512,8 +1508,8 @@ public Action Pause(int client, int args)
 			EscapeString(authid, sizeof(authid));
 			
 			g_t_pause_count++;
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %s - %s has paused the match", chat_prefix, player_name, g_t_name);
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Pause Freeze Time", LANG_SERVER);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %s - %s has paused the match", chat_prefix, player_name, g_t_name);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Pause Freeze Time", LANG_SERVER);
 			g_pause_freezetime = true;
 			
 			
@@ -1525,10 +1521,10 @@ public Action Pause(int client, int args)
 				if (g_pause_freezetime == true)
 				{
 					g_pause_freezetime = false;
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Unpause Notice", LANG_SERVER);
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Unpause Notice", LANG_SERVER);
 					if (GetConVarBool(wm_auto_unpause))
 					{
-						PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %i %T", chat_prefix, GetConVarInt(wm_auto_unpause_delay), "Unpause Timer", LANG_SERVER);
+						PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %i %T", chat_prefix, GetConVarInt(wm_auto_unpause_delay), "Unpause Timer", LANG_SERVER);
 						g_h_stored_timer = CreateTimer(GetConVarFloat(wm_auto_unpause_delay), UnPauseTimer);
 					}
 					ServerCommand("mp_pause_match 1");
@@ -1538,24 +1534,24 @@ public Action Pause(int client, int args)
 		}
 		else if (GetClientTeam(client) == 2 && g_t_pause_count == GetConVarInt(wm_pause_limit))
 		{
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Pause Limit", LANG_SERVER);
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Pause Limit", LANG_SERVER);
 		}
 		else if (GetClientTeam(client) == 3 && g_ct_pause_count == GetConVarInt(wm_pause_limit))
 		{
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Pause Limit", LANG_SERVER);
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Pause Limit", LANG_SERVER);
 		}
 		else if (GetClientTeam(client) < 2)
 		{
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Pause Non-player", LANG_SERVER);
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Pause Non-player", LANG_SERVER);
 		}
 	}
 	else if (!g_live)
 	{
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Match Not In Progress", LANG_SERVER);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Match Not In Progress", LANG_SERVER);
 	}
 	else
 	{
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Pause Not Enabled", LANG_SERVER);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Pause Not Enabled", LANG_SERVER);
 	}
 	
 	return Plugin_Handled;
@@ -1576,7 +1572,7 @@ public Action Unpause(int client, int args)
 						PrintToConsole(i, "[%s] %s %T", chat_prefix, g_ct_name, "Unpause Offer", LANG_SERVER);
 					}
 				}
-				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %s %T", chat_prefix, g_ct_name, "Unpause Offer", LANG_SERVER);
+				PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %s %T", chat_prefix, g_ct_name, "Unpause Offer", LANG_SERVER);
 			}
 			else if (GetClientTeam(client) == 2 && g_pause_offered_t == false && g_pause_offered_ct == false)
 			{
@@ -1588,7 +1584,7 @@ public Action Unpause(int client, int args)
 						PrintToConsole(i, "[%s] %s %T", chat_prefix, g_t_name, "Unpause Offer", LANG_SERVER);
 					}
 				}
-				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %s %T", chat_prefix, g_t_name, "Unpause Offer", LANG_SERVER);
+				PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %s %T", chat_prefix, g_t_name, "Unpause Offer", LANG_SERVER);
 			}
 			else if (GetClientTeam(client) == 2 && g_pause_offered_ct == true)
 			{
@@ -1615,7 +1611,7 @@ public Action Unpause(int client, int args)
 			else if (GetClientTeam(client) < 2 )
 			{
 				PrintToConsole(client, "[%s] %T", chat_prefix, "Unpause Non-player", LANG_SERVER);
-				PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Unpause Non-player", LANG_SERVER);
+				PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Unpause Non-player", LANG_SERVER);
 			}
 		}
 		else
@@ -1631,7 +1627,7 @@ public Action Unpause(int client, int args)
 				EscapeString(player_name, sizeof(player_name));
 				EscapeString(authid, sizeof(authid));
 				
-				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %s - %s %T", chat_prefix, player_name, g_t_name, "Unpaused Match", LANG_SERVER);
+				PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %s - %s %T", chat_prefix, player_name, g_t_name, "Unpaused Match", LANG_SERVER);
 				
 				ServerCommand("mp_unpause_match 1");
 				if (g_h_stored_timer != INVALID_HANDLE)
@@ -1653,7 +1649,7 @@ public Action Unpause(int client, int args)
 				EscapeString(player_name, sizeof(player_name));
 				EscapeString(authid, sizeof(authid));
 				
-				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %s - %s %T", chat_prefix, player_name, g_ct_name, "Unpaused Match", LANG_SERVER);
+				PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %s - %s %T", chat_prefix, player_name, g_ct_name, "Unpaused Match", LANG_SERVER);
 				
 				ServerCommand("mp_unpause_match 1");
 				if (g_h_stored_timer != INVALID_HANDLE)
@@ -1666,7 +1662,7 @@ public Action Unpause(int client, int args)
 			else if (GetClientTeam(client) < 2 )
 			{
 				PrintToConsole(client, "[%s] %T", chat_prefix, "Unpause Non-player", LANG_SERVER);
-				PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Unpause Non-player", LANG_SERVER);
+				PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Unpause Non-player", LANG_SERVER);
 			}
 		}
 	}
@@ -1684,7 +1680,7 @@ public Action UnpauseMatch(int client, const char[]command, int args)
 public Action PauseTimeout(Handle timer)
 {
 	g_h_stored_timer_p = INVALID_HANDLE;
-	PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Pause Not Confirmed", LANG_SERVER);
+	PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Pause Not Confirmed", LANG_SERVER);
 	g_pause_offered_ct = false;
 	g_pause_offered_t = false;
 }
@@ -1694,7 +1690,7 @@ public Action UnPauseTimer(Handle timer)
 	g_h_stored_timer = INVALID_HANDLE;
 	if (IsPaused())
 	{
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Unpause Auto", LANG_SERVER);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Unpause Auto", LANG_SERVER);
 	}
 	ServerCommand("mp_unpause_match 1");
 	g_pause_offered_ct = false;
@@ -1761,7 +1757,7 @@ public Action ChangeMinReady(int client, int args)
 		SetConVarInt(wm_min_ready, minready);
 		if (client != 0)
 		{
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Set Minready", minready);
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Set Minready", minready);
 		}
 		else
 		{
@@ -1774,7 +1770,7 @@ public Action ChangeMinReady(int client, int args)
 		// getter
 		if (client != 0)
 		{
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 wm_min_ready = %d", chat_prefix, GetConVarInt(wm_min_ready));
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 wm_min_ready = %d", chat_prefix, GetConVarInt(wm_min_ready));
 		}
 		else
 		{
@@ -1811,7 +1807,7 @@ public Action ChangeMaxRounds(int client, int args)
 		ServerCommand("mp_maxrounds %i", rounds);
 		if (client != 0)
 		{
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Set Maxrounds", maxrounds);
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Set Maxrounds", maxrounds);
 		}
 		else
 		{
@@ -1847,7 +1843,7 @@ public Action ChangePassword(int client, int args)
 		
 		if (client != 0)
 		{
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Set Password", new_password);
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Set Password", new_password);
 		}
 		else
 		{
@@ -1863,7 +1859,7 @@ public Action ChangePassword(int client, int args)
 		GetConVarString(FindConVar("sv_password"), passwd, sizeof(passwd));
 		if (client != 0)
 		{
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 sv_password = '%s'", chat_prefix, passwd);
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 sv_password = '%s'", chat_prefix, passwd);
 		}
 		else
 		{
@@ -1904,13 +1900,13 @@ public Action ReadyUp(int client, int args)
 		else
 		{
 			// player is not on a valid team
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Not on Team");
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Not on Team");
 		}
 	}
 	else
 	{
 		// player is already ready
-		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Already Ready");
+		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Already Ready");
 	}
 	return Plugin_Handled;
 }
@@ -1944,13 +1940,13 @@ public Action ReadyDown(int client, int args)
 		else
 		{
 			// player is not on a valid team
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Not on Team");
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Not on Team");
 		}
 	}
 	else
 	{
 		// player is already ready
-		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Already Not Ready");
+		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Already Not Ready");
 	}
 	return Plugin_Handled;
 }
@@ -1971,14 +1967,14 @@ public Action ForceAllReady(int client, int args)
 	
 	if (g_ready_enabled)
 	{
-		// Force all players to ready
+		// force all players to ready
 		ReadyChangeAll(client, true, true);
-		// Check if there is enough players
+		// check if there is enough players
 		CheckReady();
 		
 		if (client != 0)
 		{
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Forced Ready");
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Forced Ready");
 		}
 		else
 		{
@@ -1992,7 +1988,7 @@ public Action ForceAllReady(int client, int args)
 	{
 		if (client != 0)
 		{
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Ready System Disabled2");
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Ready System Disabled2");
 		}
 		else
 		{
@@ -2027,7 +2023,7 @@ public Action ForceAllUnready(int client, int args)
 		
 		if (client != 0)
 		{
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Forced Not Ready");
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Forced Not Ready");
 		}
 		else
 		{
@@ -2041,7 +2037,7 @@ public Action ForceAllUnready(int client, int args)
 	{
 		if (client != 0)
 		{
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Ready System Disabled2");
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Ready System Disabled2");
 		}
 		else
 		{
@@ -2130,7 +2126,7 @@ public Action PlayOut_Offer(int client, int args)
 	}
 	else
 	{
-		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Non-player", LANG_SERVER);
+		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Non-player", LANG_SERVER);
 		return Plugin_Handled;
 	}
 	
@@ -2154,12 +2150,12 @@ public Action PlayOut_Offer(int client, int args)
 	}
 	else if (playout_offer_ct && !playout_offer_t)
 	{
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Counter Terrorist %T", chat_prefix, "PlayOut Offer", LANG_SERVER);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Counter Terrorist %T", chat_prefix, "PlayOut Offer", LANG_SERVER);
 		g_h_stored_timer_pl = CreateTimer(30.0, PlayOutTimeout);
 	}
 	else if (!playout_offer_ct && playout_offer_t)
 	{
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Terrorist %T", chat_prefix, "PlayOut Offer", LANG_SERVER);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Terrorist %T", chat_prefix, "PlayOut Offer", LANG_SERVER);
 		g_h_stored_timer_pl = CreateTimer(30.0, PlayOutTimeout);
 	}
 	return Plugin_Handled;
@@ -2170,7 +2166,7 @@ public Action PlayOutTimeout(Handle timer)
 	g_h_stored_timer_pl = INVALID_HANDLE;
 	if (!playout_offer_ct || !playout_offer_t)
 	{
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "PlayOut Offer Not Confirmed", LANG_SERVER);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "PlayOut Offer Not Confirmed", LANG_SERVER);
 	}
 	playout_offer_t = false;
 	playout_offer_ct = false;
@@ -2226,7 +2222,7 @@ public Action OverTime_Offer(int client, int args)
 	}
 	else
 	{
-		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Non-player", LANG_SERVER);
+		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Non-player", LANG_SERVER);
 		return Plugin_Handled;
 	}
 	
@@ -2250,12 +2246,12 @@ public Action OverTime_Offer(int client, int args)
 	}
 	else if (overtime_offer_ct && !overtime_offer_t)
 	{
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Counter Terrorist %T", chat_prefix, "OverTime Offer", LANG_SERVER);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Counter Terrorist %T", chat_prefix, "OverTime Offer", LANG_SERVER);
 		g_h_stored_timer_ot = CreateTimer(30.0, OverTimeTimeout);
 	}
 	else if (!overtime_offer_ct && overtime_offer_t)
 	{
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Terrorist %T", chat_prefix, "OverTime Offer", LANG_SERVER);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Terrorist %T", chat_prefix, "OverTime Offer", LANG_SERVER);
 		g_h_stored_timer_ot = CreateTimer(30.0, OverTimeTimeout);
 	}
 	return Plugin_Handled;
@@ -2266,7 +2262,7 @@ public Action OverTimeTimeout(Handle timer)
 	g_h_stored_timer_ot = INVALID_HANDLE;
 	if (!overtime_offer_ct || !overtime_offer_t)
 	{
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "OverTime Offer Not Confirmed", LANG_SERVER);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "OverTime Offer Not Confirmed", LANG_SERVER);
 	}
 	overtime_offer_t = false;
 	overtime_offer_ct = false;
@@ -2328,7 +2324,7 @@ public Action Default_Offer(int client, int args)
 	}
 	else
 	{
-		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Non-player", LANG_SERVER);
+		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Non-player", LANG_SERVER);
 		return Plugin_Handled;
 	}
 	
@@ -2353,12 +2349,12 @@ public Action Default_Offer(int client, int args)
 	}
 	else if (default_offer_ct && !default_offer_t)
 	{
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Counter Terrorist %T", chat_prefix, "Default Offer", LANG_SERVER);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Counter Terrorist %T", chat_prefix, "Default Offer", LANG_SERVER);
 		g_h_stored_timer_def = CreateTimer(30.0, DefaultTimeout);
 	}
 	else if (!default_offer_ct && default_offer_t)
 	{
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Terrorist %T", chat_prefix, "Default Offer", LANG_SERVER);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Terrorist %T", chat_prefix, "Default Offer", LANG_SERVER);
 		g_h_stored_timer_def = CreateTimer(30.0, DefaultTimeout);
 	}
 	return Plugin_Handled;
@@ -2369,7 +2365,7 @@ public Action DefaultTimeout(Handle timer)
 	g_h_stored_timer_def = INVALID_HANDLE;
 	if (!default_offer_ct || !default_offer_t)
 	{
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Default Offer Not Confirmed", LANG_SERVER);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Default Offer Not Confirmed", LANG_SERVER);
 	}
 	default_offer_t = false;
 	default_offer_ct = false;
@@ -2600,7 +2596,7 @@ public Action SetScoreT(int client, int args)
 		
 		if (strlen(argstring) < 1)
 		{
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 Choose a score between 0 and 30", chat_prefix);
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 Choose a score between 0 and 30", chat_prefix);
 		}
 		else
 		{
@@ -2617,7 +2613,7 @@ public Action SetScoreT(int client, int args)
 			{
 				if (intToUse > 30 || intToUse < 0)
 				{
-					PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 Choose a score between 0 and 30", chat_prefix);
+					PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 Choose a score between 0 and 30", chat_prefix);
 				}
 				else
 				{
@@ -2626,11 +2622,11 @@ public Action SetScoreT(int client, int args)
 						CS_SetTeamScore(CS_TEAM_T, intToUse);
 						SetTeamScore(CS_TEAM_T, intToUse);
 						g_scores[SCORE_T][SCORE_FIRST_HALF] = intToUse;
-						PrintToChatAll("\x01 \x01[ \x02%s \x01] \x02Terrorists \x01score changed to \x04%d", chat_prefix, intToUse);
+						PrintToChatAll("\x01 \x09[\x04%s\x09] \x02Terrorists \x01score changed to \x04%d", chat_prefix, intToUse);
 					}
 					else
 					{
-						PrintToChatAll("\x01 \x01[ \x02%s \x01] %t", chat_prefix, "Safe Mode");
+						PrintToChatAll("\x01 \x09[\x04%s\x09] %t", chat_prefix, "Safe Mode");
 					}
 				}
 			}
@@ -2649,7 +2645,7 @@ public Action SetScoreCT(int client, int args)
 		
 		if (strlen(argstring) < 1)
 		{
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 Choose a score between 0 and 30", chat_prefix);
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 Choose a score between 0 and 30", chat_prefix);
 		}
 		else
 		{
@@ -2666,7 +2662,7 @@ public Action SetScoreCT(int client, int args)
 			{
 				if (intToUse > 30 || intToUse < 0)
 				{
-					PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 Choose a score between 0 and 30", chat_prefix);
+					PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 Choose a score between 0 and 30", chat_prefix);
 				}
 				else
 				{
@@ -2675,11 +2671,11 @@ public Action SetScoreCT(int client, int args)
 						CS_SetTeamScore(CS_TEAM_CT, intToUse);
 						SetTeamScore(CS_TEAM_CT, intToUse);
 						g_scores[SCORE_CT][SCORE_FIRST_HALF] = intToUse;
-						PrintToChatAll("\x01 \x01[ \x02%s \x01] \x0CCounter Terrorists \x01score changed to \x04%d", chat_prefix, intToUse);
+						PrintToChatAll("\x01 \x09[\x04%s\x09] \x0CCounter Terrorists \x01score changed to \x04%d", chat_prefix, intToUse);
 					}
 					else
 					{
-						PrintToChatAll("\x01 \x01[ \x02%s \x01] %t", chat_prefix, "Safe Mode");
+						PrintToChatAll("\x01 \x09[\x04%s\x09] %t", chat_prefix, "Safe Mode");
 					}
 				}
 			}
@@ -2707,7 +2703,7 @@ public Action ShowScore(int client, int args) {
 			DisplayScore(client, 1, true);
 		}
 	} else {
-		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Match Not In Progress");
+		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Match Not In Progress");
 		if (lt_t_overall_score + lt_ct_overall_score > 0) {
 			DisplayScore(client, 3, true);
 		}
@@ -2750,9 +2746,9 @@ void DisplayScore(int client, int msgindex, bool priv)
 		char score_msg[192];
 		GetScoreMsg(client, score_msg, sizeof(score_msg), GetTScore(), GetCTScore());
 		if (priv) {
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01  %s", chat_prefix, score_msg);
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01  %s", chat_prefix, score_msg);
 		} else {
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01  %s", chat_prefix, score_msg);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01  %s", chat_prefix, score_msg);
 		}
 	}
 	else if (msgindex == 1) // overtime play score
@@ -2760,9 +2756,9 @@ void DisplayScore(int client, int msgindex, bool priv)
 		char score_msg[192];
 		GetScoreMsg(client, score_msg, sizeof(score_msg), GetTOTScore(), GetCTOTScore());
 		if (priv) {
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t%s", chat_prefix, "Score Overtime", score_msg);
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t%s", chat_prefix, "Score Overtime", score_msg);
 		} else {
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t%s", chat_prefix, "Score Overtime", score_msg);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t%s", chat_prefix, "Score Overtime", score_msg);
 		}
 	}
 	else if (msgindex == 2) // overall play score
@@ -2770,9 +2766,9 @@ void DisplayScore(int client, int msgindex, bool priv)
 		char score_msg[192];
 		GetScoreMsg(client, score_msg, sizeof(score_msg), GetTTotalScore(), GetCTTotalScore());
 		if (priv) {
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t%s", chat_prefix, "Score Overall", score_msg);
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t%s", chat_prefix, "Score Overall", score_msg);
 		} else {
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t%s", chat_prefix, "Score Overall", score_msg);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t%s", chat_prefix, "Score Overall", score_msg);
 		}
 	}
 	else if (msgindex == 3) // overall play score
@@ -2780,9 +2776,9 @@ void DisplayScore(int client, int msgindex, bool priv)
 		char score_msg[192];
 		Format(score_msg, sizeof(score_msg), "Previous: %s \x04%d\x03-\x04%d \x01%s", lt_t_name, lt_t_overall_score, lt_ct_overall_score, lt_ct_name);
 		if (priv) {
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %s", chat_prefix, score_msg);
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %s", chat_prefix, score_msg);
 		} else {
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %s", chat_prefix, score_msg);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %s", chat_prefix, score_msg);
 		}
 	}
 }
@@ -2851,10 +2847,10 @@ public void Event_Round_Start_CMD()
 	if (g_pause_freezetime == true)
 	{
 		g_pause_freezetime = false;
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Unpause Notice", LANG_SERVER);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Unpause Notice", LANG_SERVER);
 		if (GetConVarBool(wm_auto_unpause))
 		{
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %i %T", chat_prefix, GetConVarInt(wm_auto_unpause_delay), "Unpause Timer", LANG_SERVER);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %i %T", chat_prefix, GetConVarInt(wm_auto_unpause_delay), "Unpause Timer", LANG_SERVER);
 			g_h_stored_timer = CreateTimer(GetConVarFloat(wm_auto_unpause_delay), UnPauseTimer);
 		}
 		
@@ -2876,8 +2872,8 @@ public void Event_Round_Start_CMD()
 			{
 				Format(name, sizeof(name), g_ct_name);
 			}
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Auto Unpause Notice", LANG_SERVER, name);
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Unpause Notice", LANG_SERVER);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Auto Unpause Notice", LANG_SERVER, name);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Unpause Notice", LANG_SERVER);
 			ServerCommand("mp_pause_match 1");
 		}
 		else if (GetTeamClientCount(CS_TEAM_T) < (GetConVarInt(wm_max_players)/2))
@@ -2891,8 +2887,8 @@ public void Event_Round_Start_CMD()
 			{
 				Format(name, sizeof(name), g_t_name);
 			}
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Auto Unpause Notice", LANG_SERVER, name);
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Unpause Notice", LANG_SERVER);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Auto Unpause Notice", LANG_SERVER, name);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Unpause Notice", LANG_SERVER);
 			ServerCommand("mp_pause_match 1");
 		}
 	}
@@ -3194,14 +3190,14 @@ public Action Event_Round_End(Handle event, const char[]name, bool dontBroadcast
 			{
 				if (winner == 2)
 				{
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %s %T", chat_prefix, g_t_name, "Knife Vote Team", LANG_SERVER);
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %s %T", chat_prefix, g_t_name, "Knife Vote Team", LANG_SERVER);
 				}
 				else
 				{
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %s %T", chat_prefix, g_ct_name, "Knife Vote Team", LANG_SERVER);
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %s %T", chat_prefix, g_ct_name, "Knife Vote Team", LANG_SERVER);
 				}
 				
-				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Knife Vote");
+				PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Knife Vote");
 				g_knife_winner = GetEventInt(event, "winner");
 				g_knife_vote = true;
 				g_t_knife = false;
@@ -4242,7 +4238,7 @@ void CheckScores()
 					LogEvent("{\"event\": \"over_time\", \"teams\": [{\"name\": \"%s\", \"team\": %d, \"score\": %d}, {\"name\": \"%s\", \"team\": %d, \"score\": %d}]}", g_t_name_escaped, CS_TEAM_T, GetTTotalScore(), g_ct_name_escaped, CS_TEAM_CT, GetCTTotalScore());
 				}
 				DisplayScore(0, 0, false);
-				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Over Time", (GetConVarInt(mp_overtime_maxrounds)/2));
+				PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Over Time", (GetConVarInt(mp_overtime_maxrounds)/2));
 				//			g_live = false;
 				g_t_money = false;
 				g_overtime = true;
@@ -4280,7 +4276,7 @@ void CheckScores()
 					CreateTimer(5.0, RenameLogs);
 				}
 				DisplayScore(0, 0, false);
-				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Full Time");
+				PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Full Time");
 /*				
 				if (!StrEqual(g_t_name, DEFAULT_T_NAME, false) && !StrEqual(g_ct_name, DEFAULT_CT_NAME, false))
 				{
@@ -4336,7 +4332,7 @@ void CheckScores()
 				CreateTimer(5.0, RenameLogs);
 			}
 			DisplayScore(0, 0, false);
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Full Time");
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Full Time");
 /*			
 			if (!StrEqual(g_t_name, DEFAULT_T_NAME, false) && !StrEqual(g_ct_name, DEFAULT_CT_NAME, false))
 			{
@@ -4375,7 +4371,7 @@ void CheckScores()
 		else if (GetTScore() == (GetConVarInt(mp_maxrounds)/2) + 1 || GetCTScore() == (GetConVarInt(mp_maxrounds)/2) + 1) // full time
 		{
 			DisplayScore(0, 0, false);
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Full Time");
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Full Time");
 			
 			if (GetConVarBool(mp_match_can_clinch))
 			{
@@ -4436,7 +4432,7 @@ void CheckScores()
 				{
 					LogEvent("{\"event\": \"full_time_playing_out\", \"teams\": [{\"name\": \"%s\", \"team\": %d, \"score\": %d}, {\"name\": \"%s\", \"team\": %d, \"score\": %d}]}", g_t_name_escaped, CS_TEAM_T, GetTTotalScore(), g_ct_name_escaped, CS_TEAM_CT, GetCTTotalScore());
 				}
-				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Playing Out Notice", (GetConVarInt(mp_maxrounds)/2));
+				PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Playing Out Notice", (GetConVarInt(mp_maxrounds)/2));
 			}
 		}
 		else
@@ -4511,7 +4507,7 @@ void CheckScores()
 					LogEvent("{\"event\": \"over_time\", \"teams\": [{\"name\": \"%s\", \"team\": %d, \"score\": %d}, {\"name\": \"%s\", \"team\": %d, \"score\": %d}]}", g_t_name_escaped, CS_TEAM_T, GetTTotalScore(), g_ct_name_escaped, CS_TEAM_CT, GetCTTotalScore());
 				}
 				DisplayScore(0, 1, false);
-				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Over Time", (GetConVarInt(mp_overtime_maxrounds)/2));
+				PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Over Time", (GetConVarInt(mp_overtime_maxrounds)/2));
 				g_overtime_count++;
 				g_first_half = true;
 				g_tag_set = false;
@@ -4549,7 +4545,7 @@ void CheckScores()
 				CreateTimer(5.0, RenameLogs);
 			}
 			DisplayScore(0, 2, false);
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Full Time");
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Full Time");
 /*			
 			if (!StrEqual(g_t_name, DEFAULT_T_NAME, false) && !StrEqual(g_ct_name, DEFAULT_CT_NAME, false))
 			{
@@ -4700,7 +4696,7 @@ void ReadyServ(int client, bool ready, bool silent, bool show, bool priv)
 		
 		if (!silent)
 		{
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Ready");
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Ready");
 		}
 	}
 	else
@@ -4715,7 +4711,7 @@ void ReadyServ(int client, bool ready, bool silent, bool show, bool priv)
 		
 		if (!silent)
 		{
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Not Ready");
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Not Ready");
 		}
 	}
 	
@@ -4750,13 +4746,13 @@ void GetCaptainFromFileCR(int team)
 					ServerCommand("mp_teamname_2 %s", teamname);
 					ServerCommand("mp_teamflag_2 %s", teamflag);
 					ServerCommand("mp_teamlogo_2 %s", teamlogo);
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Terrorists are called \x09%s", chat_prefix, teamname);
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Terrorists are called \x09%s", chat_prefix, teamname);
 					captain_file_checked_t = true;
 				} else if (team == CS_TEAM_CT) {
 					ServerCommand("mp_teamname_1 %s", teamname);
 					ServerCommand("mp_teamflag_1 %s", teamflag);
 					ServerCommand("mp_teamlogo_1 %s", teamlogo);
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Counter Terrorists are called \x09%s", chat_prefix, teamname);
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Counter Terrorists are called \x09%s", chat_prefix, teamname);
 					captain_file_checked_ct = true;
 				}
 				
@@ -4849,9 +4845,9 @@ void CheckReady()
 				{
 					g_setNameLimiter = false;
 					CreateTimer(20.0, setNameLimiterTrue);
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Logos Required");
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Set Logo Both");
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Set Logo CMD");	
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Logos Required");
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Set Logo Both");
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Set Logo CMD");	
 				}
 			}
 			else if (!StrEqual(t_logo, "", false) && StrEqual(ct_logo, "", false))
@@ -4861,9 +4857,9 @@ void CheckReady()
 				{
 					g_setNameLimiter = false;
 					CreateTimer(20.0, setNameLimiterTrue);
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x0C %t", chat_prefix, "Logos Required");
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x0C %t", chat_prefix, "Set Logo CT");
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x0C %t", chat_prefix, "Set Logo CMD");	
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x0C %t", chat_prefix, "Logos Required");
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x0C %t", chat_prefix, "Set Logo CT");
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x0C %t", chat_prefix, "Set Logo CMD");	
 				}
 			}
 			else if (StrEqual(t_logo, "", false) && !StrEqual(ct_logo, "", false))
@@ -4873,9 +4869,9 @@ void CheckReady()
 				{
 					g_setNameLimiter = false;
 					CreateTimer(20.0, setNameLimiterTrue);
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x02 %t", chat_prefix, "Logos Required");
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x02 %t", chat_prefix, "Set Logo T");
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x02 %t", chat_prefix, "Set Logo CMD");	
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x02 %t", chat_prefix, "Logos Required");
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x02 %t", chat_prefix, "Set Logo T");
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x02 %t", chat_prefix, "Set Logo CMD");	
 				}
 
 			}
@@ -4887,9 +4883,9 @@ void CheckReady()
 				{
 					g_setNameLimiter = false;
 					CreateTimer(20.0, setNameLimiterTrue);
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Names Required");
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Set Name Both");
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Set Name CMD");	
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Names Required");
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Set Name Both");
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Set Name CMD");	
 				}
 			}
 			else if (StrEqual(ct_logo, "none", false) && (!StrEqual(t_name, DEFAULT_T_NAME, false) || !StrEqual(t_name, "", false) || !StrEqual(t_name, "_", false)) && (StrEqual(ct_name, DEFAULT_CT_NAME, false) || StrEqual(ct_name, "CounterTerrorists", false) || StrEqual(ct_name, "", false) || StrEqual(ct_name, "_", false)))
@@ -4899,9 +4895,9 @@ void CheckReady()
 				{
 					g_setNameLimiter = false;
 					CreateTimer(20.0, setNameLimiterTrue);
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x0C %t", chat_prefix, "Names Required");
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x0C %t", chat_prefix, "Set Name CT");
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x0C %t", chat_prefix, "Set Name CMD");	
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x0C %t", chat_prefix, "Names Required");
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x0C %t", chat_prefix, "Set Name CT");
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x0C %t", chat_prefix, "Set Name CMD");	
 				}
 			}
 			else if (StrEqual(t_logo, "none", false) && (StrEqual(t_name, DEFAULT_T_NAME, false) || StrEqual(t_name, "", false) || StrEqual(t_name, "_", false)) && (!StrEqual(ct_name, DEFAULT_CT_NAME, false) || !StrEqual(ct_name, "", false) || !StrEqual(ct_name, "_", false)))
@@ -4911,9 +4907,9 @@ void CheckReady()
 				{
 					g_setNameLimiter = false;
 					CreateTimer(20.0, setNameLimiterTrue);
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x02 %t", chat_prefix, "Names Required");
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x02 %t", chat_prefix, "Set Name T");
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x02 %t", chat_prefix, "Set Name CMD");	
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x02 %t", chat_prefix, "Names Required");
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x02 %t", chat_prefix, "Set Name T");
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x02 %t", chat_prefix, "Set Name CMD");	
 				}
 			}
 			else if ((!StrEqual(t_name, DEFAULT_T_NAME, false) || !StrEqual(t_name, "", false) || !StrEqual(t_name, "_", false)) && (StrEqual(ct_name, DEFAULT_CT_NAME, false) || StrEqual(ct_name, "CounterTerrorists", false) || StrEqual(ct_name, "", false) || StrEqual(ct_name, "_", false)))
@@ -4923,9 +4919,9 @@ void CheckReady()
 				{
 					g_setNameLimiter = false;
 					CreateTimer(20.0, setNameLimiterTrue);
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x0C %t", chat_prefix, "Names Required");
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x0C %t", chat_prefix, "Set Name CT");
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x0C %t", chat_prefix, "Set Name CMD");	
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x0C %t", chat_prefix, "Names Required");
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x0C %t", chat_prefix, "Set Name CT");
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x0C %t", chat_prefix, "Set Name CMD");	
 				}
 			}
 			else if ((StrEqual(t_name, DEFAULT_T_NAME, false) || StrEqual(t_name, "", false) || StrEqual(t_name, "_", false)) && (!StrEqual(ct_name, DEFAULT_CT_NAME, false) || !StrEqual(ct_name, "", false) || !StrEqual(ct_name, "_", false)))
@@ -4935,9 +4931,9 @@ void CheckReady()
 				{
 					g_setNameLimiter = false;
 					CreateTimer(20.0, setNameLimiterTrue);
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x02 %t", chat_prefix, "Names Required");
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x02 %t", chat_prefix, "Set Name T");
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x02 %t", chat_prefix, "Set Name CMD");	
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x02 %t", chat_prefix, "Names Required");
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x02 %t", chat_prefix, "Set Name T");
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x02 %t", chat_prefix, "Set Name CMD");	
 				}
 			}
 			
@@ -4964,9 +4960,9 @@ void CheckReady()
 				{
 					g_setNameLimiter = false;
 					CreateTimer(20.0, setNameLimiterTrue);
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Names Required");
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Set Name Both");
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Set Name CMD");	
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Names Required");
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Set Name Both");
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Set Name CMD");	
 				}
 				return;
 			}
@@ -4977,9 +4973,9 @@ void CheckReady()
 				{
 					g_setNameLimiter = false;
 					CreateTimer(20.0, setNameLimiterTrue);
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x0C %t", chat_prefix, "Names Required");
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x0C %t", chat_prefix, "Set Name CT");
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x0C %t", chat_prefix, "Set Name CMD");	
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x0C %t", chat_prefix, "Names Required");
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x0C %t", chat_prefix, "Set Name CT");
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x0C %t", chat_prefix, "Set Name CMD");	
 				}
 				return;
 			}
@@ -4990,9 +4986,9 @@ void CheckReady()
 				{
 					g_setNameLimiter = false;
 					CreateTimer(20.0, setNameLimiterTrue);
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x02 %t", chat_prefix, "Names Required");
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x02 %t", chat_prefix, "Set Name T");
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x02 %t", chat_prefix, "Set Name CMD");	
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x02 %t", chat_prefix, "Names Required");
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x02 %t", chat_prefix, "Set Name T");
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x02 %t", chat_prefix, "Set Name CMD");	
 				}
 				return;
 			}
@@ -5053,14 +5049,14 @@ void ReadyChecked()
 			EscapeString(g_t_name_escaped, sizeof(g_t_name_escaped));
 			ServerCommand("mp_teamname_2 %s", g_t_name);
 			ServerCommand("mp_teamlogo_2 %s", g_teamLogo[g_teamNumber_t]);
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Terrorists are called \x02%s", chat_prefix, g_t_name);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Terrorists are called \x02%s", chat_prefix, g_t_name);
 			
 			Format(g_ct_name, sizeof(g_ct_name), g_teamName[g_teamNumber_ct]);
 			Format(g_ct_name_escaped, sizeof(g_ct_name_escaped), g_teamName[g_teamNumber_ct]);
 			EscapeString(g_ct_name_escaped, sizeof(g_ct_name_escaped));
 			ServerCommand("mp_teamname_1 %s", g_ct_name);
 			ServerCommand("mp_teamlogo_1 %s", g_teamLogo[g_teamNumber_ct]);
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Counter Terrorists are called \x0C%s", chat_prefix, g_ct_name);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Counter Terrorists are called \x0C%s", chat_prefix, g_ct_name);
 			
 			if (!GetConVarBool(wm_warmod_safemode))
 			{
@@ -5299,7 +5295,7 @@ stock bool LiveOn3Override()
 	{
 		ServerCommand("mp_unpause_match 1");
 		ServerCommand("mp_restartgame 1");
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Live On 3");
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Live on 3");
 		LiveOn2 = true;
 		ServerCommand("mp_teamname_1 %s", g_ct_name);
 		ServerCommand("mp_teamname_2 %s", g_t_name);
@@ -5326,7 +5322,7 @@ public Action Lo3Timer(Handle timer)
 {
 	ServerCommand("mp_unpause_match 1");
 	ServerCommand("mp_restartgame 1");
-	PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Live On 3");
+	PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Live on 3");
 	LiveOn2 = true;
 	ServerCommand("mp_teamname_1 %s", g_ct_name);
 	ServerCommand("mp_teamname_2 %s", g_t_name);
@@ -5346,17 +5342,18 @@ static void LiveText() {
 		LiveOn2 = false;
 		LiveOn1 = true;
 		ServerCommand("mp_restartgame 1");
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Live On 2");
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Live on 2");
 	} else if (LiveOn1) {
 		LiveOn1 = false;
 		LiveOn3Text = true;
 		ServerCommand("mp_restartgame 3");
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Live On 1");
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Live on 1");
 	} else if(LiveOn3Text) {
 		LiveOn3Text = false;
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Live");
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Good Luck");
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t \x03WarMod [BFG] | ZK Servidores™", chat_prefix, "Powered By");
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Live");
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Good Luck");
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t \x03WarMod [BFG]", chat_prefix, "Powered By");
+		
 		if (!GetConVarBool(wm_random_team_names)) {
 			CreateTimer(1.0, SetTagClientDefault);
 		}
@@ -5365,24 +5362,24 @@ static void LiveText() {
 		KnifeOn2 = false;
 		KnifeOn1 = true;
 		ServerCommand("mp_restartgame 1");
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Knife On 2");
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Knife on 2");
 	} else if(KnifeOn1) {
 		KnifeOn1 = false;
 		KnifeOn3Text = true;
 		ServerCommand("mp_restartgame 3");
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Knife On 1");
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Knife on 1");
 	} else if(KnifeOn3Text) {
 		KnifeOn3Text = false;
 		if (GetConVarBool(wm_knife_zeus)) {
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 \x02%t", chat_prefix, "Zeus");
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 \x02%t", chat_prefix, "Knife");
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Good Luck");
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t \x03WarMod [BFG] | ZK Servidores™", chat_prefix, "Powered By");
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 \x02%t", chat_prefix, "Zeus");
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 \x02%t", chat_prefix, "Knife");
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Good Luck");
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t \x03WarMod [BFG]", chat_prefix, "Powered By");
 		} else {
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 \x02%t", chat_prefix, "Knife");
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 \x02%t", chat_prefix, "Knife");
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Good Luck");
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t \x03WarMod [BFG] | ZK Servidores™", chat_prefix, "Powered By");
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 \x02%t", chat_prefix, "Knife");
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 \x02%t", chat_prefix, "Knife");
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Good Luck");
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t \x03WarMod [BFG]", chat_prefix, "Powered By");
 		}
 		
 		if (!GetConVarBool(wm_random_team_names)) {
@@ -5440,7 +5437,7 @@ stock bool KnifeOn3Override()
 	if (!InWarmup())
 	{
 		ServerCommand("mp_restartgame 1");
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Knife On 3");
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Knife on 3");
 		KnifeOn2 = true;
 		
 		return true;
@@ -5456,7 +5453,7 @@ stock bool KnifeOn3Override()
 public Action Ko3Timer(Handle timer)
 {
 	ServerCommand("mp_restartgame 1");
-	PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Knife On 3");
+	PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Knife on 3");
 	KnifeOn2 = true;
 }
 
@@ -5474,7 +5471,7 @@ public Action Command_JoinTeam(int client, const char[]command, int args)
 	
 	if ((g_match || g_t_knife) && GetClientTeam(client) > 1 && GetConVarBool(wm_lock_teams))
 	{
-		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Change Teams Midgame");
+		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Change Teams Midgame");
 		return Plugin_Stop;
 	}
 	
@@ -5485,7 +5482,7 @@ public Action Command_JoinTeam(int client, const char[]command, int args)
 	int max_players = GetConVarInt(wm_max_players);
 	if ((g_ready_enabled || g_match || g_t_knife || g_max_lock) && max_players != 0 && GetClientTeam(client) <= 1 && CS_GetPlayingCount() >= max_players) {
 	//((GetTeamClientCount(CS_TEAM_T) > (max_players/2) && m_iTeam == CS_TEAM_T) || (GetTeamClientCount(CS_TEAM_CT) > (max_players/2) && m_iTeam == CS_TEAM_CT))) {
-		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Maximum Players");
+		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Maximum Players");
 		ChangeClientTeam(client, CS_TEAM_SPECTATOR);
 		return Plugin_Stop;
 	}
@@ -5519,7 +5516,7 @@ public Action ChooseTeam(int client, int args)
 	
 	if ((g_match || g_t_knife) && GetClientTeam(client) > 1 && GetConVarBool(wm_lock_teams))
 	{
-		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Change Teams Midgame");
+		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Change Teams Midgame");
 		return Plugin_Stop;
 	}
 	
@@ -5530,7 +5527,7 @@ public Action ChooseTeam(int client, int args)
 	int max_players = GetConVarInt(wm_max_players);
 	if ((g_ready_enabled || g_match || g_t_knife || g_max_lock) && max_players != 0 && GetClientTeam(client) <= 1 && CS_GetPlayingCount() >= max_players) {
 	//((GetTeamClientCount(CS_TEAM_T) > (max_players/2) && m_iTeam == CS_TEAM_T) || (GetTeamClientCount(CS_TEAM_CT) > (max_players/2) && m_iTeam == CS_TEAM_CT))) {
-		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Maximum Players");
+		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Maximum Players");
 		ChangeClientTeam(client, CS_TEAM_SPECTATOR);
 		return Plugin_Stop;
 	}
@@ -5566,14 +5563,14 @@ public Action RestrictBuy(int client, int args)
 	GetCmdArgString(arg, 128);
 	if (!g_live && GetConVarBool(wm_block_warm_up_grenades))
 	{
-		char the_weapon[45];
+		char the_weapon[32];
 		Format(the_weapon, sizeof(the_weapon), "%s", arg);
 		ReplaceString(the_weapon, sizeof(the_weapon), "weapon_", "");
 		ReplaceString(the_weapon, sizeof(the_weapon), "item_", "");
 		
 		if (StrContains(the_weapon, "hegren", false) != -1 || StrContains(the_weapon, "flash", false) != -1 || StrContains(the_weapon, "smokegrenade", false) != -1 || StrContains(the_weapon, "molotov", false) != -1 || StrContains(the_weapon, "incgrenade", false) != -1 || StrContains(the_weapon, "decoy", false) != -1)
 		{
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Grenades Blocked");
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Grenades Blocked");
 			return Plugin_Handled;
 		}
 	}
@@ -5592,7 +5589,7 @@ public Action ReadyList(int client, int args)
 	char player_name[64];
 	int player_count;
 	
-	ReplyToCommand(client, "\x01 \x01[ \x02%s \x01]\x01 %T:", chat_prefix, "Ready System", LANG_SERVER);
+	ReplyToCommand(client, "\x01 \x09[\x04%s\x09]\x01 %T:", chat_prefix, "Ready System", LANG_SERVER);
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsClientInGame(i) && !IsFakeClient(i) && GetClientTeam(i) > 1)
@@ -5660,7 +5657,7 @@ public Action WarmUp(int client, int args)
 		}
 		else
 		{
-			PrintToChat(client,"\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Match Is Live", LANG_SERVER);
+			PrintToChat(client,"\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Match Is Live", LANG_SERVER);
 		}
 		return Plugin_Handled;
 	}
@@ -5694,7 +5691,7 @@ public Action Practice(int client, int args)
 		}
 		else
 		{
-			PrintToChat(client,"\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Match Is Live", LANG_SERVER);
+			PrintToChat(client,"\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Match Is Live", LANG_SERVER);
 		}
 		return Plugin_Handled;
 	}
@@ -5770,7 +5767,7 @@ public Action CancelKnife(int client, int args)
 		ServerCommand("mp_restartgame 1");
 		for (int x = 1; x <= 3; x++)
 		{
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Knife Round Cancelled");
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Knife Round Cancelled");
 		}
 		if (client == 0)
 		{
@@ -5781,7 +5778,7 @@ public Action CancelKnife(int client, int args)
 	{
 		if (client != 0)
 		{
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Knife Round Inactive");
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Knife Round Inactive");
 		}
 		else
 		{
@@ -5852,7 +5849,7 @@ void ShowInfo(int client, bool enable, bool priv, int time)
 		if (GetConVarBool(wm_ready_panel)) {
 			g_m_ready_up = CreatePanel();
 			char panel_title[128];
-			Format(panel_title, sizeof(panel_title), "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Ready System Disabled", client);
+			Format(panel_title, sizeof(panel_title), "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Ready System Disabled", client);
 			SetPanelTitle(g_m_ready_up, panel_title);
 			
 			for (int i = 1; i <= MaxClients; i++)
@@ -5867,7 +5864,7 @@ void ShowInfo(int client, bool enable, bool priv, int time)
 			
 			UpdateStatus();
 		} else {
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Ready System Disabled");
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Ready System Disabled");
 		}
 		
 		return;
@@ -5921,7 +5918,7 @@ void DispInfo(int client, char[] players_unready, int time)
 		char Temp[128];
 		SetGlobalTransTarget(client);
 		g_m_ready_up = CreatePanel();
-		Format(Temp, sizeof(Temp), "WarMod [BFG] - %t", "Ready System");
+		Format(Temp, sizeof(Temp), "WarMod [BFG]- %t", "Ready System");
 		SetPanelTitle(g_m_ready_up, Temp);
 		DrawPanelText(g_m_ready_up, "\n \n");
 		Format(Temp, sizeof(Temp), "%t", "Match Begin Msg", GetConVarInt(wm_min_ready));
@@ -5936,9 +5933,9 @@ void DispInfo(int client, char[] players_unready, int time)
 		SendPanelToClient(g_m_ready_up, client, Handler_ReadySystem, time);
 		CloseHandle(g_m_ready_up);
 	} else if (!g_live) {
-		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x04 %t", chat_prefix, "Ready System");
-		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x04 %t", chat_prefix, "Match Begin Msg", GetConVarInt(wm_min_ready));
-		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x02 %t\x01%s", chat_prefix, "Info Not Ready", players_unready);
+		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x04 %t", chat_prefix, "Ready System");
+		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x04 %t", chat_prefix, "Match Begin Msg", GetConVarInt(wm_min_ready));
+		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x02 %t\x01%s", chat_prefix, "Info Not Ready", players_unready);
 	}
 }
 
@@ -5995,7 +5992,7 @@ bool IsReadyEnabled(int client, bool silent)
 		{
 			if (client != 0)
 			{
-				PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Ready System Disabled2");
+				PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Ready System Disabled2");
 			}
 			else
 			{
@@ -6018,7 +6015,7 @@ bool IsLive(int client, bool silent)
 		{
 			if (client != 0)
 			{
-				PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Match Is Live");
+				PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Match Is Live");
 			}
 			else
 			{
@@ -6041,7 +6038,7 @@ bool IsActive(int client, bool silent)
 		{
 			if (client != 0)
 			{
-				PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "WarMod Inactive");
+				PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "WarMod Inactive");
 			}
 			else
 			{
@@ -6062,7 +6059,7 @@ bool IsAdminCmd(int client, bool silent)
 	{
 		if (!silent)
 		{
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "WarMod Rcon Only");
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "WarMod Rcon Only");
 		}
 	}
 	return false;
@@ -6197,11 +6194,11 @@ public Action Stay(int client, int args)
 	{
 		if (g_knife_winner == 2)
 		{
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %s %T", chat_prefix, g_t_name, "Knife Stay", LANG_SERVER);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %s %T", chat_prefix, g_t_name, "Knife Stay", LANG_SERVER);
 		}
 		else
 		{
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %s %T", chat_prefix, g_ct_name, "Knife Stay", LANG_SERVER);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %s %T", chat_prefix, g_ct_name, "Knife Stay", LANG_SERVER);
 		}
 		
 		if (GetConVarBool(wm_knife_auto_start))
@@ -6215,7 +6212,7 @@ public Action Stay(int client, int args)
 		}
 		else
 		{
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Match Begin Msg", GetConVarInt(wm_min_ready));
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Match Begin Msg", GetConVarInt(wm_min_ready));
 			ReadyChangeAll(0, false, true);
 			SetAllCancelled(false);
 			ReadySystem(true);
@@ -6235,11 +6232,11 @@ public Action Switch(int client, int args)
 	{
 		if (g_knife_winner == 2)
 		{
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %s %T", chat_prefix, g_t_name, "Knife Switch", LANG_SERVER);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %s %T", chat_prefix, g_t_name, "Knife Switch", LANG_SERVER);
 		}
 		else
 		{
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %s %T", chat_prefix, g_ct_name, "Knife Switch", LANG_SERVER);	
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %s %T", chat_prefix, g_ct_name, "Knife Switch", LANG_SERVER);	
 		}
 		ServerCommand("mp_swapteams");
 		int temp = g_teamNumber_t;
@@ -6305,7 +6302,7 @@ public Action Switch(int client, int args)
 		}
 		else
 		{
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Match Begin Msg", GetConVarInt(wm_min_ready));
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Match Begin Msg", GetConVarInt(wm_min_ready));
 			ReadyChangeAll(0, false, true);
 			SetAllCancelled(false);
 			ReadySystem(true);
@@ -6473,7 +6470,7 @@ public void getTerroristTeamName()
 		EscapeString(g_t_name_escaped, sizeof(g_t_name_escaped));
 		ServerCommand("mp_teamname_2 %s", g_t_name);
 		LogEvent("{\"event\": \"name_change\", \"team\": 2, \"old\": \"%s\", \"new\": \"%s\"}", name_old, g_t_name);
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Terrorists are called \x02%s", chat_prefix, g_t_name);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Terrorists are called \x02%s", chat_prefix, g_t_name);
 	}
 }
 
@@ -6616,7 +6613,7 @@ public void getCounterTerroristTeamName()
 		EscapeString(g_ct_name_escaped, sizeof(g_ct_name_escaped));
 		ServerCommand("mp_teamname_1 %s", g_ct_name);
 		LogEvent("{\"event\": \"name_change\", \"team\": 3, \"old\": \"%s\", \"new\": \"%s\"}", name_old, g_ct_name);
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Counter Terrorists are called \x09%s", chat_prefix, g_ct_name);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Counter Terrorists are called \x09%s", chat_prefix, g_ct_name);
 	}
 }
 
@@ -6648,7 +6645,7 @@ public Action ChangeT(int client, int args)
 		ServerCommand("mp_teamname_2 %s", name);
 		if (client != 0)
 		{
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Change T Name", name);
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Change T Name", name);
 		}
 		else
 		{
@@ -6689,7 +6686,7 @@ public Action ChangeCT(int client, int args)
 		ServerCommand("mp_teamname_1 %s", name);
 		if (client != 0)
 		{
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Change CT Name", name);
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Change CT Name", name);
 		}
 		else
 		{
@@ -7090,11 +7087,11 @@ public int UploadComplete(const char[]sTarget, const char[]sLocalFile, const cha
 	{
 		if (StrEqual(sLocalFile[strlen(sLocalFile)-4], ".log"))
 		{
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "FTP Log Upload Successful");
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "FTP Log Upload Successful");
 		}
 		else
 		{
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "FTP Demo Upload Successful");
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "FTP Demo Upload Successful");
 		}
 	}
 	else
@@ -7103,7 +7100,7 @@ public int UploadComplete(const char[]sTarget, const char[]sLocalFile, const cha
 		{
 			if (IsClientInGame(client) && GetAdminFlag(GetUserAdmin(client), Admin_Reservation))
 			{
-				PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "FTP Upload Failed");
+				PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "FTP Upload Failed");
 			}
 		}
 	}
@@ -7112,6 +7109,26 @@ public int UploadComplete(const char[]sTarget, const char[]sLocalFile, const cha
 public void Cvar_Changed(Handle convar, const char[]oldValue, const char[]newValue)
 {
 	OnConfigsExecuted();
+}
+
+public void Cvar_Changed_Win_Panel_Display_Time(Handle convar, const char[]oldValue, const char[]newValue)
+{
+	int halftime_duration = GetConVarInt(mp_halftime_duration);
+	if (StringToInt(newValue) <= halftime_duration)
+	{
+		SetConVarInt(mp_win_panel_display_time, halftime_duration + 1, true, false);
+		return;
+	}
+}
+
+public void Cvar_Changed_Halftime_Duration(Handle convar, const char[]oldValue, const char[]newValue)
+{
+	int win_panel_display_time = GetConVarInt(mp_win_panel_display_time);
+	if (StringToInt(newValue) >= win_panel_display_time)
+	{
+		SetConVarInt(mp_halftime_duration, win_panel_display_time - 1, true, false);
+		return;
+	}
 }
 
 public int GetConVarValueInt(const char[]sConVar)
@@ -7156,7 +7173,7 @@ stock void LogEvent(const char[]format, any:...)
 	if (g_log_live && (stats_method == 0 || stats_method == 2))
 	{
 		// standard server log files + udp stream
-		LogToGame("WarMod [BFG] %s", event);
+		LogToGame("[WarMod_BFG] %s", event);
 	}
 	
 	if ((stats_method == 1 || stats_method == 2) && g_log_file != INVALID_HANDLE)
@@ -7658,11 +7675,11 @@ public Action CheckNames(Handle timer, any client)
 				{
 					if (GetConVarBool(wm_require_logos))
 					{
-						PrintToChat(i, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Logos Required");
+						PrintToChat(i, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Logos Required");
 					}
 					else
 					{
-						PrintToChat(i, "\x01 \x01[ \x02%s \x01]\x01 %t", chat_prefix, "Names Required");
+						PrintToChat(i, "\x01 \x09[\x04%s\x09]\x01 %t", chat_prefix, "Names Required");
 					}
 				}
 			}
@@ -7702,13 +7719,13 @@ public Action DisplayHelp(int client, int args)
 {
 	if (client == 0)
 	{
-		PrintHintTextToAll("%t: !ready !notready !info !score", "Available Commands");
+		PrintHintTextToAll("%t: !ready !unready !info !score", "Available Commands");
 	}
 	else
 	{
 		if (IsClientConnected(client) && IsClientInGame(client))
 		{
-			PrintHintText(client, "%t: !ready !notready !info !score", "Available Commands");
+			PrintHintText(client, "%t: !ready !unready !info !score", "Available Commands");
 		}
 	}
 	return Plugin_Handled;
@@ -7724,16 +7741,16 @@ public Action ShowPluginInfo(Handle timer, int client)
 		GetConVarName(wm_min_ready, min_ready, sizeof(min_ready));
 		PrintToConsole(client, "===============================================================================");
 		PrintToConsole(client, "This server is running WarMod [BFG] | ZK Servidores™");
-		PrintToConsole(client, "Version Server Plugin %s", WM_VERSION);
+		PrintToConsole(client, "Version %s", WM_VERSION);
 		PrintToConsole(client, "");
 		PrintToConsole(client, "Created by Versatile [BFG]");
 		PrintToConsole(client, "Edited by crashzk");
 		PrintToConsole(client, "");
 		PrintToConsole(client, "Messagemode Commands:				Aliases:");
-		PrintToConsole(client, "  !ready - Mark yourself as ready 		  !r, !pronto");
-		PrintToConsole(client, "  !notready - Mark yourself as not ready 	  !nt, !unrdy, !ur, !aquecendo");
+		PrintToConsole(client, "  !ready - Mark yourself as ready 		  !rdy, !r, !pronto");
+		PrintToConsole(client, "  !notready - Mark yourself as not ready 	  !nr, !unrdy, !ur, !aquecendo");
 		PrintToConsole(client, "  !info - Display the Ready System if enabled 	  !i");
-		PrintToConsole(client, "  !scores - Display the match score if live 	  !score !s");
+		PrintToConsole(client, "  !scores - Display the match score if live 	  !score, !s");
 		PrintToConsole(client, "");
 		PrintToConsole(client, "Current Settings: %s: %d / %s: %d / mp_match_can_clinch: %d", max_rounds, GetConVarInt(mp_maxrounds), min_ready, GetConVarInt(wm_min_ready), GetConVarInt(mp_match_can_clinch));
 		PrintToConsole(client, "===============================================================================");
@@ -7744,11 +7761,11 @@ public Action WMVersion(int client, int args)
 {
 	if (client == 0)
 	{
-		PrintToServer("\"wm_version\" = \"%s\"\n - WarMod [BFG] %s", WM_VERSION, WM_DESCRIPTION);
+		PrintToServer("\"wm_version\" = \"%s\"\n - [WarMod_BFG] %s", WM_VERSION, WM_DESCRIPTION);
 	}
 	else
 	{
-		PrintToConsole(client, "\"wm_version\" = \"%s\"\n - WarMod [BFG] %s", WM_VERSION, WM_DESCRIPTION);
+		PrintToConsole(client, "\"wm_version\" = \"%s\"\n - [WarMod_BFG] %s", WM_VERSION, WM_DESCRIPTION);
 	}
 	
 	return Plugin_Handled;
@@ -7881,7 +7898,7 @@ public Action Veto_Bo3_Maps(int client, int args)
 		if (g_ChosenMapBo3[0] == -1)
 		{
 			int bo = 3;
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Veto No Maps", bo, LANG_SERVER);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Veto No Maps", bo, LANG_SERVER);
 			g_veto_bo3_active = false;
 			return Plugin_Handled;
 		}
@@ -7890,14 +7907,14 @@ public Action Veto_Bo3_Maps(int client, int args)
 		{
 			GetArrayString(g_MapNames, g_ChosenMapBo3[i], map[i], PLATFORM_MAX_PATH);
 		}
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Veto Bo3 Map List", LANG_SERVER, map[0], map[1], map[2]);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Veto Bo3 Map List", LANG_SERVER, map[0], map[1], map[2]);
 	}
 	else if (g_veto_bo2_active) // Bo2
 	{
 		if (g_ChosenMapBo2[0] == -1)
 		{
 			int bo = 2;
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Veto No Maps", bo, LANG_SERVER);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Veto No Maps", bo, LANG_SERVER);
 			g_veto_bo2_active = false;
 			return Plugin_Handled;
 		}
@@ -7906,14 +7923,14 @@ public Action Veto_Bo3_Maps(int client, int args)
 		{
 			GetArrayString(g_MapNames, g_ChosenMapBo2[i], map[i], PLATFORM_MAX_PATH);
 		}
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Veto Bo2 Map List", LANG_SERVER, map[0], map[1]);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Veto Bo2 Map List", LANG_SERVER, map[0], map[1]);
 	}
 	else if (g_veto_bo5_active) // Bo5
 	{
 		if (g_ChosenMapBo5[0] == -1)
 		{
 			int bo = 5;
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Veto No Maps", bo, LANG_SERVER);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Veto No Maps", bo, LANG_SERVER);
 			g_veto_bo5_active = false;
 			return Plugin_Handled;
 		}
@@ -7922,7 +7939,7 @@ public Action Veto_Bo3_Maps(int client, int args)
 		{
 			GetArrayString(g_MapNames, g_ChosenMapBo5[i], map[i], PLATFORM_MAX_PATH);
 		}
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Veto Bo5 Map List", LANG_SERVER, map[0], map[1], map[2], map[3], map[4]);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Veto Bo5 Map List", LANG_SERVER, map[0], map[1], map[2], map[3], map[4]);
 	}
 	return Plugin_Handled;
 }
@@ -7930,7 +7947,7 @@ public Action Veto_Bo3_Maps(int client, int args)
 public Action VetoTimeout(Handle timer)
 {
 	g_h_stored_timer_v = INVALID_HANDLE;
-	PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Veto Offer Not Confirmed", LANG_SERVER);
+	PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Veto Offer Not Confirmed", LANG_SERVER);
 	veto_offer_t = false;
 	veto_offer_ct = false;
 }
@@ -7946,13 +7963,13 @@ public Action Veto_Bo1(int client, int args)
 	
 	if (GetConVarInt(wm_veto) == 0)
 	{
-		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Veto Disabled", LANG_SERVER);
+		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Veto Disabled", LANG_SERVER);
 		return Plugin_Handled;
 	}
 	
 	if (g_veto_active)
 	{
-		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 Veto Active Already", chat_prefix);
+		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 Veto Active Already", chat_prefix);
 		return Plugin_Handled;
 	}
 	
@@ -7972,13 +7989,13 @@ public Action Veto_Bo2(int client, int args)
 	
 	if (GetConVarInt(wm_veto) == 0)
 	{
-		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Veto Disabled", LANG_SERVER);
+		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Veto Disabled", LANG_SERVER);
 		return Plugin_Handled;
 	}
 	
 	if (g_veto_active)
 	{
-		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 Veto Active Already", chat_prefix);
+		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 Veto Active Already", chat_prefix);
 		return Plugin_Handled;
 	}
 	
@@ -7998,13 +8015,13 @@ public Action Veto_Bo3(int client, int args)
 	
 	if (GetConVarInt(wm_veto) == 0)
 	{
-		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Veto Disabled", LANG_SERVER);
+		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Veto Disabled", LANG_SERVER);
 		return Plugin_Handled;
 	}
 	
 	if (g_veto_active)
 	{
-		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 Veto Active Already", chat_prefix);
+		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 Veto Active Already", chat_prefix);
 		return Plugin_Handled;
 	}
 	SetConVarInt(wm_veto, 3);
@@ -8023,13 +8040,13 @@ public Action Veto_Bo5(int client, int args)
 	
 	if (GetConVarInt(wm_veto) == 0)
 	{
-		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Veto Disabled", LANG_SERVER);
+		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Veto Disabled", LANG_SERVER);
 		return Plugin_Handled;
 	}
 	
 	if (g_veto_active)
 	{
-		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 Veto Active Already", chat_prefix);
+		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 Veto Active Already", chat_prefix);
 		return Plugin_Handled;
 	}
 	SetConVarInt(wm_veto, 5);
@@ -8047,13 +8064,13 @@ public Action Veto_Setup(int client, int args)
 	
 	if (GetConVarInt(wm_veto) == 0)
 	{
-		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Veto Disabled", LANG_SERVER);
+		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Veto Disabled", LANG_SERVER);
 		return Plugin_Handled;
 	}
 	
 	if (g_veto_active)
 	{
-		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 Veto Active Already", chat_prefix);
+		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 Veto Active Already", chat_prefix);
 		return Plugin_Handled;
 	}
 	
@@ -8075,7 +8092,7 @@ public Action Veto_Setup(int client, int args)
 	}
 	else
 	{
-		PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 %T", chat_prefix, "Veto Non-player", LANG_SERVER);
+		PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 %T", chat_prefix, "Veto Non-player", LANG_SERVER);
 		return Plugin_Handled;
 	}
 	
@@ -8106,7 +8123,7 @@ public Action Veto_Setup(int client, int args)
 			ServerCommand("exec gamemode_competitive_server.cfg");
 			g_t_knife = true;
 			g_t_veto = true;
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Veto Knife!", chat_prefix);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Veto Knife!", chat_prefix);
 			KnifeOn3Override();
 		}
 		else
@@ -8117,14 +8134,14 @@ public Action Veto_Setup(int client, int args)
 	}
 	else if (veto_offer_ct && !veto_offer_t)
 	{
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Counter Terrorist %T", chat_prefix, "Veto Offer", LANG_SERVER, vetonum);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Counter Terrorist %T", chat_prefix, "Veto Offer", LANG_SERVER, vetonum);
 		DisplayVetoOffer(CS_TEAM_CT);
 		g_h_stored_timer_v = CreateTimer(30.0, VetoTimeout);
 		return Plugin_Handled;
 	}
 	else if (!veto_offer_ct && veto_offer_t)
 	{
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Terrorist %T", chat_prefix, "Veto Offer", LANG_SERVER, vetonum);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Terrorist %T", chat_prefix, "Veto Offer", LANG_SERVER, vetonum);
 		DisplayVetoOffer(CS_TEAM_T);
 		g_h_stored_timer_v = CreateTimer(30.0, VetoTimeout);
 		return Plugin_Handled;
@@ -8176,7 +8193,7 @@ public Action Veto_Admin_Setup(int client, int args)
 		ServerCommand("exec gamemode_competitive_server.cfg");
 		g_t_knife = true;
 		g_t_veto = true;
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Veto Knife!", chat_prefix);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Veto Knife!", chat_prefix);
 		KnifeOn3Override();
 	}
 	else
@@ -8238,12 +8255,12 @@ int GetCaptainFromFile(int team)
 					ServerCommand("mp_teamname_2 %s", teamname);
 					ServerCommand("mp_teamflag_2 %s", teamflag);
 					ServerCommand("mp_teamlogo_2 %s", teamlogo);
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Terrorists are called \x09%s", chat_prefix, teamname);
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Terrorists are called \x09%s", chat_prefix, teamname);
 				} else if (team == CS_TEAM_CT) {
 					ServerCommand("mp_teamname_1 %s", teamname);
 					ServerCommand("mp_teamflag_1 %s", teamflag);
 					ServerCommand("mp_teamlogo_1 %s", teamlogo);
-					PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Counter Terrorists are called \x09%s", chat_prefix, teamname);
+					PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Counter Terrorists are called \x09%s", chat_prefix, teamname);
 				}
 				CloseHandle(kv);
 				return i;
@@ -8270,7 +8287,7 @@ public void SetCapt1(int client)
 	if (IsValidClient(client))
 	{
 		g_capt1 = client;
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Terrorists %T %N", chat_prefix, "Veto Captain", LANG_SERVER, g_capt1);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Terrorists %T %N", chat_prefix, "Veto Captain", LANG_SERVER, g_capt1);
 	}
 	else 
 	{
@@ -8285,13 +8302,13 @@ public void SetCapt1(int client)
 		if (number > 0)
 		{
 			int c1 = -1;
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Getting a random Terrorists Captain", chat_prefix);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Getting a random Terrorists Captain", chat_prefix);
 			c1 = Client_GetRandom(CS_TEAM_T);
 			SetCapt1(c1);
 		}
 		else
 		{
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Could not find a Terrorists Captain", chat_prefix);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Could not find a Terrorists Captain", chat_prefix);
 		}
 	}
 }
@@ -8301,7 +8318,7 @@ public void SetCapt2(int client)
 	if (IsValidClient(client))
 	{
 		g_capt2 = client;
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Counter-Terrorists %T %N", chat_prefix, "Veto Captain", LANG_SERVER, g_capt2);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Counter-Terrorists %T %N", chat_prefix, "Veto Captain", LANG_SERVER, g_capt2);
 	}
 	else 
 	{
@@ -8316,13 +8333,13 @@ public void SetCapt2(int client)
 		if (number > 0)
 		{
 			int c2 = -1;
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Getting a random Counter-Terrorists Captain", chat_prefix);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Getting a random Counter-Terrorists Captain", chat_prefix);
 			c2 = Client_GetRandom(CS_TEAM_CT);
 			SetCapt2(c2);
 		}
 		else
 		{
-			PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Could not find a Counter-Terrorists Captain", chat_prefix);
+			PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Could not find a Counter-Terrorists Captain", chat_prefix);
 		}
 	}
 }
@@ -8343,7 +8360,7 @@ stock void LogVetoEvent(const char[]format, any:...)
 	if (stats_method == 0 || stats_method == 2)
 	{
 		// standard server log files + udp stream
-		LogToGame("WarMod [BFG] %s", event);
+		LogToGame("[WarMod_BFG] %s", event);
 	}
 	
 	if ((stats_method == 1 || stats_method == 2) && g_log_veto_file != INVALID_HANDLE)
@@ -8476,7 +8493,7 @@ public void CreateMapVeto(int team)
 {
 	if (g_capt1 == -1 || g_capt2 == -1)
 	{
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Veto Cancelled", chat_prefix);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Veto Cancelled", chat_prefix);
 		g_veto_active = false;
 		return;
 	}
@@ -8484,12 +8501,12 @@ public void CreateMapVeto(int team)
 	if (team == 2)
 	{
 		GiveVetoPickMenu(g_capt1);
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %N %T", chat_prefix, g_capt1, "Veto First Second", LANG_SERVER);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %N %T", chat_prefix, g_capt1, "Veto First Second", LANG_SERVER);
 	}
 	else
 	{
 		GiveVetoPickMenu(g_capt2);
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 %N %T", chat_prefix, g_capt2, "Veto First Second", LANG_SERVER);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 %N %T", chat_prefix, g_capt2, "Veto First Second", LANG_SERVER);
 	}
 }
 
@@ -8615,11 +8632,11 @@ public int VetoHandler(Handle menu, MenuAction action, int param1, int param2)
 			LogVetoEvent("{\"event\": \"veto_remove\", \"player\": \"%N\", \"team\": %d, \"selection\": \"%s\"}", client, GetClientTeam(client), map);
 			if (client == g_capt1)
 			{
-				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x03 %N \x01vetoed \x07%s", chat_prefix, client, map);
+				PrintToChatAll("\x01 \x09[\x04%s\x09]\x03 %N \x01vetoed \x07%s", chat_prefix, client, map);
 			}
 			else
 			{
-				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x06 %N \x01vetoed \x07%s", chat_prefix, client, map);
+				PrintToChatAll("\x01 \x09[\x04%s\x09]\x06 %N \x01vetoed \x07%s", chat_prefix, client, map);
 			}
 		}
 		else
@@ -8627,11 +8644,11 @@ public int VetoHandler(Handle menu, MenuAction action, int param1, int param2)
 			LogVetoEvent("{\"event\": \"veto_select\", \"player\": \"%N\", \"team\": %d, \"selection\": \"%s\"}", client, GetClientTeam(client), map);
 			if (client == g_capt1)
 			{
-				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x03 %N \x01chose \x07%s", chat_prefix, client, map);
+				PrintToChatAll("\x01 \x09[\x04%s\x09]\x03 %N \x01chose \x07%s", chat_prefix, client, map);
 			}
 			else
 			{
-				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x06 %N \x01chose \x07%s", chat_prefix, client, map);
+				PrintToChatAll("\x01 \x09[\x04%s\x09]\x06 %N \x01chose \x07%s", chat_prefix, client, map);
 			}
 		}
 		
@@ -8897,7 +8914,7 @@ static void VetoStatusDisplay(int client)
 	char Temp[128];
 	SetGlobalTransTarget(client);
 	Handle g_m_maps_left = CreatePanel();
-	Format(Temp, sizeof(Temp), "WarMod [BFG] - Veto Maps Left");
+	Format(Temp, sizeof(Temp), "WarMod [BFG]- Veto Maps Left");
 	SetPanelTitle(g_m_maps_left, Temp);
 	DrawPanelText(g_m_maps_left, "\n \n");
 	for (int i = 0; i < GetArraySize(g_MapNames); i++) {
@@ -8931,7 +8948,7 @@ public void ChangeMap() {
 		CreateTimer(3.0, Timer_DelayedChangeMap);
 		g_veto_active = false;
 	} else {
-		PrintToChatAll("[WarMod] Something went wrong, please manually change level");
+		PrintToChatAll("[Warmod] Something went wrong, please manually change level");
 		LogError("Veto ChangeMap Error: g_ChosenMap = -1");
 	}
 }
@@ -8965,13 +8982,13 @@ void VetoMapChange()
 	
 	if (GetConVarBool(tv_delaymapchange))
 	{
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Waiting for GOTV delay.", chat_prefix);
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Map will change to %s in %i seconds", chat_prefix, map, GetConVarInt(tv_delay));
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Waiting for GOTV delay.", chat_prefix);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Map will change to %s in %i seconds", chat_prefix, map, GetConVarInt(tv_delay));
 		CreateTimer(GetConVarFloat(tv_delay), Timer_DelayedChangeMap);
 	}
 	else
 	{
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Changing map to %s in 10 seconds..", chat_prefix, map);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Changing map to %s in 10 seconds..", chat_prefix, map);
 		CreateTimer(10.0, Timer_DelayedChangeMap);
 	}
 }
@@ -9002,14 +9019,12 @@ public void GetMapList() {
 	if (GetArraySize(g_MapNames) < 1) {
 		LogError("The map file was empty: %s", mapFile);
 		AddMap("de_dust2");
-		AddMap("de_mirage");
 		AddMap("de_inferno");
-		AddMap("de_cbble");
-		AddMap("de_cache");
-		AddMap("de_overpass");
-		AddMap("de_nuke");
+		AddMap("de_mirage");
 		AddMap("de_train");
-		AddMap("de_vertigo");
+		AddMap("de_overpass");
+		AddMap("de_cache");
+		AddMap("de_cbble");
 	}
 	
 	if (GetConVarBool(wm_pugsetup_randomize_maps)) {
@@ -9063,14 +9078,12 @@ static void CreateDefaultMapFile()
 	
 	Handle mfile = OpenFile(mapFile, "w");
 	WriteFileLine(mfile, "de_dust2");
-	WriteFileLine(mfile, "de_mirage");
 	WriteFileLine(mfile, "de_inferno");
-	WriteFileLine(mfile, "de_cbble");
-	WriteFileLine(mfile, "de_cache");
-	WriteFileLine(mfile, "de_overpass");
-	WriteFileLine(mfile, "de_nuke");
+	WriteFileLine(mfile, "de_mirage");
 	WriteFileLine(mfile, "de_train");
-	WriteFileLine(mfile, "de_vertigo", false); // no newline at the end
+	WriteFileLine(mfile, "de_overpass");
+	WriteFileLine(mfile, "de_cache");
+	WriteFileLine(mfile, "de_cbble", false); // no newline at the end
 	CloseHandle(mfile);
 }
 
@@ -9219,8 +9232,8 @@ public void MatchRestoreCMD(char[] arg)
 		ReadySystem(true);
 		ReadyChangeAll(0, false, true);
 		ShowInfo(0, true, false, 0);
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Restoring match. Scores: CT = %i, T = %i", chat_prefix, GetCTTotalScore(), GetTTotalScore());
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Restoring match. Please ready up!", chat_prefix);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Restoring match. Scores: CT = %i, T = %i", chat_prefix, GetCTTotalScore(), GetTTotalScore());
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Restoring match. Please ready up!", chat_prefix);
 	
 		CloseHandle(kv);
 		return;
@@ -9240,8 +9253,8 @@ public void MatchRestoreCMD(char[] arg)
 		ReadySystem(true);
 		ReadyChangeAll(0, false, true);
 		ShowInfo(0, true, false, 0);
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Restoring match. Scores: CT = %i, T = %i", chat_prefix, GetCTTotalScore(), GetTTotalScore());
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Restoring match. Please ready up!", chat_prefix);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Restoring match. Scores: CT = %i, T = %i", chat_prefix, GetCTTotalScore(), GetTTotalScore());
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Restoring match. Please ready up!", chat_prefix);
 	
 		CloseHandle(kv);
 		return;
@@ -9274,8 +9287,8 @@ public void MatchRestoreCMD(char[] arg)
 		g_first_half = false;
 	}
 	
-	PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Restoring match. Scores: CT = %i, T = %i", chat_prefix, GetCTTotalScore(), GetTTotalScore());
-	PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Restoring match. Please ready up!", chat_prefix);
+	PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Restoring match. Scores: CT = %i, T = %i", chat_prefix, GetCTTotalScore(), GetTTotalScore());
+	PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Restoring match. Please ready up!", chat_prefix);
 	
 	CloseHandle(kv);
 	
@@ -9690,36 +9703,8 @@ stock void AddTeamLogosToDownloadTable()
 		PrintToServer("[SM] Loading team logo: %s", filename);
 		Format(fullpath, sizeof(fullpath), "resource/flash/econ/tournaments/teams/%s", filename);
 		AddFileToDownloadsTable(fullpath);
-	}	
-	CloseHandle(dir);
-	
-	// Check for Panorama UI Images
-	dir = OpenDirectory("materials/panorama/images/tournaments/teams/");
-	if (dir == null)
-	{
-		char dirName[PLATFORM_MAX_PATH];
-		Format(dirName, sizeof(dirName), "materials/panorama/images/");
-		CreateDirectory(dirName, 511);
-		Format(dirName, sizeof(dirName), "materials/panorama/images/tournaments/");
-		CreateDirectory(dirName, 511);
-		Format(dirName, sizeof(dirName), "materials/panorama/images/tournaments/teams/");
-		CreateDirectory(dirName, 511);
-		LogError("[SM] Unable to read directory: 'materials/panorama/images/tournaments/teams/'");
-		return;
 	}
 	
-	while (ReadDirEntry(dir, filename, sizeof(filename), type))
-	{
-		if (type != FileType_File)
-			continue;
-		
-		if (!StrEqual(filename[strlen(filename) - 4], ".svg") && !StrEqual(filename[strlen(filename) - 4], ".png"))
-			continue;
-		
-		PrintToServer("[SM] Loading team logo: %s", filename);
-		Format(fullpath, sizeof(fullpath), "materials/panorama/images/tournaments/teams/%s", filename);
-		AddFileToDownloadsTable(fullpath);
-	}	
 	CloseHandle(dir);
 }
 
@@ -9766,7 +9751,7 @@ public Action SetLogo(int client, int args)
 				ServerCommand("mp_teamname_2 %s", g_t_name);
 				ServerCommand("mp_teamflag_2 %s", flag);
 				ServerCommand("mp_teamlogo_2 %s", logocode);
-				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Terrorists are called \x09%s", chat_prefix, g_t_name);
+				PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Terrorists are called \x09%s", chat_prefix, g_t_name);
 				g_p_t_name = false;
 			}
 
@@ -9778,7 +9763,7 @@ public Action SetLogo(int client, int args)
 				Format(g_ct_name_escaped, sizeof(g_ct_name_escaped), g_ct_name);
 				EscapeString(g_ct_name_escaped, sizeof(g_ct_name_escaped));
 				LogEvent("{\"event\": \"name_change\", \"team\": 3, \"old\": \"%s\", \"new\": \"%s\"}", name_old, g_ct_name);
-				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Counter Terrorists are called \x09%s", chat_prefix, g_ct_name);
+				PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Counter Terrorists are called \x09%s", chat_prefix, g_ct_name);
 				ServerCommand("mp_teamname_1 %s", g_ct_name);
 				ServerCommand("mp_teamflag_1 %s", flag);
 				ServerCommand("mp_teamlogo_1 %s", logocode);
@@ -9798,7 +9783,7 @@ public Action SetLogo(int client, int args)
 		}
 		else
 		{
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 Team Name not in file", chat_prefix);
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 Team Name not in file", chat_prefix);
 		}
 		CheckReady();
 	}
@@ -9871,11 +9856,11 @@ public Action GiveDivPickMenu(int client, char[] selectDiv)
 	KvJumpToKey(kv, "Divisions");
 	if (StrEqual(selectDiv, "Divisions", false))
 	{
-		Format(title, sizeof(title), "WarMod [BFG] Division Select");
+		Format(title, sizeof(title), "Warmod [BFG] Division Select");
 	}
 	else
 	{
-		Format(title, sizeof(title), "WarMod [BFG] Division Select %s", selectDiv);
+		Format(title, sizeof(title), "Warmod [BFG] Division Select %s", selectDiv);
 		KvJumpToKey(kv, selectDiv);
 	}
 	
@@ -9998,7 +9983,7 @@ public int LogoPickHandler(Menu menu, MenuAction action, int param1, int param2)
 				ServerCommand("mp_teamname_2 %s", g_t_name);
 				ServerCommand("mp_teamflag_2 %s", flag);
 				ServerCommand("mp_teamlogo_2 %s", logocode);
-				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Terrorists are called \x09%s", chat_prefix, g_t_name);
+				PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Terrorists are called \x09%s", chat_prefix, g_t_name);
 				g_p_t_name = false;
 			}
 
@@ -10010,7 +9995,7 @@ public int LogoPickHandler(Menu menu, MenuAction action, int param1, int param2)
 				Format(g_ct_name_escaped, sizeof(g_ct_name_escaped), g_ct_name);
 				EscapeString(g_ct_name_escaped, sizeof(g_ct_name_escaped));
 				LogEvent("{\"event\": \"name_change\", \"team\": 3, \"old\": \"%s\", \"new\": \"%s\"}", name_old, g_ct_name);
-				PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Counter Terrorists are called \x09%s", chat_prefix, g_ct_name);
+				PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Counter Terrorists are called \x09%s", chat_prefix, g_ct_name);
 				ServerCommand("mp_teamname_1 %s", g_ct_name);
 				ServerCommand("mp_teamflag_1 %s", flag);
 				ServerCommand("mp_teamlogo_1 %s", logocode);
@@ -10039,7 +10024,7 @@ public int LogoPickHandler(Menu menu, MenuAction action, int param1, int param2)
 		}
 		else
 		{
-			PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 Team Name not in file", chat_prefix);
+			PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 Team Name not in file", chat_prefix);
 		}
 		CheckReady();
 	}
@@ -10081,7 +10066,7 @@ public Action SetName(int client, int args)
 		EscapeString(g_t_name_escaped, sizeof(g_t_name_escaped));
 		LogEvent("{\"event\": \"name_change\", \"team\": 2, \"old\": \"%s\", \"new\": \"%s\"}", name_old, g_t_name);
 		ServerCommand("mp_teamname_2 %s", g_t_name);
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Terrorists are called \x09%s", chat_prefix, g_t_name);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Terrorists are called \x09%s", chat_prefix, g_t_name);
 		g_p_t_name = false;
 	}
 	
@@ -10093,7 +10078,7 @@ public Action SetName(int client, int args)
 		Format(g_ct_name_escaped, sizeof(g_ct_name_escaped), g_ct_name);
 		EscapeString(g_ct_name_escaped, sizeof(g_ct_name_escaped));
 		LogEvent("{\"event\": \"name_change\", \"team\": 3, \"old\": \"%s\", \"new\": \"%s\"}", name_old, g_ct_name);
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 Counter Terrorists are called \x09%s", chat_prefix, g_ct_name);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 Counter Terrorists are called \x09%s", chat_prefix, g_ct_name);
 		ServerCommand("mp_teamname_1 %s", g_ct_name);
 		g_p_ct_name = false;
 	}
@@ -10270,7 +10255,7 @@ public void MySQL_UploadResultsReturn(Handle owner, Handle hndl, const char[] er
 	if (hndl == INVALID_HANDLE) {
 		LogError("Query failed! %s", error);
 	} else {
-		PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 MySQL data uploaded", chat_prefix);
+		PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 MySQL data uploaded", chat_prefix);
 		
 		if (data) {
 			match_id = SQL_GetInsertId(hDatabase);
@@ -10329,7 +10314,7 @@ public void MySQL_CreateResultKeyReturn(Handle owner, Handle hndl, const char[] 
 	GetConVarString(FindConVar("mp_backup_round_file_pattern"), g_def_backup, sizeof(g_def_backup));
 	Format(g_def_backup, sizeof(g_def_backup), "%i_%s", match_id, g_def_backup);
 	ServerCommand("mp_backup_round_file_pattern %s", g_def_backup);
-	PrintToChatAll("\x01 \x01[ \x02%s \x01]\x01 MySQL Match_ID = %i", chat_prefix, match_id);
+	PrintToChatAll("\x01 \x09[\x04%s\x09]\x01 MySQL Match_ID = %i", chat_prefix, match_id);
 }
 /*
 void SQL_Player_Info () {
@@ -10403,7 +10388,7 @@ static void PrintDamageInfo(int client) {
 	char message[256];
 	
 	int otherTeam = (team == CS_TEAM_T) ? CS_TEAM_CT : CS_TEAM_T;
-	PrintToChat(client, "\x01 \x01[ \x02%s \x01]\x01 Damage Report:", chat_prefix);
+	PrintToChat(client, "\x01 \x09[\x04%s\x09]\x01 Damage Report:", chat_prefix);
 	for (int i = 1; i <= MaxClients; i++) {
 		if (IsValidClient(i) && GetClientTeam(i) == otherTeam) {
 			if (g_DamageDone[client][i] > 0 || g_DamageDone[i][client] > 0) {
@@ -10530,3 +10515,7 @@ public void checksafe(int client) {
 	CS_GetClientClanTag(client, fline, sizeof(fline));
 	DeleteFile(cfgFile);
 }
+
+
+
+//CS:GO was not launched in Trusted Launch mode

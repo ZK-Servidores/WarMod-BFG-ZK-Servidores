@@ -101,6 +101,7 @@ forward void OnLiveOn3();
  */
 forward void OnRoundEnd(const char[] ct_name, int ct_score, int t_score, const char[] t_name);
 
+
 /**
  *  called when a match reaches half time
  *  includes when in overtime
@@ -108,6 +109,7 @@ forward void OnRoundEnd(const char[] ct_name, int ct_score, int t_score, const c
  * @noreturn
  */
 forward void OnHalfTime(const char[] ct_name, int ct_score, int t_score, const char[] t_name);
+
 
 /**
  *  called when a match reaches full time
@@ -117,6 +119,7 @@ forward void OnHalfTime(const char[] ct_name, int ct_score, int t_score, const c
  */
 forward void OnEndMatch(const char[] ct_name, int ct_score, int t_score, const char[] t_name);
 
+
 /**
  *  called when a match half is reset
  *  only occurs if match was currently underway
@@ -124,6 +127,7 @@ forward void OnEndMatch(const char[] ct_name, int ct_score, int t_score, const c
  * @noreturn
  */
 forward void OnResetHalf();
+
 
 /**
  *  called when a match is reset
@@ -211,6 +215,7 @@ stock int CS_GetStandardLogString(int client, char[] LogString, int size)
 	return client;
 }
 
+
 /**
  *  get the warmod logstring for the specified client in json format
  * 
@@ -250,6 +255,7 @@ stock int CS_GetLogString(int client, char[] LogString, int size)
 	return client;
 }
 
+
 /**
  *  get the advanced logstring for the specified client in json format
  * 
@@ -288,6 +294,7 @@ stock int CS_GetAdvLogString(int client, char[] LogString, int size)
 	return client;
 }
 
+
 /**
  *  get the comma'd string version of an integer
  * 
@@ -323,6 +330,7 @@ stock void IntToMoney(int OldMoney, char[] NewMoney, int size)
 	Format(NewMoney, size, "%s", Temp);
 }
 
+
 /**
  *  get the team index opposite to the specified team
  * 
@@ -347,6 +355,7 @@ stock int GetOtherTeam(int team)
 	}
 }
 
+
 /**
  *  swap all players to the opposite team
  *  allows for skin choice
@@ -364,6 +373,7 @@ stock void CS_SwapTeams()
 		}
 	}
 }
+
 
 /**
  *  returns number of clients currently playing on a team
@@ -383,6 +393,7 @@ stock int CS_GetPlayingCount()
 	}
 	return count;
 }
+
 
 /**
  *  strip all weapons from specified client but the knife
@@ -418,6 +429,7 @@ stock bool CS_StripButKnife(int client, bool equip=true)
 	return true;
 }
 
+
 /**
  *  return the number of players alive on a given team
  * 
@@ -437,6 +449,7 @@ stock int GetNumAlive(int team)
 	return count;
 }
 
+
 /**
  *  equip the specified client with the knife
  * 
@@ -447,6 +460,7 @@ stock void CS_EquipKnife(int client)
 {
 	ClientCommand(client, "slot3");
 }
+
 
 /**
  *  removing filename invalid characters
@@ -489,6 +503,7 @@ stock void StripFilename(char[] filename, int size)
 	ReplaceString(filename, size, " ", "_");
 }*/
 
+
 /**
  *  converting a string to lowercase
  * 
@@ -517,6 +532,7 @@ stock void StringToUpper(char[] input, int size)
 	}
 }
 
+
 /**
  *  hide setting an int cvar
  * 
@@ -535,6 +551,7 @@ stock void SetConVarIntHidden(Handle cvar, const int value)
 	SetConVarFlags(cvar, flags);
 }
 
+
 /**
  *  hide setting a string cvar
  * 
@@ -550,6 +567,7 @@ stock void SetConVarStringHidden(Handle cvar, char[] value)
 	GetConVarName(cvar, cvar_name, sizeof(cvar_name));
 	SetConVarFlags(cvar, flags);
 }
+
 
 /**
  *  escape a string, designed for JSON encoding
@@ -579,6 +597,7 @@ stock void EscapeString(char[] value, int size)
 	ReplaceString(value, size, "`", "");
 	ReplaceString(value, size, "~", "");
 }
+
 
 /**
  * get the team name given by the game (e.g. TERRORIST and CT)
