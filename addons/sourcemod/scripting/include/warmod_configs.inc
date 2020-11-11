@@ -457,6 +457,7 @@ static void RuleSet_WarmUp(char[] WM_VERSION)
 	WriteFileLine(file, "mp_autokick		\"0\"		//Kick idle/team-killing/team-damaging players");
 	WriteFileLine(file, "mp_friendlyfire		\"0\"		//Allows team members to injure other members of their team");
 	WriteFileLine(file, "mp_startmoney		\"16000\"			//amount of money each player gets when they reset");
+	WriteFileLine(file, "mp_free_armor 		\"2\"");
 	WriteFileLine(file, "mp_warmup_pausetimer		\"1\"		//Set to 1 to stay in warmup indefinitely. Set to 0 to resume the timer.");
 	WriteFileLine(file, "wm_round_money		\"0\"		//Enable or disable a client's team mates money to be displayed at the start of a round (to him only)");
 	WriteFileLine(file, "sv_infinite_ammo		\"0\"		//Player's active weapon will never run out of ammo.");
@@ -1417,6 +1418,7 @@ static void UpdateWarmUp(char[] WM_VERSION)
 	WriteFileLine(file, "mp_autokick		\"0\"		//Kick idle/team-killing/team-damaging players");
 	WriteFileLine(file, "mp_friendlyfire		\"0\"		//Allows team members to injure other members of their team");
 	WriteFileLine(file, "mp_startmoney		\"16000\"			//amount of money each player gets when they reset");
+	WriteFileLine(file, "mp_free_armor 		\"2\"");
 	WriteFileLine(file, "mp_warmup_pausetimer		\"1\"		//Set to 1 to stay in warmup indefinitely. Set to 0 to resume the timer.");
 	WriteFileLine(file, "wm_round_money		\"0\"		//Enable or disable a client's team mates money to be displayed at the start of a round (to him only)");
 	WriteFileLine(file, "sv_infinite_ammo		\"0\"		//Player's active weapon will never run out of ammo.");
