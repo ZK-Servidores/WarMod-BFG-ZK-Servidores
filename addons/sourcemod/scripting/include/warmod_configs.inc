@@ -464,6 +464,10 @@ static void RuleSet_WarmUp(char[] WM_VERSION)
 	WriteFileLine(file, "sv_cheats			\"0\"			//Allow cheats on server");
 	WriteFileLine(file, "mp_buy_anywhere		\"0\"		//When set, players can buy anywhere, not only in buyzones");
 	WriteFileLine(file, "mp_roundtime_defuse		\"1.92\"		//How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead");
+	WriteFileLine(file, "mp_give_player_c4 \"0\"		// This command would enable the C4, meaning a random player on the terrorist team would receive it at the start of the round");
+	WriteFileLine(file, "ammo_grenade_limit_default \"0\"");
+	WriteFileLine(file, "ammo_grenade_limit_flashbang \"0\"");
+	WriteFileLine(file, "ammo_grenade_limit_total \"0\"");	
 	WriteFileLine(file, "mp_death_drop_defuser	\"0\"			// Drop defuser on player death");
 	WriteFileLine(file, "mp_death_drop_grenade	\"0\"			// Which grenade to drop on player death: 0=none, 1=best, 2=current or best");
 	WriteFileLine(file, "mp_death_drop_gun	\"0\"			// Which gun to drop on player death: 0=none, 1=best, 2=current or best");
@@ -578,7 +582,7 @@ static void RuleSet_Knife(char[] WM_VERSION)
 	Handle file = OpenFile(cfgFile, "w");
 
 	WriteFileLine(file, "// WarMod [BFG] - Knife Ruleset Config");
-	WriteFileLine(file, "// Updated via [BFG] WarMod | ZK Servidores™ %s - Config Updater", WM_VERSION);
+	WriteFileLine(file, "// Created via [BFG] WarMod | ZK Servidores™ %s", WM_VERSION);
 	WriteFileLine(file, "// Exec global config");
 	WriteFileLine(file, "exec warmod/ruleset_global.cfg");
 	WriteFileLine(file, "");
@@ -587,8 +591,8 @@ static void RuleSet_Knife(char[] WM_VERSION)
 	WriteFileLine(file, "mp_match_can_clinch		\"1\"		//Can a team clinch and end the match by being so far ahead that the other team has no way to catching up?");
 	WriteFileLine(file, "mp_overtime_enable		\"0\"		//If a match ends in a tie, use overtime rules to determine winner");
 	WriteFileLine(file, "mp_startmoney		\"0\"			//amount of money each player gets when they reset");
-	WriteFileLine(file, "mp_roundtime		\"60.00\"		//How many minutes each round takes");
-	WriteFileLine(file, "mp_roundtime_defuse		\"60.00\"		//How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead");
+	WriteFileLine(file, "mp_roundtime		\"1.92\"		//How many minutes each round takes");
+	WriteFileLine(file, "mp_roundtime_defuse		\"1.92\"		//How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead");
 	WriteFileLine(file, "wm_round_money		\"0\"		//Enable or disable a client's team mates money to be displayed at the start of a round (to him only)");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "say WarMod [BFG] Knife Match Config Loaded", false); // no newline at the end
@@ -1312,7 +1316,7 @@ static void UpdateRuleSet_Default(char[] WM_VERSION)
 	WriteFileLine(file, "wm_match_config		\"warmod/ruleset_default.cfg\"		//Sets the match config to load on Live on 3");
 	WriteFileLine(file, "mp_maxrounds		\"30\"		//max number of rounds to play before server changes maps");
 	WriteFileLine(file, "mp_match_can_clinch		\"1\"		//Can a team clinch and end the match by being so far ahead that the other team has no way to catching up?");
-	WriteFileLine(file, "mp_overtime_enable		\"0\"		//If a match ends in a tie, use overtime rules to determine winner");
+	WriteFileLine(file, "mp_overtime_enable		\"1\"		//If a match ends in a tie, use overtime rules to determine winner");
 	WriteFileLine(file, "mp_overtime_maxrounds		\"%i\"		//When overtime is enabled play additional rounds to determine winner", GetConVarInt(FindConVar("mp_overtime_maxrounds")));
 	WriteFileLine(file, "mp_overtime_startmoney		\"%i\"		//Money assigned to all players at start of every overtime half", GetConVarInt(FindConVar("mp_overtime_startmoney")));
 	WriteFileLine(file, "mp_startmoney		\"800\"			//amount of money each player gets when they reset");
@@ -1419,6 +1423,10 @@ static void UpdateWarmUp(char[] WM_VERSION)
 	WriteFileLine(file, "sv_cheats			\"0\"			//Allow cheats on server");
 	WriteFileLine(file, "mp_buy_anywhere		\"0\"		//When set, players can buy anywhere, not only in buyzones");
 	WriteFileLine(file, "mp_roundtime_defuse		\"1.92\"		//How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead");
+	WriteFileLine(file, "mp_give_player_c4 \"0\"		// This command would enable the C4, meaning a random player on the terrorist team would receive it at the start of the round");
+	WriteFileLine(file, "ammo_grenade_limit_default \"0\"");
+	WriteFileLine(file, "ammo_grenade_limit_flashbang \"0\"");
+	WriteFileLine(file, "ammo_grenade_limit_total \"0\"");	
 	WriteFileLine(file, "mp_death_drop_defuser	\"0\"			// Drop defuser on player death");
 	WriteFileLine(file, "mp_death_drop_grenade	\"0\"			// Which grenade to drop on player death: 0=none, 1=best, 2=current or best");
 	WriteFileLine(file, "mp_death_drop_gun	\"0\"			// Which gun to drop on player death: 0=none, 1=best, 2=current or best");
@@ -1479,8 +1487,8 @@ static void UpdateRuleSet_Knife(char[] WM_VERSION)
 	WriteFileLine(file, "mp_match_can_clinch		\"1\"		//Can a team clinch and end the match by being so far ahead that the other team has no way to catching up?");
 	WriteFileLine(file, "mp_overtime_enable		\"0\"		//If a match ends in a tie, use overtime rules to determine winner");
 	WriteFileLine(file, "mp_startmoney		\"0\"			//amount of money each player gets when they reset");
-	WriteFileLine(file, "mp_roundtime		\"60.00\"		//How many minutes each round takes");
-	WriteFileLine(file, "mp_roundtime_defuse		\"60.00\"		//How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead");
+	WriteFileLine(file, "mp_roundtime		\"1.92\"		//How many minutes each round takes");
+	WriteFileLine(file, "mp_roundtime_defuse		\"1.92\"		//How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead");
 	WriteFileLine(file, "wm_round_money		\"0\"		//Enable or disable a client's team mates money to be displayed at the start of a round (to him only)");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "say WarMod [BFG] Knife Match Config Loaded", false); // no newline at the end
