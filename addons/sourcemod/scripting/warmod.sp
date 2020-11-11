@@ -336,7 +336,7 @@ ConVar mp_win_panel_display_time;
 
 /* Plugin info */
 #define UPDATE_URL				"https://warmod.bitbucket.io/updatefile.txt"
-#define WM_VERSION				"20.07.15.1214 + 4.2.6"
+#define WM_VERSION				"20.07.15.1214 + 4.2.6fix"
 #define WM_DESCRIPTION			"An automative service for CS:GO competition matches"
 
 public Plugin myinfo = {

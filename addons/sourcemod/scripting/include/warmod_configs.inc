@@ -200,7 +200,7 @@ static void Gamemode_Competitive_Server(char[] WM_VERSION)
 	WriteFileLine(file, "mp_playerid 0					// Controls what information player see in the status bar: 0 all names; 1 team names; 2 no names");
 	WriteFileLine(file, "mp_playerid_delay 0.5				// Number of seconds to delay showing information in the status bar");
 	WriteFileLine(file, "mp_playerid_hold 0.25				// Number of seconds to keep showing old information in the status bar");
-	WriteFileLine(file, "mp_round_restart_delay 5			// Number of seconds to delay before restarting a round after a win");
+	WriteFileLine(file, "mp_round_restart_delay 7			// Number of seconds to delay before restarting a round after a win");
 	WriteFileLine(file, "mp_roundtime 1.92                       	// How many minutes each round takes");
 	WriteFileLine(file, "mp_roundtime_defuse 1.92                	// How many minutes each round takes on defusal maps");
 	WriteFileLine(file, "mp_roundtime_hostage 1.92					// This would make hostage gamemode rounds last 3 minutes");
@@ -592,6 +592,7 @@ static void RuleSet_Knife(char[] WM_VERSION)
 	WriteFileLine(file, "mp_match_can_clinch		\"1\"		//Can a team clinch and end the match by being so far ahead that the other team has no way to catching up?");
 	WriteFileLine(file, "mp_overtime_enable		\"0\"		//If a match ends in a tie, use overtime rules to determine winner");
 	WriteFileLine(file, "mp_startmoney		\"0\"			//amount of money each player gets when they reset");
+	WriteFileLine(file, "mp_freezetime \"5\"");
 	WriteFileLine(file, "mp_roundtime		\"1.92\"		//How many minutes each round takes");
 	WriteFileLine(file, "mp_roundtime_defuse		\"1.92\"		//How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead");
 	WriteFileLine(file, "mp_give_player_c4 \"0\"		// This command would enable the C4, meaning a random player on the terrorist team would receive it at the start of the round");
@@ -1490,6 +1491,7 @@ static void UpdateRuleSet_Knife(char[] WM_VERSION)
 	WriteFileLine(file, "mp_match_can_clinch		\"1\"		//Can a team clinch and end the match by being so far ahead that the other team has no way to catching up?");
 	WriteFileLine(file, "mp_overtime_enable		\"0\"		//If a match ends in a tie, use overtime rules to determine winner");
 	WriteFileLine(file, "mp_startmoney		\"0\"			//amount of money each player gets when they reset");
+	WriteFileLine(file, "mp_freezetime \"5\"");
 	WriteFileLine(file, "mp_roundtime		\"1.92\"		//How many minutes each round takes");
 	WriteFileLine(file, "mp_roundtime_defuse		\"1.92\"		//How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead");
 	WriteFileLine(file, "mp_give_player_c4 \"0\"		// This command would enable the C4, meaning a random player on the terrorist team would receive it at the start of the round");
