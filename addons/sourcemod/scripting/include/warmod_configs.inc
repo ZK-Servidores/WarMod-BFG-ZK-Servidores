@@ -271,7 +271,6 @@ static void RuleSet_Global(char[] WM_VERSION)
 	WriteFileLine(file, "sv_cheats				\"0\"	//Allow cheats on server (cheat console commands not hacks)");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// WarMod Multiplayer");
-	WriteFileLine(file, "");
 	WriteFileLine(file, "wm_active					\"1\"	//Enable or disable WarMod as active");
 	WriteFileLine(file, "wm_max_players				\"10\"	//Sets the maximum players allowed on both teams combined, others will be forced to spectator (0 = unlimited)");
 	WriteFileLine(file, "wm_round_money				\"1\"	//Enable or disable a client's team mates money to be displayed at the start of a round (to him only)");
@@ -285,7 +284,7 @@ static void RuleSet_Global(char[] WM_VERSION)
 	WriteFileLine(file, "wm_damageprint_auto_color		\"1\"	//Whether colors are automatically inserted for damage values, changing depending on if the damage resulted in a kill");
 	WriteFileLine(file, "wm_damageprint_enabled			\"0\"	//Whether to enabled damage print to client on round end");
 	WriteFileLine(file, "wm_damageprint_format			\"--> ({DMG_TO} DMG / {HITS_TO} HITS) to ({DMG_FROM} DMG / {HITS_FROM} HITS) from {NAME} ({HEALTH} HP)\"	//Format of the damage output string. Avaliable tags are in the default, color tags such as {LIGHT_RED} and {GREEN} also work.");
-	
+	WriteFileLine(file, "");
 	WriteFileLine(file, "//WarMod Knife");
 	WriteFileLine(file, "wm_auto_knife				\"1\"	//Enable or disable the knife round before going live");
 	WriteFileLine(file, "wm_knife_auto_start		\"1\"	//Enable or disable after knife round to be forced lived");
@@ -298,7 +297,6 @@ static void RuleSet_Global(char[] WM_VERSION)
 	WriteFileLine(file, "wm_name_fix				\"0\"	//Fix name swap after knife round");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "//WarMod Pause");
-	WriteFileLine(file, "");
 	WriteFileLine(file, "sv_pausable				\"1\"	//Is the server pausable");
 	WriteFileLine(file, "wm_auto_pause				\"0\"	//Will pause server if team players equals less than half of wm_max_players: 0 = off, 1 = on");
 	WriteFileLine(file, "wm_pause_confirm			\"0\"	//Wait for other team to confirm pause: 0 = off, 1 = on");
@@ -308,7 +306,6 @@ static void RuleSet_Global(char[] WM_VERSION)
 	WriteFileLine(file, "wm_pause_limit				\"5\"	//Sets max pause count per team per half");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// WarMod Misc");
-	WriteFileLine(file, "");
 	WriteFileLine(file, "wm_show_info				\"1\"	//Enable or disable the display of the Ready System to players");
 	WriteFileLine(file, "wm_rcon_only				\"0\"	//Enable or disable admin commands to be only executed via RCON or console");
 	WriteFileLine(file, "wm_require_names			\"0\"	//Enable or disable the requirement of set team names for lo3");
@@ -318,12 +315,10 @@ static void RuleSet_Global(char[] WM_VERSION)
 	WriteFileLine(file, "wm_auto_ready				\"1\"	//Enable or disable the ready system being automatically enabled on map change");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// WarMod Ban");
-	WriteFileLine(file, "");
 	WriteFileLine(file, "wm_ban_on_disconnect	\"0\"	//Enable or disable players banned on disconnect if match is live");
 	WriteFileLine(file, "wm_ban_percentage		\"0.75\"	//Percentage of wm_max_players that will be banned on disconnect");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// Warmod Veto");
-	WriteFileLine(file, "");
 	WriteFileLine(file, "wm_veto						\"0\"	//Veto Style: 0 = off, 1 = Bo1, 2 = Bo2, 3 = Bo3, 5 = Bo5");
 	WriteFileLine(file, "wm_veto_knife					\"1\"	//Requires a knife round to determine who votes first: 0 = off, 1 = on");
 	WriteFileLine(file, "wm_veto_bo3					\"0\"	//Veto Style: 0 = Normal, 1 = New");
@@ -497,7 +492,6 @@ static void RuleSet_OnMapLoad(char[] WM_VERSION)
 	WriteFileLine(file, "// Note: Plugins have been loaded by now");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "//WarMod Updater");
-	WriteFileLine(file, "");
 	WriteFileLine(file, "sm_updater 			\"1\"		//Determines update functionality. (1 = Notify, 2 = Download, 3 = Include source code)");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "//WarMod Configs");
@@ -510,7 +504,6 @@ static void RuleSet_OnMapLoad(char[] WM_VERSION)
 	WriteFileLine(file, "wm_reset_config			\"warmod/on_match_end.cfg\"	//Sets the config to load at the end/reset of a match");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// WarMod Stats");
-	WriteFileLine(file, "");
 	WriteFileLine(file, "wm_save_dir				\"warmod\"	//Directory to store SourceTV demos and WarMod logs");
 	WriteFileLine(file, "wm_prefix_logs				\"1\"		//Enable or disable the prefixing of \"_\" to uncompleted match SourceTV demos and WarMod logs");
 	WriteFileLine(file, "wm_stats_enabled			\"1\"		//Enable or disable statistical logging");
@@ -526,20 +519,17 @@ static void RuleSet_OnMapLoad(char[] WM_VERSION)
 	WriteFileLine(file, "wm_chat_prefix				\"WarMod BFG\"	//Change the chat prefix. Default is WarMod_BFG");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// Stats Site");
-	WriteFileLine(file, "");
 	WriteFileLine(file, "wm_site_location			\"\"		//Location of where the stats site is uploaded for download. Do not have '/' at end of string. eg. www.warmod.com");
 	WriteFileLine(file, "wm_site_data				\"warmod.bitbucket.org/stats\"		//Location of where the sites images, css and js files are. Do not have '/' at end of string. eg. warmod.bitbucket.org/stats");
 	WriteFileLine(file, "wm_demo_location			\"\"		//Location of where the demo is uploaded for download. eg. www.warmod.com/demos/");
 	WriteFileLine(file, "wm_forums_location			\"\"		//Location of where the community forums are. eg. www.warmod.com/forums/");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// FTP Upload");
-	WriteFileLine(file, "");
 	WriteFileLine(file, "wm_upload_results				\"0\"			//Enable or disable the uploading of match results via MySQL");
 	WriteFileLine(file, "wm_table_name					\"wm_results\"	//The MySQL table name to store match results in)");
 	WriteFileLine(file, "wm_table_name_players			\"wm_players\"	//The MySQL table name to store match players in)");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// FTP Upload");
-	WriteFileLine(file, "");
 	WriteFileLine(file, "wm_autodemoupload_enable				\"0\"			//Automatically upload demos when finished recording");
 	WriteFileLine(file, "wm_autodemoupload_bzip2				\"9\"			//Compression level. If set > 0 demos will be compressed before uploading (Requires bzip2 extension)");
 	WriteFileLine(file, "wm_autodemoupload_delete				\"0\"			//Delete the demo (and the bz2) if upload was successful");
@@ -549,7 +539,6 @@ static void RuleSet_OnMapLoad(char[] WM_VERSION)
 	WriteFileLine(file, "wm_autodemoupload_completed			\"0\"			//Only upload demos when match is completed");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// Voice Communications");
-	WriteFileLine(file, "");
 	WriteFileLine(file, "sm_deadtalk		\"0\"			//Controls how dead communicate 0 - Off, 1 - Dead players ignore teams, 2 - Dead players talk to living teammates");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "exec warmod/ruleset_warmup.cfg", false);// no newline at the end
@@ -1220,7 +1209,6 @@ static void UpdateRuleSet_Global(char[] WM_VERSION)
 	WriteFileLine(file, "sv_cheats				\"0\"	//Allow cheats on server (cheat console commands not hacks)");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// WarMod Multiplayer");
-	WriteFileLine(file, "");
 	WriteFileLine(file, "wm_active					\"%i\"	//Enable or disable WarMod as active", GetConVarInt(FindConVar("wm_active")));
 	WriteFileLine(file, "wm_max_players				\"%i\"	//Sets the maximum players allowed on both teams combined, others will be forced to spectator (0 = unlimited)", GetConVarInt(FindConVar("wm_max_players")));
 	WriteFileLine(file, "wm_round_money				\"%i\"	//Enable or disable a client's team mates money to be displayed at the start of a round (to him only)", GetConVarInt(FindConVar("wm_round_money")));
@@ -1241,7 +1229,6 @@ static void UpdateRuleSet_Global(char[] WM_VERSION)
 	WriteFileLine(file, "wm_knife_helmet			\"%i\"	//Enable or disable giving a player a Helmet on Knife on 3 [requires armor active]", GetConVarInt(FindConVar("wm_knife_helmet")));
 	WriteFileLine(file, "");
 	WriteFileLine(file, "//WarMod Pause");
-	WriteFileLine(file, "");
 	WriteFileLine(file, "sv_pausable				\"%i\"	//Is the server pausable.", GetConVarInt(FindConVar("sv_pausable")));
 	WriteFileLine(file, "wm_auto_pause				\"%i\"	//Will pause server if team players equals less than half of wm_max_players: 0 = off, 1 = on", GetConVarInt(FindConVar("wm_auto_pause")));
 	WriteFileLine(file, "wm_pause_confirm			\"%i\"	//Wait for other team to confirm pause: 0 = off, 1 = on", GetConVarInt(FindConVar("wm_pause_confirm")));
@@ -1251,7 +1238,6 @@ static void UpdateRuleSet_Global(char[] WM_VERSION)
 	WriteFileLine(file, "wm_pause_limit				\"%i\"	//Sets max pause count per team per half", GetConVarInt(FindConVar("wm_pause_limit")));
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// WarMod Misc");
-	WriteFileLine(file, "");
 	WriteFileLine(file, "wm_show_info				\"%i\"	//Enable or disable the display of the Ready System to players", GetConVarInt(FindConVar("wm_show_info")));
 	WriteFileLine(file, "wm_rcon_only				\"%i\"	//Enable or disable admin commands to be only executed via RCON or console", GetConVarInt(FindConVar("wm_rcon_only")));
 	WriteFileLine(file, "wm_require_names			\"%i\"	//Enable or disable the requirement of set team names for lo3", GetConVarInt(FindConVar("wm_require_names")));
@@ -1261,12 +1247,10 @@ static void UpdateRuleSet_Global(char[] WM_VERSION)
 	WriteFileLine(file, "wm_auto_ready				\"%i\"	//Enable or disable the ready system being automatically enabled on map change", GetConVarInt(FindConVar("wm_auto_ready")));
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// WarMod Ban");
-	WriteFileLine(file, "");
 	WriteFileLine(file, "wm_ban_on_disconnect		\"%i\"	//Enable or disable players banned on disconnect if match is live", GetConVarInt(FindConVar("wm_ban_on_disconnect")));
 	WriteFileLine(file, "wm_ban_percentage			\"%-.2f%\"	//Percentage of wm_max_players that will be banned on disconnect", GetConVarFloat(FindConVar("wm_ban_percentage")));
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// Warmod Veto");
-	WriteFileLine(file, "");
 	WriteFileLine(file, "wm_veto					\"%i\"	//Veto Style: 0 = off, 1 = Bo1, 2 = Bo2, 3 = Bo3, 5 = Bo5", GetConVarInt(FindConVar("wm_veto")));
 	WriteFileLine(file, "wm_veto_knife				\"%i\"	//Requires a knife round to determine who votes first: 0 = off, 1 = on", GetConVarInt(FindConVar("wm_veto_knife")));
 	WriteFileLine(file, "wm_veto_bo3				\"%i\"	//Veto Style: 0 = Normal, 1 = New", GetConVarInt(FindConVar("wm_veto_bo3")));
@@ -1498,7 +1482,6 @@ static void UpdateOn_Map_Load(char[] WM_VERSION)
 	WriteFileLine(file, "// Note: Plugins have been loaded by now");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "//WarMod Updater");
-	WriteFileLine(file, "");
 	if (LibraryExists("updater"))
 	{
 		WriteFileLine(file, "sm_updater 		\"%i\"		//Determines update functionality. (1 = Notify, 2 = Download, 3 = Include source code)", GetConVarInt(FindConVar("sm_updater")));
@@ -1509,7 +1492,6 @@ static void UpdateOn_Map_Load(char[] WM_VERSION)
 	}
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// WarMod Configs");
-	WriteFileLine(file, "");
 	WriteFileLine(file, "wm_warmod_safemode			\"%i\"		//This disables features that usually break on a CS:GO update", GetConVarInt(FindConVar("wm_warmod_safemode")));
 	GetConVarString(FindConVar("wm_match_config"), convarString, sizeof(convarString));
 	WriteFileLine(file, "wm_match_config			\"%s\"	//Sets the match config to load on Live on 3", convarString);
@@ -1525,7 +1507,6 @@ static void UpdateOn_Map_Load(char[] WM_VERSION)
 	WriteFileLine(file, "wm_reset_config			\"%s\"	//Sets the config to load at the end/reset of a match", convarString);
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// WarMod Stats");
-	WriteFileLine(file, "");
 	GetConVarString(FindConVar("wm_save_dir"), convarString, sizeof(convarString));
 	WriteFileLine(file, "wm_save_dir			\"%s\"	//Directory to store SourceTV demos and WarMod logs", convarString);
 	WriteFileLine(file, "wm_prefix_logs			\"%i\"		//Enable or disable the prefixing of \"_\" to uncompleted match SourceTV demos and WarMod logs", GetConVarInt(FindConVar("wm_prefix_logs")));
@@ -1551,7 +1532,6 @@ static void UpdateOn_Map_Load(char[] WM_VERSION)
 	if (LibraryExists("warmod_stats"))
 	{
 		WriteFileLine(file, "// Stats Site");
-		WriteFileLine(file, "");
 		GetConVarString(FindConVar("wm_site_location"), convarString, sizeof(convarString));
 		WriteFileLine(file, "wm_site_location			\"%s\"		//Location of where the demo is uploaded for download. Do not have '/' at end of string. eg. www.warmod.com", convarString);
 		GetConVarString(FindConVar("wm_site_data"), convarString, sizeof(convarString));
@@ -1565,7 +1545,6 @@ static void UpdateOn_Map_Load(char[] WM_VERSION)
 	else
 	{
 		WriteFileLine(file, "// Stats Site");
-		WriteFileLine(file, "");
 		WriteFileLine(file, "wm_site_location			\"\"		//Location of where the stats site is uploaded for download. Do not have '/' at end of string. eg. www.warmod.com");
 		WriteFileLine(file, "wm_site_data				\"warmod.bitbucket.org/stats\"		//Location of where the sites images, css and js files are. Do not have '/' at end of string. eg. warmod.bitbucket.org/stats");
 		WriteFileLine(file, "wm_demo_location			\"\"		//Location of where the demo is uploaded for download. eg. www.warmod.com/demos/");
@@ -1573,7 +1552,6 @@ static void UpdateOn_Map_Load(char[] WM_VERSION)
 		WriteFileLine(file, "");
 	}
 	WriteFileLine(file, "// FTP Upload");
-	WriteFileLine(file, "");
 	WriteFileLine(file, "wm_upload_results						\"%i\"			//Enable or disable the uploading of match results via MySQL", GetConVarInt(FindConVar("wm_upload_results")));
 	GetConVarString(FindConVar("wm_table_name"), convarString, sizeof(convarString));
 	WriteFileLine(file, "wm_table_name							\"%s\"	//The MySQL table name to store match results in)", convarString);
@@ -1581,7 +1559,6 @@ static void UpdateOn_Map_Load(char[] WM_VERSION)
 	WriteFileLine(file, "wm_table_name_players					\"%s\"	//The MySQL table name to store match players in)", convarString);
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// FTP Upload");
-	WriteFileLine(file, "");
 	WriteFileLine(file, "wm_autodemoupload_enable				\"%i\"			//Automatically upload demos when finished recording.", GetConVarInt(FindConVar("wm_autodemoupload_enable")));
 	WriteFileLine(file, "wm_autodemoupload_bzip2				\"%i\"			//Compression level. If set > 0 demos will be compressed before uploading. (Requires bzip2 extension.)", GetConVarInt(FindConVar("wm_autodemoupload_bzip2")));
 	WriteFileLine(file, "wm_autodemoupload_delete				\"%i\"			//Delete the demo (and the bz2) if upload was successful.", GetConVarInt(FindConVar("wm_autodemoupload_delete")));
@@ -1601,7 +1578,6 @@ static void UpdateOn_Map_Load(char[] WM_VERSION)
 	WriteFileLine(file, "wm_autodemoupload_completed		\"%i\"			//Only upload demos when match is completed.", GetConVarInt(FindConVar("wm_autodemoupload_completed")));
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// Voice Communications");
-	WriteFileLine(file, "");
 	if (LibraryExists("basecomm"))
 	{
 		WriteFileLine(file, "sm_deadtalk					\"%i\"			//Controls how dead communicate. 0 - Off. 1 - Dead players ignore teams. 2 - Dead players talk to living teammates.", GetConVarInt(FindConVar("sm_deadtalk")));
