@@ -593,6 +593,7 @@ static void RuleSet_Knife(char[] WM_VERSION)
 	WriteFileLine(file, "mp_startmoney		\"0\"			//amount of money each player gets when they reset");
 	WriteFileLine(file, "mp_roundtime		\"1.92\"		//How many minutes each round takes");
 	WriteFileLine(file, "mp_roundtime_defuse		\"1.92\"		//How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead");
+	WriteFileLine(file, "mp_give_player_c4 \"0\"		// This command would enable the C4, meaning a random player on the terrorist team would receive it at the start of the round");
 	WriteFileLine(file, "wm_round_money		\"0\"		//Enable or disable a client's team mates money to be displayed at the start of a round (to him only)");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "say WarMod [BFG] Knife Match Config Loaded", false); // no newline at the end
@@ -1489,6 +1490,7 @@ static void UpdateRuleSet_Knife(char[] WM_VERSION)
 	WriteFileLine(file, "mp_startmoney		\"0\"			//amount of money each player gets when they reset");
 	WriteFileLine(file, "mp_roundtime		\"1.92\"		//How many minutes each round takes");
 	WriteFileLine(file, "mp_roundtime_defuse		\"1.92\"		//How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead");
+	WriteFileLine(file, "mp_give_player_c4 \"0\"		// This command would enable the C4, meaning a random player on the terrorist team would receive it at the start of the round");
 	WriteFileLine(file, "wm_round_money		\"0\"		//Enable or disable a client's team mates money to be displayed at the start of a round (to him only)");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "say WarMod [BFG] Knife Match Config Loaded", false); // no newline at the end
