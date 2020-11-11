@@ -200,7 +200,7 @@ static void Gamemode_Competitive_Server(char[] WM_VERSION)
 	WriteFileLine(file, "mp_playerid 0					// Controls what information player see in the status bar: 0 all names; 1 team names; 2 no names");
 	WriteFileLine(file, "mp_playerid_delay 0.5				// Number of seconds to delay showing information in the status bar");
 	WriteFileLine(file, "mp_playerid_hold 0.25				// Number of seconds to keep showing old information in the status bar");
-	WriteFileLine(file, "mp_round_restart_delay 7			// Number of seconds to delay before restarting a round after a win");
+	WriteFileLine(file, "mp_round_restart_delay 5			// Number of seconds to delay before restarting a round after a win");
 	WriteFileLine(file, "mp_roundtime 1.92                       	// How many minutes each round takes");
 	WriteFileLine(file, "mp_roundtime_defuse 1.92                	// How many minutes each round takes on defusal maps");
 	WriteFileLine(file, "mp_roundtime_hostage 1.92					// This would make hostage gamemode rounds last 3 minutes");
@@ -338,7 +338,7 @@ static void RuleSet_Global(char[] WM_VERSION)
 	WriteFileLine(file, "wm_auto_ready				\"1\"	//Enable or disable the ready system being automatically enabled on map change");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// WarMod Ban");
-	WriteFileLine(file, "wm_ban_on_disconnect	\"0\"		//Enable or disable players banned on disconnect if match is live");
+	WriteFileLine(file, "wm_ban_on_disconnect	\"0\"	//Enable or disable players banned on disconnect if match is live");
 	WriteFileLine(file, "wm_ban_percentage		\"0.75\"	//Percentage of wm_max_players that will be banned on disconnect");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// Warmod Veto");
@@ -523,13 +523,13 @@ static void RuleSet_OnMapLoad(char[] WM_VERSION)
 	WriteFileLine(file, "sm_updater 			\"1\"		//Determines update functionality. (1 = Notify, 2 = Download, 3 = Include source code)");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "//WarMod Configs");
-	WriteFileLine(file, "wm_warmod_safemode			\"0\"							//This disables features that usually break on a CS:GO update");
+	WriteFileLine(file, "wm_warmod_safemode			\"0\"		//This disables features that usually break on a CS:GO update");
 	WriteFileLine(file, "wm_match_config			\"warmod/ruleset_default.cfg\"	//Sets the match config to load on Live on 3");
 	WriteFileLine(file, "wm_default_config			\"warmod/ruleset_default.cfg\"	//Sets the match config to load when the default command is called");
 	WriteFileLine(file, "wm_overtime_config			\"warmod/ruleset_overtime.cfg\"	//Sets the match config to load when the overtime command is called");
 	WriteFileLine(file, "wm_playout_config			\"warmod/ruleset_playout.cfg\"	//Sets the match config to load when the play out command is called");
-	WriteFileLine(file, "wm_prac_config				\"warmod/practice.cfg\"			//Loads when the practice command is called");
-	WriteFileLine(file, "wm_reset_config			\"warmod/on_match_end.cfg\"		//Sets the config to load at the end/reset of a match");
+	WriteFileLine(file, "wm_prac_config				\"warmod/practice.cfg\"	//Loads when the practice command is called");
+	WriteFileLine(file, "wm_reset_config			\"warmod/on_match_end.cfg\"	//Sets the config to load at the end/reset of a match");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// WarMod Stats");
 	WriteFileLine(file, "wm_save_dir				\"warmod\"	//Directory to store SourceTV demos and WarMod logs");
@@ -1543,14 +1543,14 @@ static void UpdateOn_Map_Load(char[] WM_VERSION)
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// WarMod Stats");
 	GetConVarString(FindConVar("wm_save_dir"), convarString, sizeof(convarString));
-	WriteFileLine(file, "wm_save_dir			\"%s\"		//Directory to store SourceTV demos and WarMod logs", convarString);
+	WriteFileLine(file, "wm_save_dir			\"%s\"	//Directory to store SourceTV demos and WarMod logs", convarString);
 	WriteFileLine(file, "wm_prefix_logs			\"%i\"		//Enable or disable the prefixing of \"_\" to uncompleted match SourceTV demos and WarMod logs", GetConVarInt(FindConVar("wm_prefix_logs")));
 	WriteFileLine(file, "wm_stats_enabled		\"%i\"		//Enable or disable statistical logging", GetConVarInt(FindConVar("wm_stats_enabled")));
 	WriteFileLine(file, "wm_stats_method		\"%i\"		//Sets the stats logging method: 0 = UDP stream/server logs, 1 = WarMod logs, 2 = both", GetConVarInt(FindConVar("wm_stats_method")));
 	WriteFileLine(file, "wm_stats_trace			\"%i\"		//Enable or disable updating all player positions, every wm_stats_trace_delay seconds", GetConVarInt(FindConVar("wm_stats_trace")));
 	WriteFileLine(file, "wm_stats_trace_delay	\"%i\"		//The ammount of time between sending player position updates", GetConVarInt(FindConVar("wm_stats_trace_delay")));
 	GetConVarString(FindConVar("mp_teamname_1"), convarString, sizeof(convarString));
-	WriteFileLine(file, "mp_teamname_1 			\"%s\"		//A non-empty string overrides the first team's name", convarString);
+	WriteFileLine(file, "mp_teamname_1 			\"%s\"	//A non-empty string overrides the first team's name", convarString);
 	GetConVarString(FindConVar("mp_teamname_2"), convarString, sizeof(convarString));
 	WriteFileLine(file, "mp_teamname_2 			\"%s\"		//A non-empty string overrides the second team's name", convarString);
 	GetConVarString(FindConVar("mp_teamlogo_1"), convarString, sizeof(convarString));
@@ -1558,11 +1558,11 @@ static void UpdateOn_Map_Load(char[] WM_VERSION)
 	GetConVarString(FindConVar("mp_teamlogo_2"), convarString, sizeof(convarString));
 	WriteFileLine(file, "mp_teamlogo_2 			\"%s\"		//Enter a team's shorthand image name to display their logo", convarString);
 	GetConVarString(FindConVar("wm_competition"), convarString, sizeof(convarString));
-	WriteFileLine(file, "wm_competition			\"%s\"		//Name of host for a competition. eg. ESEA, Cybergamer, CEVO, ESL", convarString);
+	WriteFileLine(file, "wm_competition			\"%s\"	//Name of host for a competition. eg. ESEA, Cybergamer, CEVO, ESL", convarString);
 	GetConVarString(FindConVar("wm_event"), convarString, sizeof(convarString));
-	WriteFileLine(file, "wm_event				\"%s\"		//Name of event. eg. Season #, ODC #, Ladder", convarString);
+	WriteFileLine(file, "wm_event			\"%s\"		//Name of event. eg. Season #, ODC #, Ladder", convarString);
 	GetConVarString(FindConVar("wm_chat_prefix"), convarString, sizeof(convarString));
-	WriteFileLine(file, "wm_chat_prefix			\"%s\"		//Change the chat prefix. Default is WarMod_BFG", convarString);
+	WriteFileLine(file, "wm_chat_prefix			\"%s\"	//Change the chat prefix. Default is WarMod_BFG", convarString);
 	WriteFileLine(file, "");
 	if (LibraryExists("warmod_stats"))
 	{
@@ -1587,16 +1587,16 @@ static void UpdateOn_Map_Load(char[] WM_VERSION)
 		WriteFileLine(file, "");
 	}
 	WriteFileLine(file, "// FTP Upload");
-	WriteFileLine(file, "wm_upload_results						\"%i\"	//Enable or disable the uploading of match results via MySQL", GetConVarInt(FindConVar("wm_upload_results")));
+	WriteFileLine(file, "wm_upload_results						\"%i\"			//Enable or disable the uploading of match results via MySQL", GetConVarInt(FindConVar("wm_upload_results")));
 	GetConVarString(FindConVar("wm_table_name"), convarString, sizeof(convarString));
 	WriteFileLine(file, "wm_table_name							\"%s\"	//The MySQL table name to store match results in)", convarString);
 	GetConVarString(FindConVar("wm_table_name_players"), convarString, sizeof(convarString));
 	WriteFileLine(file, "wm_table_name_players					\"%s\"	//The MySQL table name to store match players in)", convarString);
 	WriteFileLine(file, "");
 	WriteFileLine(file, "// FTP Upload");
-	WriteFileLine(file, "wm_autodemoupload_enable				\"%i\"		//Automatically upload demos when finished recording.", GetConVarInt(FindConVar("wm_autodemoupload_enable")));
-	WriteFileLine(file, "wm_autodemoupload_bzip2				\"%i\"		//Compression level. If set > 0 demos will be compressed before uploading. (Requires bzip2 extension.)", GetConVarInt(FindConVar("wm_autodemoupload_bzip2")));
-	WriteFileLine(file, "wm_autodemoupload_delete				\"%i\"		//Delete the demo (and the bz2) if upload was successful.", GetConVarInt(FindConVar("wm_autodemoupload_delete")));
+	WriteFileLine(file, "wm_autodemoupload_enable				\"%i\"			//Automatically upload demos when finished recording.", GetConVarInt(FindConVar("wm_autodemoupload_enable")));
+	WriteFileLine(file, "wm_autodemoupload_bzip2				\"%i\"			//Compression level. If set > 0 demos will be compressed before uploading. (Requires bzip2 extension.)", GetConVarInt(FindConVar("wm_autodemoupload_bzip2")));
+	WriteFileLine(file, "wm_autodemoupload_delete				\"%i\"			//Delete the demo (and the bz2) if upload was successful.", GetConVarInt(FindConVar("wm_autodemoupload_delete")));
 	GetConVarString(FindConVar("wm_autodemoupload_ftptargetdemo"), convarString, sizeof(convarString));
 	WriteFileLine(file, "wm_autodemoupload_ftptargetdemo		\"%s\"		//The ftp target to use for demo uploads.", convarString);
 	GetConVarString(FindConVar("wm_autodemoupload_ftptargetlog"), convarString, sizeof(convarString));
@@ -1608,7 +1608,7 @@ static void UpdateOn_Map_Load(char[] WM_VERSION)
 	}
 	else
 	{
-		WriteFileLine(file, "wm_autodemoupload_ftptargetstats			\"stats\"	//The ftp target to use for stats site uploads");
+		WriteFileLine(file, "wm_autodemoupload_ftptargetstats			\"stats\"		//The ftp target to use for stats site uploads");
 	}
 	WriteFileLine(file, "wm_autodemoupload_completed		\"%i\"			//Only upload demos when match is completed.", GetConVarInt(FindConVar("wm_autodemoupload_completed")));
 	WriteFileLine(file, "");
