@@ -375,7 +375,7 @@ static void RuleSet_Default(char[] WM_VERSION)
 	WriteFileLine(file, "wm_match_config		\"warmod/ruleset_default.cfg\"		//Sets the match config to load on Live on 3");
 	WriteFileLine(file, "mp_maxrounds		\"30\"		//max number of rounds to play before server changes maps");
 	WriteFileLine(file, "mp_match_can_clinch		\"1\"		//Can a team clinch and end the match by being so far ahead that the other team has no way to catching up?");
-	WriteFileLine(file, "mp_overtime_enable		\"0\"		//If a match ends in a tie, use overtime rules to determine winner");
+	WriteFileLine(file, "mp_overtime_enable		\"1\"		//If a match ends in a tie, use overtime rules to determine winner");
 	WriteFileLine(file, "mp_overtime_maxrounds		\"6\"		//When overtime is enabled play additional rounds to determine winner");
 	WriteFileLine(file, "mp_overtime_startmoney		\"10000\"		//Money assigned to all players at start of every overtime half");
 	WriteFileLine(file, "mp_startmoney		\"800\"			//amount of money each player gets when they reset");
@@ -476,6 +476,7 @@ static void RuleSet_WarmUp(char[] WM_VERSION)
 	WriteFileLine(file, "mp_death_drop_grenade	\"0\"			// Which grenade to drop on player death: 0=none, 1=best, 2=current or best");
 	WriteFileLine(file, "mp_death_drop_gun	\"0\"			// Which gun to drop on player death: 0=none, 1=best, 2=current or best");
 	WriteFileLine(file, "mp_give_player_c4 \"0\"		// This command sets whether or not a player (on T side) should be given a bomb at the start of the round");
+	WriteFileLine(file, "mp_free_armor \"2\"		// Determines whether armor and helmet are given automatically");
 	WriteFileLine(file, "wm_active			\"1\"		//Enable or disable WarMod as active");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "say WarMod [BFG] Round WarmUp Config Loaded", false); // no newline at the end
@@ -509,6 +510,7 @@ static void RuleSet_Practice(char[] WM_VERSION)
 	WriteFileLine(file, "sv_cheats	\"1\"	//Allow cheats on server");
 	WriteFileLine(file, "mp_buy_anywhere		\"1\"		//When set, players can buy anywhere, not only in buyzones");
 	WriteFileLine(file, "mp_roundtime_defuse		\"9999\"		//How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead");
+	WriteFileLine(file, "mp_free_armor \"2\"		// Determines whether armor and helmet are given automatically");
 	WriteFileLine(file, "bot_quota			\"0\"		//Determines the total number of bots in the game.");
 	WriteFileLine(file, "wm_active			\"0\"		//Enable or disable WarMod as active");
 	WriteFileLine(file, "");
@@ -1333,7 +1335,7 @@ static void UpdateRuleSet_Default(char[] WM_VERSION)
 	WriteFileLine(file, "wm_match_config		\"warmod/ruleset_default.cfg\"		//Sets the match config to load on Live on 3");
 	WriteFileLine(file, "mp_maxrounds		\"30\"		//max number of rounds to play before server changes maps");
 	WriteFileLine(file, "mp_match_can_clinch		\"1\"		//Can a team clinch and end the match by being so far ahead that the other team has no way to catching up?");
-	WriteFileLine(file, "mp_overtime_enable		\"0\"		//If a match ends in a tie, use overtime rules to determine winner");
+	WriteFileLine(file, "mp_overtime_enable		\"1\"		//If a match ends in a tie, use overtime rules to determine winner");
 	WriteFileLine(file, "mp_overtime_maxrounds		\"%i\"		//When overtime is enabled play additional rounds to determine winner", GetConVarInt(FindConVar("mp_overtime_maxrounds")));
 	WriteFileLine(file, "mp_overtime_startmoney		\"%i\"		//Money assigned to all players at start of every overtime half", GetConVarInt(FindConVar("mp_overtime_startmoney")));
 	WriteFileLine(file, "mp_startmoney		\"800\"			//amount of money each player gets when they reset");
@@ -1447,6 +1449,7 @@ static void UpdateWarmUp(char[] WM_VERSION)
 	WriteFileLine(file, "mp_death_drop_grenade	\"0\"			// Which grenade to drop on player death: 0=none, 1=best, 2=current or best");
 	WriteFileLine(file, "mp_death_drop_gun	\"0\"			// Which gun to drop on player death: 0=none, 1=best, 2=current or best");
 	WriteFileLine(file, "mp_give_player_c4 \"0\"		// This command sets whether or not a player (on T side) should be given a bomb at the start of the round");
+	WriteFileLine(file, "mp_free_armor \"2\"		// Determines whether armor and helmet are given automatically");
 	WriteFileLine(file, "wm_active			\"1\"		//Enable or disable WarMod as active");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "say WarMod [BFG] Round WarmUp Config Loaded", false); // no newline at the end
@@ -1481,6 +1484,7 @@ static void UpdatePractice(char[] WM_VERSION)
 	WriteFileLine(file, "sv_cheats	\"1\"	//Allow cheats on server");
 	WriteFileLine(file, "mp_buy_anywhere		\"1\"		//When set, players can buy anywhere, not only in buyzones");
 	WriteFileLine(file, "mp_roundtime_defuse		\"9999\"		//How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead");
+	WriteFileLine(file, "mp_free_armor \"2\"		// Determines whether armor and helmet are given automatically");
 	WriteFileLine(file, "bot_quota			\"0\"		//Determines the total number of bots in the game.");
 	WriteFileLine(file, "wm_active			\"0\"		//Enable or disable WarMod as active");
 	WriteFileLine(file, "");

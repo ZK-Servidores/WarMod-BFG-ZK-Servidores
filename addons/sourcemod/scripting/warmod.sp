@@ -330,7 +330,7 @@ Handle g_h_menu = INVALID_HANDLE;
 
 /* Plugin Info */
 #define UPDATE_URL		"https://warmod.bitbucket.io/updatefile.txt"
-#define WM_VERSION		"20.06.24.1348 + v1.2.2"
+#define WM_VERSION		"20.06.24.1348 + v1.2.3"
 #define WM_DESCRIPTION	"An automative service for CS:GO competition matches"
 
 public Plugin myinfo = {
