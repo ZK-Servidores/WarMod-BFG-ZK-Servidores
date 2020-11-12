@@ -390,7 +390,7 @@
 	}
 	"Good Luck"
 	{
-		"pt"			"Good Luck, Have Fun!"
+		"pt"			"Boa sorte, divirta-se!"
 	}
 	"Powered By"
 	{
