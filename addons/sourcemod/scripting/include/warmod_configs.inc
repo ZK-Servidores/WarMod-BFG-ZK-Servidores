@@ -115,7 +115,7 @@ static void CreateAutoExecConfigFile(char[] WM_VERSION)
 	
 	Handle file = OpenFile(cfgFile, "w");
 	WriteFileLine(file, "// WarMod [BFG] - Auto Executed Config File");
-	WriteFileLine(file, "// Created via [BFG] WarMod v%s", WM_VERSION);
+	WriteFileLine(file, "// Created via [BFG] WarMod | ZK Servidores™ %s", WM_VERSION);
 	WriteFileLine(file, "// This file will execute when warmod is loaded");
 	WriteFileString(file, "exec warmod/on_map_load.cfg", false); // no newline at the end
 	CloseHandle(file);
@@ -424,7 +424,7 @@ static void RuleSet_OverTime(char[] WM_VERSION)
 	WriteFileLine(file, "wm_match_config		\"warmod/ruleset_overtime.cfg\"		//Sets the match config to load on Live on 3");
 	WriteFileLine(file, "mp_maxrounds		\"30\"		//max number of rounds to play before server changes maps");
 	WriteFileLine(file, "mp_match_can_clinch		\"1\"		//Can a team clinch and end the match by being so far ahead that the other team has no way to catching up?");
-	WriteFileLine(file, "mp_overtime_enable		\"1\"		//If a match ends in a tie, use overtime rules to determine winner");
+	WriteFileLine(file, "mp_overtime_enable		\"0\"		//If a match ends in a tie, use overtime rules to determine winner");
 	WriteFileLine(file, "mp_overtime_maxrounds		\"6\"		//When overtime is enabled play additional rounds to determine winner");
 	WriteFileLine(file, "mp_overtime_startmoney 		\"10000\"		//Money assigned to all players at start of every overtime half");
 	WriteFileLine(file, "mp_startmoney		\"800\"		//amount of money each player gets when they reset");
@@ -491,14 +491,17 @@ static void RuleSet_Practice(char[] WM_VERSION)
 	WriteFileLine(file, "// Change WarmUp commands");
 	WriteFileLine(file, "wm_warmup_respawn		\"0\"		//Enable or disable the respawning of players in warmup");
 	WriteFileLine(file, "wm_block_warm_up_grenades		\"0\"	//Enable or disable grenade blocking in warmup");
-	WriteFileLine(file, "mp_buytime		\"120\"		//How many seconds after round start players can buy items for.");
+	WriteFileLine(file, "mp_buytime		\"300\"		//How many seconds after round start players can buy items for.");
 	WriteFileLine(file, "mp_freezetime		\"0\"		//How many seconds to keep players frozen when the round starts");
 	WriteFileLine(file, "mp_autokick		\"0\"		//Kick idle/team-killing/team-damaging players");
 	WriteFileLine(file, "mp_startmoney		\"16000\"			//amount of money each player gets when they reset");
 	WriteFileLine(file, "wm_round_money		\"0\"		//Enable or disable a client's team mates money to be displayed at the start of a round (to him only)");
 	WriteFileLine(file, "sv_infinite_ammo		\"2\"		//Player's active weapon will never run out of ammo.");
-	WriteFileLine(file, "sv_showimpacts		\"2\"			//Shows client (red) and server (blue) bullet impact point");
 	WriteFileLine(file, "sv_cheats			\"1\"			//Allow cheats on server");
+	WriteFileLine(file, "sv_showimpacts		\"2\"			//Shows client (red) and server (blue) bullet impact point");
+	WriteFileLine(file, "sv_showimpacts_time \"10\"			//Shows client (red) and server (blue) bullet impact point");
+	WriteFileLine(file, "sv_grenade_trajectory \"1\"		//This command will make it so that grenade trajectories are shown");
+	WriteFileLine(file, "sv_grenade_trajectory_time \"10\"	//his makes grenade trajectories be hidden after 5 seconds of having been shown");	
 	WriteFileLine(file, "mp_buy_anywhere		\"1\"		//When set, players can buy anywhere, not only in buyzones");
 	WriteFileLine(file, "mp_roundtime_defuse		\"9999\"		//How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead");
 	WriteFileLine(file, "bot_quota			\"0\"		//Determines the total number of bots in the game.");
@@ -1384,7 +1387,7 @@ static void UpdateRuleSet_OverTime(char[] WM_VERSION)
 	WriteFileLine(file, "wm_match_config		\"warmod/ruleset_overtime.cfg\"		//Sets the match config to load on Live on 3");
 	WriteFileLine(file, "mp_maxrounds		\"30\"		//max number of rounds to play before server changes maps");
 	WriteFileLine(file, "mp_match_can_clinch		\"1\"		//Can a team clinch and end the match by being so far ahead that the other team has no way to catching up?");
-	WriteFileLine(file, "mp_overtime_enable		\"1\"		//If a match ends in a tie, use overtime rules to determine winner");
+	WriteFileLine(file, "mp_overtime_enable		\"0\"		//If a match ends in a tie, use overtime rules to determine winner");
 	WriteFileLine(file, "mp_overtime_maxrounds		\"%i\"		//When overtime is enabled play additional rounds to determine winner", GetConVarInt(FindConVar("mp_overtime_maxrounds")));
 	WriteFileLine(file, "mp_overtime_startmoney 		\"%i\"		//Money assigned to all players at start of every overtime half", GetConVarInt(FindConVar("mp_overtime_startmoney")));
 	WriteFileLine(file, "mp_startmoney		\"800\"		//amount of money each player gets when they reset");
@@ -1454,14 +1457,17 @@ static void UpdatePractice(char[] WM_VERSION)
 	WriteFileLine(file, "// Change WarmUp commands");
 	WriteFileLine(file, "wm_warmup_respawn		\"0\"		//Enable or disable the respawning of players in warmup");
 	WriteFileLine(file, "wm_block_warm_up_grenades		\"0\"	//Enable or disable grenade blocking in warmup");
-	WriteFileLine(file, "mp_buytime		\"120\"		//How many seconds after round start players can buy items for.");
+	WriteFileLine(file, "mp_buytime		\"300\"		//How many seconds after round start players can buy items for.");
 	WriteFileLine(file, "mp_freezetime		\"0\"		//How many seconds to keep players frozen when the round starts");
 	WriteFileLine(file, "mp_autokick		\"0\"		//Kick idle/team-killing/team-damaging players");
 	WriteFileLine(file, "mp_startmoney		\"16000\"			//amount of money each player gets when they reset");
 	WriteFileLine(file, "wm_round_money		\"0\"		//Enable or disable a client's team mates money to be displayed at the start of a round (to him only)");
 	WriteFileLine(file, "sv_infinite_ammo		\"2\"		//Player's active weapon will never run out of ammo.");
-	WriteFileLine(file, "sv_showimpacts		\"2\"			//Shows client (red) and server (blue) bullet impact point");
 	WriteFileLine(file, "sv_cheats			\"1\"			//Allow cheats on server");
+	WriteFileLine(file, "sv_showimpacts		\"2\"			//Shows client (red) and server (blue) bullet impact point");
+	WriteFileLine(file, "sv_showimpacts_time \"10\"			//Shows client (red) and server (blue) bullet impact point");
+	WriteFileLine(file, "sv_grenade_trajectory \"1\"		//This command will make it so that grenade trajectories are shown");
+	WriteFileLine(file, "sv_grenade_trajectory_time \"10\"	//his makes grenade trajectories be hidden after 5 seconds of having been shown");	
 	WriteFileLine(file, "mp_buy_anywhere		\"1\"		//When set, players can buy anywhere, not only in buyzones");
 	WriteFileLine(file, "mp_roundtime_defuse		\"9999\"		//How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead");
 	WriteFileLine(file, "bot_quota			\"0\"		//Determines the total number of bots in the game.");

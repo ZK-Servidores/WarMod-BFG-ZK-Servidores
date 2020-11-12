@@ -2,27 +2,27 @@
 {
 	"Safe Mode"
 	{
-		"pt"			"Safe Mode Enabled. Feature is disabled."
+		"pt"			"Modo de segurança ativado. O recurso está desativado."
 	}
 	"Practice Mode Active"
 	{
-		"pt"			"Practice Mode Activated"
+		"pt"			"Modo de Prática - Ativado"
 	}
 	"Match Reset"
 	{
-		"pt"			"Match Reset - Game is not live!"
+		"pt"			"Match Reset - O jogo não está valendo!"
 	}
 	"Half Reset"
 	{
-		"pt"			"Match Half Reset - Game is not live!"
+		"pt"			"Match Half Reset - O jogo não está valendo!"
 	}
 	"Half Time"
 	{
-		"pt"			"Half Time! Please swap teams..."
+		"pt"			"Half Time! Por favor, troquem de time..."
 	}
 	"Half Time Auto Swap"
 	{
-		"pt"			"Half Time! Swapping teams..."
+		"pt"			"Half Time! Trocando times..."
 	}
 	"Full Time"
 	{
@@ -44,11 +44,11 @@
 	}
 	"Ready"
 	{
-		"pt"			"You have been marked as ready"
+		"pt"			"Você foi marcado como pronto"
 	}
 	"Not Ready"
 	{
-		"pt"			"You have been marked as not ready"
+		"pt"			"Você foi marcado como não pronto"
 	}
 	"Score Overtime"
 	{
@@ -60,47 +60,47 @@
 	}
 	"Knife Round Cancelled"
 	{
-		"pt"			"Knife Round cancelled - Not Live"
+		"pt"			"Round Faca cancelado - Não está valendo"
 	}
 	"Knife Round Inactive"
 	{
-		"pt"			"Knife Round is not active"
+		"pt"			"Round Faca não está ativo"
 	}
 	"Ready System Enabled"
 	{
-		"pt"			"Ready System - Enabled"
+		"pt"			"Ready System - Ativado"
 	}
 	"Ready System Disabled"
 	{
-		"pt"			"Ready System - Disabled"
+		"pt"			"Ready System - Desativado"
 	}
 	"Set Active"
 	{
-		"pt"			"Set to Active"
+		"pt"			"Definido como ativo"
 	}
 	"Set Inactive"
 	{
-		"pt"			"Set to Inactive"
+		"pt"			"Definido como inativo"
 	}
 	"Console Ready"
 	{
-		"pt"			"Console cannot be marked as ready"
+		"pt"			"Console não pode ser marcado como pronto"
 	}
 	"Console Not Ready"
 	{
-		"pt"			"Console cannot be marked as not ready"
+		"pt"			"Console não pode ser marcado como não pronto"
 	}
 	"Not on Team"
 	{
-		"pt"			"You are not on a team"
+		"pt"			"Você não está em um time"
 	}
 	"Already Ready"
 	{
-		"pt"			"You have already been marked as ready"
+		"pt"			"Você já foi marcado como pronto"
 	}
 	"Already Not Ready"
 	{
-		"pt"			"You have already been marked as not ready"
+		"pt"			"Você já foi marcado como não pronto"
 	}
 	"Forced Ready"
 	{
@@ -116,50 +116,50 @@
 	}
 	"Match Not In Progress"
 	{
-		"pt"			"Match is not in progress!"
+		"pt"			"Partida não está em andamento!"
 	}
 	"T Winning"
 	{
 		"#format"		"{1:s}"
-		"pt"			"{1} are winning"
+		"pt"			"{1} estão ganhando"
 	}
 	"Tied"
 	{
-		"pt"			"Scores are tied"
+		"pt"			"Pontuações empatadas"
 	}
 	"CT Winning"
 	{
 		"#format"		"{1:s}"
-		"pt"			"{1} are winning"
+		"pt"			"{1} estão ganhando"
 	}
 	"Change Teams Midgame"
 	{
-		"pt"			"Blocked - Match is in progress"
+		"pt"			"Bloqueado - Partida em andamento"
 	}
 	"Maximum Players"
 	{
-		"pt"			"Teams have reached the maximum player limit"
+		"pt"			"Os times atingiram o limite máximo de players"
 	}
 	"Nightvision Blocked"
 	{
-		"pt"			"Night vision is disabled"
+		"pt"			"Visão Noturna - Desativada"
 	}
 	"Grenades Blocked"
 	{
-		"pt"			"Grenades in warmup are disabled"
+		"pt"			"Granadas no aquecimento estão desativadas"
 	}
 	"Ready System"
 	{
-		"pt"			"Ready System"
+		"pt"			"Sistema Ready"
 	}
 	"Match Begin Msg"
 	{
 		"#format"		"{1:i}"
-		"pt"			"Match will begin after {1} players are ready"
+		"pt"			"Partida começará depois que {1} players estiverem prontos"
 	}
 	"No Players Found"
 	{
-		"pt"			"No players found"
+		"pt"			"Nenhum player encontrado"
 	}
 	"Info Not Ready"
 	{
@@ -179,11 +179,11 @@
 	}
 	"Match Is Live"
 	{
-		"pt"			"The match is live"
+		"pt"			"A partida está valendo"
 	}
 	"WarMod Inactive"
 	{
-		"pt"			"WarMod is not active"
+		"pt"			"WarMod não está ativo"
 	}
 	"Change T Name"
 	{
@@ -201,11 +201,11 @@
 	}
 	"Available Commands"
 	{
-		"pt"			"Available client commands"
+		"pt"			"Comandos disponíveis"
 	}
 	"No Permission"
 	{
-		"pt"			"You do not have permission to use this command"
+		"pt"			"Você não tem permissão para usar este comando"
 	}
 	"Set Minready"
 	{
@@ -302,19 +302,19 @@
 	}
 	"Knife Vote Team"
 	{
-		"pt"			"are voting to stay or swap teams"
+		"pt"			"estão votando para ficar ou trocar de time"
 	}
 	"Knife Vote"
 	{
-		"pt"			"Please type !stay or !swap"
+		"pt"			"Por favor, digite !ficar ou !trocar"
 	}
 	"Knife Stay"
 	{
-		"pt"			"have voted to stay"
+		"pt"			"votou para ficar no mesmo time"
 	}
 	"Knife Switch"
 	{
-		"pt"			"have voted to swap teams"
+		"pt"			"votaram para trocar de time"
 	}
 	"Set Name CT"
 	{
@@ -354,35 +354,35 @@
 	}
 	"Live"
 	{
-		"pt"			"The match is now LIVE!"
+		"pt"			"Partida está valendo!"
 	}
 	"Live on 3"
 	{
-		"pt"			"Live on 3..."
+		"pt"			"Live em 3..."
 	}
 	"Live on 2"
 	{
-		"pt"			"Live on 2..."
+		"pt"			"Live em 2..."
 	}
 	"Live on 1"
 	{
-		"pt"			"Live on 1..."
+		"pt"			"Live em 1..."
 	}
 	"Knife on 3"
 	{
-		"pt"			"Knife on 3..."
+		"pt"			"Round Faca em 3..."
 	}
 	"Knife on 2"
 	{
-		"pt"			"Knife on 2..."
+		"pt"			"Round Faca em 2..."
 	}
 	"Knife on 1"
 	{
-		"pt"			"Knife on 1..."
+		"pt"			"Round Faca em 1..."
 	}
 	"Knife"
 	{
-		"pt"			"KNIFE!"
+		"pt"			"ROUND FACA!"
 	}
 	"Zeus"
 	{

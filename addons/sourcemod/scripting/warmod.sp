@@ -18,7 +18,6 @@
 
 bool SQL_DEBUG = false;
 
-
 int g_player_list[MAXPLAYERS + 1];
 bool g_cancel_list[MAXPLAYERS + 1];
 int g_scores[2][2];
@@ -154,7 +153,6 @@ ConVar mp_teamflag_2;
 ConVar wm_ready_tag;
 ConVar wm_ready_panel;
 
-
 ConVar mp_startmoney;
 ConVar hostname;
 
@@ -239,7 +237,6 @@ Handle g_h_stored_timer_ot = INVALID_HANDLE;
 bool playout_offer_ct = false;
 bool playout_offer_t = false;
 Handle g_h_stored_timer_pl = INVALID_HANDLE;
-
 
 /* Pause and Unpause */
 bool g_pause_freezetime = false;
@@ -336,7 +333,7 @@ ConVar mp_win_panel_display_time;
 
 /* Plugin info */
 #define UPDATE_URL				"https://warmod.bitbucket.io/updatefile.txt"
-#define WM_VERSION				"20.07.15.1214 + 4.2.6fix"
+#define WM_VERSION				"20.07.15.1214 + 4.2.6"
 #define WM_DESCRIPTION			"An automative service for CS:GO competition matches"
 
 public Plugin myinfo = {
@@ -344,7 +341,7 @@ public Plugin myinfo = {
 	author = "Versatile_BFG, abnerfs, crashzk",
 	description = WM_DESCRIPTION,
 	version = WM_VERSION,
-	url = "https://www.facebook.com/BFG-Software-107461914353371"
+	url = "https://github.com/zkservidores-clientes/Plugins-SourceMod"
 };
 
 public APLRes AskPluginLoad2(Handle myself, bool late, char[] error, int err_max)
