@@ -382,7 +382,7 @@
 	}
 	"Knife"
 	{
-		"en"			"KNIFE!"
+		"en"			"ROUND KNIFE!"
 	}
 	"Zeus"
 	{
@@ -410,7 +410,7 @@
 	}
 	"Admin_Menu Knife"
 	{
-		"en"			"Knife"
+		"en"			"Force Round Knife"
 	}
 	"Admin_Menu Force Start"
 	{
@@ -430,7 +430,7 @@
 	}
 	"Admin_Menu Cancel Knife"
 	{
-		"en"			"Cancel Knife"
+		"en"			"Cancel Round Knife"
 	}
 	"Admin_Menu ForceAllReady"
 	{
@@ -454,7 +454,7 @@
 	}
 	"Warm Up Active"
 	{
-		"en"			"Warm Up Active"
+		"en"			"Warm Up - Active"
 	}
 	"FTP Upload Failed"
 	{

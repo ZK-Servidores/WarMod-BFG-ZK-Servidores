@@ -1029,7 +1029,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Knife\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"KNIFE!\"");
+	WriteFileLine(file, "		\"en\"			\"ROUND KNIFE!\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Zeus\"");
 	WriteFileLine(file, "	{");
@@ -1057,7 +1057,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Admin_Menu Knife\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Knife\"");
+	WriteFileLine(file, "		\"en\"			\"Force Round Knife\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Admin_Menu Force Start\"");
 	WriteFileLine(file, "	{");
@@ -1077,7 +1077,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Admin_Menu Cancel Knife\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Cancel Knife\"");
+	WriteFileLine(file, "		\"en\"			\"Cancel Round Knife\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Admin_Menu ForceAllReady\"");
 	WriteFileLine(file, "	{");
@@ -1101,7 +1101,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Warm Up Active\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Warm Up Active\"");
+	WriteFileLine(file, "		\"en\"			\"Warm Up - Active\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"FTP Upload Failed\"");
 	WriteFileLine(file, "	{");
