@@ -338,7 +338,7 @@ ConVar mp_win_panel_display_time;
 
 public Plugin myinfo = {
 	name = "[BFG] WarMod | ZK Servidores™",
-	author = "Versatile_BFG, abnerfs, crashzk",
+	author = "Versatile_BFG, crashzk",
 	description = WM_DESCRIPTION,
 	version = WM_VERSION,
 	url = "https://github.com/zkservidores-clientes/Plugins-SourceMod"
