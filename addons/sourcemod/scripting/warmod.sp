@@ -9021,12 +9021,14 @@ public void GetMapList() {
 	if (GetArraySize(g_MapNames) < 1) {
 		LogError("The map file was empty: %s", mapFile);
 		AddMap("de_dust2");
-		AddMap("de_inferno");
 		AddMap("de_mirage");
-		AddMap("de_train");
-		AddMap("de_overpass");
-		AddMap("de_cache");
+		AddMap("de_inferno");
 		AddMap("de_cbble");
+		AddMap("de_cache");
+		AddMap("de_overpass");
+		AddMap("de_nuke");
+		AddMap("de_train");
+		AddMap("de_vertigo");
 	}
 	
 	if (GetConVarBool(wm_pugsetup_randomize_maps)) {
@@ -9080,12 +9082,14 @@ static void CreateDefaultMapFile()
 	
 	Handle mfile = OpenFile(mapFile, "w");
 	WriteFileLine(mfile, "de_dust2");
-	WriteFileLine(mfile, "de_inferno");
 	WriteFileLine(mfile, "de_mirage");
-	WriteFileLine(mfile, "de_train");
-	WriteFileLine(mfile, "de_overpass");
+	WriteFileLine(mfile, "de_inferno");
+	WriteFileLine(mfile, "de_cbble");
 	WriteFileLine(mfile, "de_cache");
-	WriteFileLine(mfile, "de_cbble", false); // no newline at the end
+	WriteFileLine(mfile, "de_overpass");
+	WriteFileLine(mfile, "de_nuke");
+	WriteFileLine(mfile, "de_train");
+	WriteFileLine(mfile, "de_vertigo", false); // no newline at the end
 	CloseHandle(mfile);
 }
 

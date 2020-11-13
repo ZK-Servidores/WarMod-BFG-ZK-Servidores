@@ -1182,11 +1182,11 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"OverTime Offer\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"have asked for a over time match. Please type !overtime to accept\"");
+	WriteFileLine(file, "		\"en\"			\"have asked for a overtime match. Please type !ot to accept\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"OverTime Offer Not Confirmed\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Over Time offer was not confirmed by the other team\"");
+	WriteFileLine(file, "		\"en\"			\"Overtime offer was not confirmed by the other team offer was not confirmed by the other team\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "}", false);
 	CloseHandle(file);
@@ -1199,12 +1199,14 @@ static void CreateVetoMapListFile()
 	Handle file = OpenFile(cfgFile, "w");
 
 	WriteFileLine(file, "de_dust2");
-	WriteFileLine(file, "de_inferno");
 	WriteFileLine(file, "de_mirage");
-	WriteFileLine(file, "de_train");
-	WriteFileLine(file, "de_overpass");
+	WriteFileLine(file, "de_inferno");
+	WriteFileLine(file, "de_cbble");
 	WriteFileLine(file, "de_cache");
-	WriteFileLine(file, "de_cbble", false); // no newline at the end
+	WriteFileLine(file, "de_overpass");
+	WriteFileLine(file, "de_nuke");
+	WriteFileLine(file, "de_train");
+	WriteFileLine(file, "de_vertigo", false); // no newline at the end
 	CloseHandle(file);
 }
 
