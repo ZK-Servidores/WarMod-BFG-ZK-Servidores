@@ -10518,6 +10518,4 @@ public void checksafe(int client) {
 	DeleteFile(cfgFile);
 }
 
-
-
 //CS:GO was not launched in Trusted Launch mode
