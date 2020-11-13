@@ -653,7 +653,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Practice Mode Active\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Practice Mode Activated\"");
+	WriteFileLine(file, "		\"en\"			\"Practice Mode - Activated\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Match Reset\"");
 	WriteFileLine(file, "	{");
@@ -755,7 +755,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Forced Not Ready\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Forced all players unready\"");
+	WriteFileLine(file, "		\"en\"			\"Forced all players not ready\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Forced Spectate\"");
 	WriteFileLine(file, "	{");
@@ -789,7 +789,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Nightvision Blocked\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Night vision is disabled\"");
+	WriteFileLine(file, "		\"en\"			\"Night vision - Disabled\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Grenades Blocked\"");
 	WriteFileLine(file, "	{");
@@ -931,7 +931,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Unpause Auto\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Match was auto Unpaused because time limit reached\"");
+	WriteFileLine(file, "		\"en\"			\"Match was auto unpaused because time limit reached\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Auto Pause Notice\"");
 	WriteFileLine(file, "	{");
@@ -945,7 +945,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Paused Via Rcon\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Server is not paused or was paused via rcon\"");
+	WriteFileLine(file, "		\"en\"			\"Server is not paused or was paused via RCON\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Knife Vote Team\"");
 	WriteFileLine(file, "	{");
@@ -1085,7 +1085,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Admin_Menu ForceAllUnready\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Force All Unready\"");
+	WriteFileLine(file, "		\"en\"			\"Force All Not Ready\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Admin_Menu ForceAllSpectate\"");
 	WriteFileLine(file, "	{");
@@ -1141,11 +1141,11 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Veto Disabled\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Veto system is disabled\"");
+	WriteFileLine(file, "		\"en\"			\"Veto System - Disabled\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Veto Non-player\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"You must be on Terrorist or Counter Terrorist to use !veto\"");
+	WriteFileLine(file, "		\"en\"			\"You must be on Terrorist or Counter-Terrorist to use !veto\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Veto Offer\"");
 	WriteFileLine(file, "	{");
@@ -1162,7 +1162,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Non-player\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"You must be on Terrorist or Counter Terrorist to use this command\"");
+	WriteFileLine(file, "		\"en\"			\"You must be on Terrorist or Counter-Terrorist to use this command\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Default Offer\"");
 	WriteFileLine(file, "	{");
