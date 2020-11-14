@@ -707,11 +707,11 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Knife Round Cancelled\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Round Knife cancelled - Not Live\"");
+	WriteFileLine(file, "		\"en\"			\"Round knife cancelled - Not Live\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Knife Round Inactive\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Round Knife is not active\"");
+	WriteFileLine(file, "		\"en\"			\"Round knife is not active\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Ready System Enabled\"");
 	WriteFileLine(file, "	{");
@@ -789,7 +789,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Nightvision Blocked\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Night vision - Disabled\"");
+	WriteFileLine(file, "		\"en\"			\"Night Vision - Disabled\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Grenades Blocked\"");
 	WriteFileLine(file, "	{");
@@ -818,11 +818,11 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Ready System Disabled2\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"The Ready System is not enabled\"");
+	WriteFileLine(file, "		\"en\"			\"The ready system is not enabled\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"ShowInfo Disabled\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"The Ready System display is not enabled\"");
+	WriteFileLine(file, "		\"en\"			\"The ready system display is not enabled\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Match Is Live\"");
 	WriteFileLine(file, "	{");
@@ -899,7 +899,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Pause Offer\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"have asked for a Pause. Please type !pause to pause the match\"");
+	WriteFileLine(file, "		\"en\"			\"have asked for a pause. Please type !pause to pause the match\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Pause Not Enabled\"");
 	WriteFileLine(file, "	{");
@@ -907,7 +907,7 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Unpause Notice\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Match is now Paused. Please type !unpause to unpause the match\"");
+	WriteFileLine(file, "		\"en\"			\"Match is now paused. Please type !unpause to unpause the match\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"Unpause Offer\"");
 	WriteFileLine(file, "	{");
@@ -1174,11 +1174,11 @@ static void CreateTranslationFile()
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"PlayOut Offer\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"have asked for a play out match. Please type !playout to accept\"");
+	WriteFileLine(file, "		\"en\"			\"have asked for a playout match. Please type !playout to accept\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"PlayOut Offer Not Confirmed\"");
 	WriteFileLine(file, "	{");
-	WriteFileLine(file, "		\"en\"			\"Play Out offer was not confirmed by the other team\"");
+	WriteFileLine(file, "		\"en\"			\"Playout offer was not confirmed by the other team\"");
 	WriteFileLine(file, "	}");
 	WriteFileLine(file, "	\"OverTime Offer\"");
 	WriteFileLine(file, "	{");

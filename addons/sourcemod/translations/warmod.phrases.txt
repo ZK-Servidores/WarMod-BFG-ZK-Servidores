@@ -60,11 +60,11 @@
 	}
 	"Knife Round Cancelled"
 	{
-		"en"			"Round Knife cancelled - Not Live"
+		"en"			"Round knife cancelled - Not Live"
 	}
 	"Knife Round Inactive"
 	{
-		"en"			"Round Knife is not active"
+		"en"			"Round knife is not active"
 	}
 	"Ready System Enabled"
 	{
@@ -171,11 +171,11 @@
 	}
 	"Ready System Disabled2"
 	{
-		"en"			"The Ready System is not enabled"
+		"en"			"The ready system is not enabled"
 	}
 	"ShowInfo Disabled"
 	{
-		"en"			"The Ready System display is not enabled"
+		"en"			"The ready system display is not enabled"
 	}
 	"Match Is Live"
 	{
@@ -252,7 +252,7 @@
 	}
 	"Pause Offer"
 	{
-		"en"			"have asked for a Pause. Please type !pause to pause the match"
+		"en"			"have asked for a pause. Please type !pause to pause the match"
 	}
 	"Pause Not Enabled"
 	{
@@ -527,11 +527,11 @@
 	}
 	"PlayOut Offer"
 	{
-		"en"			"have asked for a play out match. Please type !playout to accept"
+		"en"			"have asked for a playout match. Please type !playout to accept"
 	}
 	"PlayOut Offer Not Confirmed"
 	{
-		"en"			"Play Out offer was not confirmed by the other team"
+		"en"			"Playout offer was not confirmed by the other team"
 	}
 	"OverTime Offer"
 	{

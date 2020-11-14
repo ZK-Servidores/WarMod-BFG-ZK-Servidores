@@ -22,7 +22,7 @@
 	}
 	"Half Time Auto Swap"
 	{
-		"pt"			"Half Time! Trocando de times..."
+		"pt"			"Half Time! Trocando os times..."
 	}
 	"Full Time"
 	{
@@ -60,11 +60,11 @@
 	}
 	"Knife Round Cancelled"
 	{
-		"pt"			"Round Knife cancelled - Not Live"
+		"pt"			"Round knife cancelled - Not Live"
 	}
 	"Knife Round Inactive"
 	{
-		"pt"			"Round Knife is not active"
+		"pt"			"Round knife is not active"
 	}
 	"Ready System Enabled"
 	{
@@ -171,11 +171,11 @@
 	}
 	"Ready System Disabled2"
 	{
-		"pt"			"The Ready System is not enabled"
+		"pt"			"The ready system is not enabled"
 	}
 	"ShowInfo Disabled"
 	{
-		"pt"			"The Ready System display is not enabled"
+		"pt"			"The ready system display is not enabled"
 	}
 	"Match Is Live"
 	{
@@ -260,7 +260,7 @@
 	}
 	"Unpause Notice"
 	{
-		"pt"			"Match is now Paused. Please type !unpause to unpause the match"
+		"pt"			"Match is now paused. Please type !unpause to unpause the match"
 	}
 	"Unpause Offer"
 	{
@@ -370,19 +370,19 @@
 	}
 	"Knife on 3"
 	{
-		"pt"			"Round Knife em 3..."
+		"pt"			"Round Faca em 3..."
 	}
 	"Knife on 2"
 	{
-		"pt"			"Round Knife em 2..."
+		"pt"			"Round Faca em 2..."
 	}
 	"Knife on 1"
 	{
-		"pt"			"Round Knife em 1..."
+		"pt"			"Round Faca em 1..."
 	}
 	"Knife"
 	{
-		"pt"			"ROUND KNIFE!"
+		"pt"			"ROUND FACA!"
 	}
 	"Zeus"
 	{
@@ -494,7 +494,7 @@
 	}
 	"Veto Disabled"
 	{
-		"pt"			"Veto System - Disabled"
+		"pt"			"Sistema Veto - Desativado"
 	}
 	"Veto Non-player"
 	{
@@ -527,11 +527,11 @@
 	}
 	"PlayOut Offer"
 	{
-		"pt"			"have asked for a play out match. Please type !playout to accept"
+		"pt"			"have asked for a playout match. Please type !playout to accept"
 	}
 	"PlayOut Offer Not Confirmed"
 	{
-		"pt"			"Play Out offer was not confirmed by the other team"
+		"pt"			"Playout offer was not confirmed by the other team"
 	}
 	"OverTime Offer"
 	{
