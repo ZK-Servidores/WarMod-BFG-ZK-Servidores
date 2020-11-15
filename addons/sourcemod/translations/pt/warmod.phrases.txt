@@ -44,11 +44,11 @@
 	}
 	"Ready"
 	{
-		"pt"			"You have been marked as ready"
+		"pt"			"Você foi marcado como pronto"
 	}
 	"Not Ready"
 	{
-		"pt"			"You have been marked as not ready"
+		"pt"			"Você foi marcado como não pronto"
 	}
 	"Score Overtime"
 	{
@@ -84,15 +84,15 @@
 	}
 	"Console Ready"
 	{
-		"pt"			"Console cannot be marked as ready"
+		"pt"			"Console não pode ser marcado como pronto"
 	}
 	"Console Not Ready"
 	{
-		"pt"			"Console cannot be marked as not ready"
+		"pt"			"Console não pode ser marcado como não pronto"
 	}
 	"Not on Team"
 	{
-		"pt"			"You are not on a team"
+		"pt"			"Você não está em um time"
 	}
 	"Already Ready"
 	{
@@ -205,7 +205,7 @@
 	}
 	"No Permission"
 	{
-		"pt"			"You do not have permission to use this command"
+		"pt"			"Você não tem permissão para usar este comando"
 	}
 	"Set Minready"
 	{
@@ -480,17 +480,17 @@
 	"Veto Bo3 Map List"
 	{
 		"#format"		"{1:s},{2:s},{3:s}"
-		"pt"			"Map 1 = {1}, Map 2 = {2}, Map 3 = {3}"
+		"pt"			"Mapa 1 = {1}, Mapa 2 = {2}, Mapa 3 = {3}"
 	}
 	"Veto Bo5 Map List"
 	{
 		"#format"		"{1:s},{2:s},{3:s},{4:s},{5:s}"
-		"pt"			"Map 1 = {1}, Map 2 = {2}, Map 3 = {3}, Map 4 = {4}, Map 5 = {5}"
+		"pt"			"Mapa 1 = {1}, Mapa 2 = {2}, Mapa 3 = {3}, Mapa 4 = {4}, Mapa 5 = {5}"
 	}
 	"Veto Bo2 Map List"
 	{
 		"#format"		"{1:s},{2:s}"
-		"pt"			"Map 1 = {1}, Map 2 = {2}"
+		"pt"			"Mapa 1 = {1}, Mapa 2 = {2}"
 	}
 	"Veto Disabled"
 	{
