@@ -7721,13 +7721,13 @@ public Action DisplayHelp(int client, int args)
 {
 	if (client == 0)
 	{
-		PrintHintTextToAll("%t: !ready !unready !info !score", "Available Commands");
+		PrintHintTextToAll("%t: !ready !notready !info !score", "Available Commands");
 	}
 	else
 	{
 		if (IsClientConnected(client) && IsClientInGame(client))
 		{
-			PrintHintText(client, "%t: !ready !unready !info !score", "Available Commands");
+			PrintHintText(client, "%t: !ready !notready !info !score", "Available Commands");
 		}
 	}
 	return Plugin_Handled;
