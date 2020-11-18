@@ -2,7 +2,7 @@
 {
 	"Safe Mode"
 	{
-		"pt"			"Safe Mode Enabled. Feature is disabled."
+		"pt"			"Modo de Segurança ativado. O recurso está desativado!"
 	}
 	"Practice Mode Active"
 	{
@@ -40,7 +40,7 @@
 	"Playing Out Notice"
 	{
 		"#format"		"{1:i}"
-		"pt"			"Note: All {1} rounds must be played out!"
+		"pt"			"Nota: Todos os {1} rounds devem ser jogadas!"
 	}
 	"Ready"
 	{
@@ -60,11 +60,11 @@
 	}
 	"Knife Round Cancelled"
 	{
-		"pt"			"Round knife cancelled - Not Live"
+		"pt"			"Round Faca cancelado - Não está valendo"
 	}
 	"Knife Round Inactive"
 	{
-		"pt"			"Round knife is not active"
+		"pt"			"Round Faca não está ativo"
 	}
 	"Ready System Enabled"
 	{
@@ -183,7 +183,7 @@
 	}
 	"WarMod Inactive"
 	{
-		"pt"			"WarMod is not active"
+		"pt"			"WarMod não está ativo"
 	}
 	"Change T Name"
 	{
@@ -219,7 +219,7 @@
 	}
 	"WarMod Rcon Only"
 	{
-		"pt"			"Admin commands have been restricted to RCON only"
+		"pt"			"Os comandos de administração foram restritos apenas a RCON"
 	}
 	"Set Password"
 	{
@@ -228,31 +228,31 @@
 	}
 	"Autokick"
 	{
-		"pt"			"You have been automatically kicked from the server"
+		"pt"			"Você foi kickado automaticamente do servidor"
 	}
 	"Names Required"
 	{
-		"pt"			"Match will not LO3 until both team names have been set"
+		"pt"			"A partida não será LO3 até que os nomes de ambos os times tenham sido definidos"
 	}
 	"Pause Freeze Time"
 	{
-		"pt"			"Game will pause at freeze time"
+		"pt"			"O jogo irá fazer um pause no freeze time"
 	}
 	"Pause Round End"
 	{
-		"pt"			"Game will pause at the end of the round"
+		"pt"			"O jogo fará uma pause no fim do round"
 	}
 	"Pause Limit"
 	{
-		"pt"			"You have used all your pauses already"
+		"pt"			"Você já usou todos os pauses disponíveis"
 	}
 	"Pause Non-player"
 	{
-		"pt"			"You must be on T or CT to use !pause"
+		"pt"			"Você deve estar de T ou CT para usar !pause"
 	}
 	"Pause Offer"
 	{
-		"pt"			"have asked for a Pause. Please type !pause to pause the match"
+		"pt"			"pediram um pause. Digite !pause para pausar a partida"
 	}
 	"Pause Not Enabled"
 	{
@@ -260,45 +260,45 @@
 	}
 	"Unpause Notice"
 	{
-		"pt"			"Match is now paused. Please type !unpause to unpause the match"
+		"pt"			"A partida está pausada. Digite !unpause para retomar a partida"
 	}
 	"Unpause Offer"
 	{
-		"pt"			"have asked to unpause the game. Please type !unpause to unpause the match"
+		"pt"			"pediram para retomar o jogo. Digite !unpause para retomar a partida"
 	}
 	"Unpaused Match"
 	{
-		"pt"			"have unpaused the match"
+		"pt"			"retomou a partida"
 	}
 	"Unpause Non-player"
 	{
-		"pt"			"You must be on T or CT to use !unpause"
+		"pt"			"Você deve estar de T ou CT para usar !unpause"
 	}
 	"Pause Not Confirmed"
 	{
-		"pt"			"Pause offer was not confirmed by the other team"
+		"pt"			"Pedido de pause não foi confirmado pelo outro time"
 	}
 	"Unpause Timer"
 	{
-		"pt"			"seconds until game is auto unpaused"
+		"pt"			"segundos até que o jogo seja retomado automaticamente"
 	}
 	"Unpause Auto"
 	{
-		"pt"			"Match was auto unpaused because time limit reached"
+		"pt"			"A partida foi retomada automaticamente porque o limite de tempo do pause foi atingido"
 	}
 	"Auto Pause Notice"
 	{
 		"#format"		"{1:s}"
-		"pt"			"Match will be paused because a player from '{1}' has left the server"
+		"pt"			"A partida será pausada porque um player do '{1}' saiu do servidor"
 	}
 	"Auto Unpause Notice"
 	{
 		"#format"		"{1:s}"
-		"pt"			"Match has been auto paused because a player from '{1}' has left the server"
+		"pt"			"A partida foi pausada automaticamente porque um player do '{1}' saiu do servidor"
 	}
 	"Paused Via Rcon"
 	{
-		"pt"			"Server is not paused or was paused via RCON"
+		"pt"			"O servidor não está pausado ou foi pausado via RCON"
 	}
 	"Knife Vote Team"
 	{
@@ -334,7 +334,7 @@
 	}
 	"Logos Required"
 	{
-		"pt"			"Match will not LO3 until both team logos have been set"
+		"pt"			"A partida não será LO3 até que ambos os logotipos dos times tenham sido definidos"
 	}
 	"Set Logo CT"
 	{
@@ -446,11 +446,11 @@
 	}
 	"Admin_Menu Activate WarMod"
 	{
-		"pt"			"Activate WarMod"
+		"pt"			"Ativar WarMod"
 	}
 	"Admin_Menu Deactivate WarMod"
 	{
-		"pt"			"Deactivate WarMod"
+		"pt"			"Desativar WarMod"
 	}
 	"Warm Up Active"
 	{
@@ -475,7 +475,7 @@
 	"Veto No Maps"
 	{
 		"#format"		"{1:i}"
-		"pt"			"No maps in BO{1} list"
+		"pt"			"Nenhum mapa na lista BO{1}"
 	}
 	"Veto Bo3 Map List"
 	{
@@ -515,7 +515,7 @@
 	}
 	"Non-player"
 	{
-		"pt"			"You must be on Terrorist or Counter-Terrorist to use this command"
+		"pt"			"Você deve estar em Terrorista ou Contra-Terrorista para usar este comando"
 	}
 	"Default Offer"
 	{
@@ -535,10 +535,10 @@
 	}
 	"OverTime Offer"
 	{
-		"pt"			"have asked for a overtime match. Please type !ot to accept"
+		"pt"			"pediram overtime. Digite !ot para aceitar"
 	}
 	"OverTime Offer Not Confirmed"
 	{
-		"pt"			"Overtime offer was not confirmed by the other team"
+		"pt"			"Overtime não foi confirmado pela outro time"
 	}
 }

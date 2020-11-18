@@ -2,7 +2,7 @@
 {
 	"Safe Mode"
 	{
-		"en"			"Safe Mode Enabled. Feature is disabled."
+		"en"			"Safe Mode enabled. Feature is disabled!"
 	}
 	"Practice Mode Active"
 	{
