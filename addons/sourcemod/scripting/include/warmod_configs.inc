@@ -510,7 +510,6 @@ static void RuleSet_Practice(char[] WM_VERSION)
 	WriteFileLine(file, "mp_roundtime_defuse		\"9999\"		//How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead");
 	WriteFileLine(file, "bot_quota			\"0\"		//Determines the total number of bots in the game.");
 	WriteFileLine(file, "wm_active			\"0\"		//Enable or disable WarMod as active");
-	WriteFileLine(file, "mp_restartargame			\"7\"");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "say WarMod [BFG] Practice Config Loaded", false); // no newline at the end
 	CloseHandle(file);
@@ -1483,7 +1482,6 @@ static void UpdatePractice(char[] WM_VERSION)
 	WriteFileLine(file, "mp_roundtime_defuse		\"9999\"		//How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead");
 	WriteFileLine(file, "bot_quota			\"0\"		//Determines the total number of bots in the game.");
 	WriteFileLine(file, "wm_active			\"0\"		//Enable or disable WarMod as active");
-	WriteFileLine(file, "mp_restartargame			\"7\"");
 	WriteFileLine(file, "");
 	WriteFileLine(file, "say WarMod [BFG] Practice Config Loaded", false); // no newline at the end
 	CloseHandle(file);
