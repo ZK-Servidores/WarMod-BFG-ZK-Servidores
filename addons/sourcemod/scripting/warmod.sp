@@ -6713,7 +6713,7 @@ public Action OnClientSayCommand(int client, const char[]command, const char[]sA
 	ChatAlias(".ready", ReadyUp)
 	ChatAlias(".r", ReadyUp)
 	ChatAlias(".rdy", ReadyUp)
-	ChatAlias(".auqecendo", ReadyDown)
+	ChatAlias(".aquecendo", ReadyDown)
 	ChatAlias(".notready", ReadyDown)
 	ChatAlias(".nr", ReadyDown)
 	ChatAlias(".unready", ReadyDown)
