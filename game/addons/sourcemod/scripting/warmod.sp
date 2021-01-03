@@ -314,9 +314,9 @@ ConVar wm_ban_percentage;
 ConVar sv_kick_ban_duration;
 
 /* Random Team Names and Logos */
-static char g_teamName[][] = {	"3DMAX", 	"Astralis", 	"Astana Dragons", 	"Bravado Gaming", 	"BIG",	"Cloud9", 	"Counter Logic Gaming", 	"Clan Mystik", 	"Chaos Esports Club",	"compLexity Gaming", 	"Copenhagen Wolves", 	"dAT Team",		"Dexterity Team",	"Team Dignitas", 	"Epsilon eSports", 	"ENCE eSports",		"ESC Gaming", 	"FaZe Clan",	"Flipsid3 Tactics", 	"fnatic", 	"G2 Esports",	"g3nerationX",	"Gambit Esports",	"HellRaisers", 	"Immortals",	"INTZ eSports", 	"iBUYPOWER", 	"Team Wolf", 	"KaBuM.TD",		"Keyd Stars", 	"Team Liquid",	"London Conspiracy", 	"Luminosity Gaming", 	"Team LDLC.com", 	"Team One",	"LGB eSports", 	"mousesports", 	"MyXMG", 	"Natus Vincere", 	"Ninjas in Pyjamas", 	"Team EnVyUs", 	"PENTA Sports", 	"Planetkey Dynamics", 	"Reason Gaming", 	"SK Gaming", 	"Tempo Storm",	"Team SoloMid", 	"Titan", 	"Vox Eminor", 	"VeryGames", 	"Team Vitality",	"Virtus.Pro"};
-static char g_teamTag[][] = {	"3DMAX", 	"Astralis", 	"Astana Dragons", 	"Bravado", 			"BIG",	"Cloud9", 	"CLG", 						"Clan Mystik", 	"Chaos",				"COL", 					"CPH Wolves", 			"dAT Team", 	"DeX",				"Dignitas", 		"Epsilon", 			"ENCE",				"ESC", 			"FAZE",			"Flipsid3", 			"fnatic", 	"G2 Esports",	"g3X",			"Gambit",			"HellRaisers", 	"Immortals", 	"INTZ",				"iBUYPOWER", 	"Team Wolf", 	"KaBuM.TD",		"Keyd Stars", 	"Liquid",		"Ldn-Con", 				"LG",					"Team LDLC", 		"One",		"LGB", 			"mousesports", 	"MyXMG", 	"Na`Vi", 			"NiP", 					"EnVyUs", 		"PENTA", 			"Planetkey", 			"Reason", 			"SK|", 			"TempoStorm",	"TSM", 				"Titan", 	"Vox Eminor", 	"VeryGames", 	"Vitality",			"Virtus.Pro"};
-static char g_teamLogo[][] = {	"3dm", 		"astrl", 		"ad", 				"bravg", 			"big",	"c9", 		"clg", 						"cm", 			"Chaos",				"col", 					"cw", 					"dat", 			"dexte",			"dig", 				"eps", 				"ence",				"esc", 			"faze",			"flip", 				"fntc", 	"g2",			"g3ner",		"gambi",			"hlr", 			"immor", 		"intz",				"ibp", 			"indw", 		"kabum",		"keyd", 		"liqui",		"lc", 					"lumin",				"ldlc", 			"tone",		"lgb", 			"mss", 			"myxmg", 	"navi", 			"nip", 					"envy", 		"penta", 			"pkd", 					"rgg", 				"sk", 			"tmps",			"tsm", 				"tit", 		"ve", 			"vg", 			"vital",			"vp"};
+static char g_teamName[][] = {	"Astralis", 	"Gambit Esports", 	"BOOM Esports", 	"BIG",	"Cloud9", 	"Counter Logic Gaming", 	"GODSENT", 	"Chaos Esports Club",	"compLexity Gaming", 	"paiN Gaming", 	"DETONA Gaming",	"Dexterity Team",	"Team Dignitas", 	"Epsilon eSports", 	"ENCE eSports",		"FURIA Esports", 	"FaZe Clan",	"Team Spirit", 	"fnatic", 	"G2 Esports",	"g3nerationX",	"Gambit Esports",	"HellRaisers", 	"Immortals",	"INTZ eSports", 	"iBUYPOWER", 	"RED Canids", 	"KaBuM.TD",		"Keyd Stars", 	"Team Liquid",	"Imperial Esports", 	"Luminosity Gaming", 	"forZe", 	"Team One",	"North", 	"mousesports", 	"MAD Lions", 	"Natus Vincere", 	"Ninjas in Pyjamas", 	"Team EnVyUs", 	"PENTA Sports", 	"Evil Geniuses", 	"Reason Gaming", 	"SK Gaming", 	"Tempo Storm",	"Triumph", 	"OG", 	"Heroic", 	"Team Vitality",	"Virtus.Pro"};
+static char g_teamTag[][] = {	"Astralis", 	"Gambit", 			"BOOM", 			"BIG",	"Cloud9", 	"CLG", 						"GODSENT", 	"Chaos",				"COL", 					"paiN", 		"DETONA", 			"DeX",				"Dignitas", 		"Epsilon", 			"ENCE",				"FURIA", 			"FAZE",			"Spirit", 		"fnatic", 	"G2 Esports",	"g3X",			"Gambit",			"HellRaisers", 	"Immortals", 	"INTZ",				"iBUYPOWER", 	"RED Canids", 	"KaBuM.TD",		"Keyd Stars", 	"Liquid",		"Imperial", 			"LG",					"forZe", 	"One",		"North", 	"mousesports", 	"MAD Lions", 	"Na`Vi", 			"NiP", 					"EnVyUs", 		"PENTA", 			"EG", 				"Reason", 			"SK|", 			"TempoStorm",	"Triumph", 	"OG", 	"Heroic", 	"Vitality",			"Virtus.Pro"};
+static char g_teamLogo[][] = {	"astrl", 		"gambi", 			"boom", 			"big",	"c9", 		"clg", 						"godse", 	"chaos",				"col", 					"paing", 		"deton", 			"dexte",			"dig", 				"eps", 				"ence",				"furia", 			"faze",			"spiri", 		"fntc", 	"g2",			"g3ner",		"gambi",			"hlr", 			"immor", 		"intz",				"ibp", 			"redca", 		"kabum",		"keyd", 		"liqui",		"imper", 				"lumin",				"forze", 	"tone",		"north", 	"mss", 			"madli", 		"navi", 			"nip", 					"envy", 		"penta", 			"evilg", 			"rgg", 				"sk", 			"tmps",			"trium", 	"og", 	"heroi", 	"vital",			"vp"};
 int g_teamNumber_ct = 0;
 int g_teamNumber_t = 0;
 bool g_tag_set = false;
@@ -333,7 +333,7 @@ ConVar mp_win_panel_display_time;
 
 /* Plugin info */
 #define UPDATE_URL			"https://warmod.bitbucket.io/updatefile.txt"
-#define WM_VERSION			"20.07.15.1214 + 4.2.6"
+#define WM_VERSION			"20.07.15.1214 + 4.2.6fix"
 #define WM_DESCRIPTION		"An automative service for CS:GO competition matches"
 
 public Plugin myinfo = {
@@ -487,7 +487,9 @@ public void OnPluginStart()
 	RegAdminCmd("forceallready", ForceAllReady, ADMFLAG_CUSTOM1, "Forces all players to become ready");
 	RegAdminCmd("far", ForceAllReady, ADMFLAG_CUSTOM1, "Forces all players to become ready");
 	
+	RegAdminCmd("forceallnotready", ForceAllUnready, ADMFLAG_CUSTOM1, "Forces all players to become unready");
 	RegAdminCmd("forceallunready", ForceAllUnready, ADMFLAG_CUSTOM1, "Forces all players to become unready");
+	RegAdminCmd("fanr", ForceAllUnready, ADMFLAG_CUSTOM1, "Forces all players to become unready");
 	RegAdminCmd("faur", ForceAllUnready, ADMFLAG_CUSTOM1, "Forces all players to become unready");
 	
 	RegAdminCmd("forceallspectate", ForceAllSpectate, ADMFLAG_CUSTOM1, "Forces all players to become a spectator");
