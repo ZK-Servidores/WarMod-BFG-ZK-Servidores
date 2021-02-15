@@ -341,7 +341,7 @@ public Plugin myinfo = {
 	author = "Versatile_BFG, crashzk",
 	description = WM_DESCRIPTION,
 	version = WM_VERSION,
-	url = "https://github.com/zkservidores-clientes/Plugins-SourceMod"
+	url = "https://github.com/ZK-Servidores/Plugins-SourceMod"
 };
 
 public APLRes AskPluginLoad2(Handle myself, bool late, char[] error, int err_max)

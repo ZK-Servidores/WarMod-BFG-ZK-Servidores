@@ -28,13 +28,6 @@ To use admins commands you must have the `ADMFLAG_CUSTOM1` privilege.
 
 All admins commands are in the `!admin` menu in the **WarMod Commands** category.
 
-## Changelog
-### 4.2.6
-- Added new Team Names & Logos;
-- Updated cvars generated in `gamemode_competitive_server.cfg`;
-- Updated cvars generated in the `cfg/warmod` folder;
-- Fixed errors in translations;
-
 ## Credits
 - [Versalite [BFG]](https://forums.alliedmods.net/member.php?u=171777) - Fork of the orignal plugin;
 - [crashzk](https://github.com/crashzk) - Support for the latest SourceMod and other minor fixes;
