@@ -163,7 +163,7 @@
 	}
 	"Info Not Ready"
 	{
-		"en"			"NotReady:"
+		"en"			"NotReady"
 	}
 	"Info Exit"
 	{

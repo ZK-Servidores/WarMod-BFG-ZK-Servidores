@@ -48,7 +48,7 @@
 	}
 	"Not Ready"
 	{
-		"pt"			"Você foi marcado como não pronto"
+		"pt"			"Você foi marcado como aquecendo"
 	}
 	"Score Overtime"
 	{
@@ -88,7 +88,7 @@
 	}
 	"Console Not Ready"
 	{
-		"pt"			"Console não pode ser marcado como não pronto"
+		"pt"			"Console não pode ser marcado como aquecendo"
 	}
 	"Not on Team"
 	{
@@ -100,19 +100,19 @@
 	}
 	"Already Not Ready"
 	{
-		"pt"			"Você já foi marcado como não pronto"
+		"pt"			"Você já foi marcado como aquecendo"
 	}
 	"Forced Ready"
 	{
-		"pt"			"Forced all players ready"
+		"pt"			"Forçou todos os players a ficarem prontos"
 	}
 	"Forced Not Ready"
 	{
-		"pt"			"Forced all players not ready"
+		"pt"			"Forçou todos os players a ficarem aquecendo"
 	}
 	"Forced Spectate"
 	{
-		"pt"			"Forced all players to spectate"
+		"pt"			"Forçou todos os players a ficarem de spectador"
 	}
 	"Match Not In Progress"
 	{
@@ -146,7 +146,7 @@
 	}
 	"Grenades Blocked"
 	{
-		"pt"			"Granadas no aquecimento estão desativadas"
+		"pt"			"Granadas no aquecimento estão desativadas ;D"
 	}
 	"Ready System"
 	{
@@ -163,7 +163,7 @@
 	}
 	"Info Not Ready"
 	{
-		"pt"			"NotReady:"
+		"pt"			"Aquecendo"
 	}
 	"Info Exit"
 	{
@@ -171,11 +171,11 @@
 	}
 	"Ready System Disabled2"
 	{
-		"pt"			"The ready system is not enabled"
+		"pt"			"O sistema ready não está habilitado"
 	}
 	"ShowInfo Disabled"
 	{
-		"pt"			"The ready system display is not enabled"
+		"pt"			"Display do sistema ready não está habilitada"
 	}
 	"Match Is Live"
 	{
@@ -289,12 +289,12 @@
 	"Auto Pause Notice"
 	{
 		"#format"		"{1:s}"
-		"pt"			"A partida será pausada porque um player do '{1}' saiu do servidor"
+		"pt"			"A partida será pausada porque um player do '{1}' desconectou do servidor"
 	}
 	"Auto Unpause Notice"
 	{
 		"#format"		"{1:s}"
-		"pt"			"A partida foi pausada automaticamente porque um player do '{1}' saiu do servidor"
+		"pt"			"A partida foi pausada automaticamente porque um player do '{1}' desconectou do servidor"
 	}
 	"Paused Via Rcon"
 	{
@@ -306,7 +306,7 @@
 	}
 	"Knife Vote"
 	{
-		"pt"			"Por favor, digite !ficar ou !trocar"
+		"pt"			"Por favor, digite !ficar para ficar no mesmo time ou !trocar para trocar de time"
 	}
 	"Knife Stay"
 	{
@@ -402,11 +402,11 @@
 	}
 	"Admin_Menu Enable ReadyUp"
 	{
-		"pt"			"Enable ReadyUp"
+		"pt"			"Ativar ReadyUp"
 	}
 	"Admin_Menu Disable ReadyUp"
 	{
-		"pt"			"Disable ReadyUp"
+		"pt"			"Desativar ReadyUp"
 	}
 	"Admin_Menu Knife"
 	{
