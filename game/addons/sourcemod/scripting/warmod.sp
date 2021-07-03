@@ -443,7 +443,7 @@ public void OnPluginStart()
 	RegConsoleCmd("sm_default", Default_Offer, "Sets the match to be in default mode");
 	RegConsoleCmd("sm_def", Default_Offer, "Sets the match to be in default mode");
 	
-	/* Veto cmds */
+	/* Veto Commands */
 	RegConsoleCmd("sm_vetobo1", Veto_Bo1, "Ask for a Bo1 Veto");
 	RegConsoleCmd("sm_vetobo2", Veto_Bo2, "Ask for a Bo2 Veto");
 	RegConsoleCmd("sm_vetobo3", Veto_Bo3, "Ask for a Bo3 Veto");
@@ -455,7 +455,7 @@ public void OnPluginStart()
 	RegConsoleCmd("sm_veto5", Veto_Bo5, "Ask for a Bo5 Veto");
 	RegConsoleCmd("sm_vetomaps", Veto_Bo3_Maps, "Veto Bo3 Maps");
 	
-	/* admin commands */	
+	/* Admin Commands */	
 	RegAdminCmd("notlive", NotLive, ADMFLAG_CUSTOM1, "Declares half not live and restarts the round");
 	RegAdminCmd("nl", NotLive, ADMFLAG_CUSTOM1, "Declares half not live and restarts the round");
 	
@@ -520,7 +520,7 @@ public void OnPluginStart()
 	
 	RegAdminCmd("updatecfgs", UpdateCFGs, ADMFLAG_CUSTOM1, "Updates configs with the latest format");
 	
-	// server commands
+	// server Commands
 	RegServerCmd("wm_status", WarMod_Status);
 	RegServerCmd("wm_forceteam", ForceTeam, "Force the SteamID64 client to a team");
 	RegServerCmd("wm_clear_forceteam_all", ClearForceTeamAll, "Clears the list for forced teams");
@@ -6202,7 +6202,7 @@ public int Handler_ReadySystem(Handle menu, MenuAction action, int param1, int p
 	}
 }
 
-//Knife vote stay
+//Knife Vote Stay
 public Action Stay(int client, int args)
 {
 	if ((g_knife_vote) && GetClientTeam(client) == g_knife_winner)
@@ -6240,7 +6240,7 @@ public Action Stay(int client, int args)
 	return Plugin_Handled;
 }
 
-//Knife vote switch
+//Knife Vote Switch
 public Action Switch(int client, int args)
 {
 	if ((g_knife_vote) && GetClientTeam(client) == g_knife_winner)
@@ -6726,21 +6726,27 @@ public Action OnClientSayCommand(int client, const char[]command, const char[]sA
 	ChatAlias(".ready", ReadyUp)
 	ChatAlias(".r", ReadyUp)
 	ChatAlias(".rdy", ReadyUp)
+	
 	ChatAlias(".aquecendo", ReadyDown)
 	ChatAlias(".notready", ReadyDown)
 	ChatAlias(".nr", ReadyDown)
 	ChatAlias(".unready", ReadyDown)
 	ChatAlias(".ur", ReadyDown)
 	ChatAlias(".urdy", ReadyDown)
+	
 	ChatAlias(".info", ReadyInfoPriv)
 	ChatAlias(".i", ReadyInfoPriv)
+	
 	ChatAlias(".score", ShowScore)
 	ChatAlias(".s", ShowScore)
+	
 	ChatAlias(".stay", Stay)
 	ChatAlias(".ficar", Stay)
+	
 	ChatAlias(".switch", Switch)
 	ChatAlias(".trocar", Switch)
 	ChatAlias(".swap", Switch)
+	
 	ChatAlias(".help", DisplayHelp)
 	
 	if (client == 0)
