@@ -14,7 +14,7 @@ An automative service for CS:GO competition matches. ***(Modified from [WarMod [
 **sm_veto** |  Ask veto to choose a map to play. ***(Types of veto works according to what is configured on the server)*** | !veto, !veto1, !veto2, !veto3, !veto5, !vetomaps,|
 
 ## Admin Commands
-To use admins commands you must have the **`ADMFLAG_CUSTOM1** privilege.
+To use admins commands you must have the **`ADMFLAG_CUSTOM1`** privilege.
 
 **CVARS** | **Description** | **Commands** |
 :--------: | -------- | :--------: |
