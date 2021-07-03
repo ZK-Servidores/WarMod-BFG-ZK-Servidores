@@ -314,9 +314,9 @@ ConVar wm_ban_percentage;
 ConVar sv_kick_ban_duration;
 
 /* Random Team Names and Logos */
-static char g_teamName[][] = {	"Astralis", 	"Gambit Esports", 	"BIG",	"Cloud9", 	"Counter Logic Gaming", 	"GODSENT", 	"compLexity Gaming", 	"paiN Gaming", 	"Team Dignitas", 	"Endpoint",		"Epsilon eSports", 	"ENCE eSports",		"FURIA Esports", 	"FaZe Clan",	"Team Spirit", 	"fnatic", 	"G2 Esports",	"Gambit Esports",	"HellRaisers", 	"Immortals",	"INTZ eSports", 	"iBUYPOWER", 	"Keyd Stars", 	"Team Liquid",	"Luminosity Gaming", 	"MIBR",	"forZe", 	"Team One",	"North", 	"mousesports", 	"MAD Lions", 	"Natus Vincere", 	"Ninjas in Pyjamas", 	"Team EnVyUs", 	"PENTA Sports", 	"Evil Geniuses", 	"Reason Gaming", 	"SK Gaming", 	"Tempo Storm",	"Triumph",	"TYLOO", 	"OG", 	"Heroic", 	"Team Vitality",	"Virtus.Pro"};
-static char g_teamTag[][] = {	"Astralis", 	"Gambit", 			"BIG",	"Cloud9", 	"CLG", 						"GODSENT", 	"COL", 					"paiN", 		"Dignitas", 		"Endpoint",		"Epsilon", 			"ENCE",				"FURIA", 			"FAZE",			"Spirit", 		"fnatic", 	"G2 Esports",	"Gambit",			"HellRaisers", 	"Immortals", 	"INTZ",				"iBUYPOWER", 	"Keyd Stars", 	"Liquid",		"LG",					"MIBR",	"forZe", 	"One",		"North", 	"mousesports", 	"MAD Lions", 	"Na`Vi", 			"NiP", 					"EnVyUs", 		"PENTA", 			"EG", 				"Reason", 			"SK|", 			"TempoStorm",	"Triumph", 	"TyLoo",	"OG", 	"Heroic", 	"Vitality",			"Virtus.Pro"};
-static char g_teamLogo[][] = {	"astr", 		"gamb", 			"big",	"c9", 		"clg", 						"god", 		"col", 					"pain", 		"dig", 				"endp",			"eps", 				"ence",				"furi", 			"faze",			"spir", 		"fntc", 	"g2",			"gamb",				"hlr", 			"imt", 			"intz",				"ibp", 			"keyd", 		"liq",			"lumi",					"mibr",	"forz", 	"zkton",	"nor", 		"mss", 			"madli", 		"navi", 			"nip", 					"nv", 			"penta", 			"eg", 				"rgg", 				"sk", 			"tmps",			"trium", 	"tyl",		"og", 	"heroi", 	"vita",				"vp"};
+static char g_teamName[][] = {	"Astralis", 	"Gambit Esports", 	"BIG",	"Cloud9", 	"Counter Logic Gaming", 	"GODSENT", 	"compLexity Gaming", 	"paiN Gaming", 	"Team Dignitas", 	"Endpoint",		"Epsilon eSports", 	"ENCE eSports",		"FURIA Esports", 	"FaZe Clan",	"Team Spirit", 	"fnatic", 	"G2 Esports",	"Gambit Esports",	"HellRaisers", 	"Immortals",	"INTZ eSports", 	"iBUYPOWER", 	"Keyd Stars", 	"Team Liquid",	"Luminosity Gaming", 	"MIBR",	"forZe", 	"North", 	"mousesports", 	"MAD Lions", 	"Natus Vincere", 	"Ninjas in Pyjamas", 	"Team EnVyUs", 	"PENTA Sports", 	"Evil Geniuses", 	"Reason Gaming", 	"SK Gaming", 	"Tempo Storm",	"Triumph",	"TYLOO", 	"OG", 	"Heroic", 	"Team Vitality",	"Virtus.Pro"};
+static char g_teamTag[][] = {	"Astralis", 	"Gambit", 			"BIG",	"Cloud9", 	"CLG", 						"GODSENT", 	"COL", 					"paiN", 		"Dignitas", 		"Endpoint",		"Epsilon", 			"ENCE",				"FURIA", 			"FAZE",			"Spirit", 		"fnatic", 	"G2 Esports",	"Gambit",			"HellRaisers", 	"Immortals", 	"INTZ",				"iBUYPOWER", 	"Keyd Stars", 	"Liquid",		"LG",					"MIBR",	"forZe", 	"North", 	"mousesports", 	"MAD Lions", 	"Na`Vi", 			"NiP", 					"EnVyUs", 		"PENTA", 			"EG", 				"Reason", 			"SK|", 			"TempoStorm",	"Triumph", 	"TyLoo",	"OG", 	"Heroic", 	"Vitality",			"Virtus.Pro"};
+static char g_teamLogo[][] = {	"astr", 		"gamb", 			"big",	"c9", 		"clg", 						"god", 		"col", 					"pain", 		"dig", 				"endp",			"eps", 				"ence",				"furi", 			"faze",			"spir", 		"fntc", 	"g2",			"gamb",				"hlr", 			"imt", 			"intz",				"ibp", 			"keyd", 		"liq",			"lumi",					"mibr",	"forz", 	"nor", 		"mss", 			"madli", 		"navi", 			"nip", 					"nv", 			"penta", 			"eg", 				"rgg", 				"sk", 			"tmps",			"trium", 	"tyl",		"og", 	"heroi", 	"vita",				"vp"};
 int g_teamNumber_ct = 0;
 int g_teamNumber_t = 0;
 bool g_tag_set = false;
@@ -332,9 +332,9 @@ ConVar mp_halftime_duration;
 ConVar mp_win_panel_display_time;
 
 /* Plugin info */
-#define UPDATE_URL			"https://warmod.bitbucket.io/updatefile.txt"
-#define WM_VERSION			"20.07.15.1214 + 4.2.7"
-#define WM_DESCRIPTION		"An automative service for CS:GO competition matches"
+#define UPDATE_URL		"https://warmod.bitbucket.io/updatefile.txt"
+#define WM_VERSION		"20.07.15.1214 + 4.2.8"
+#define WM_DESCRIPTION	"An automative service for CS:GO competition matches"
 
 public Plugin myinfo = {
 	name = "[BFG] WarMod | ZK Servidores™",
@@ -390,12 +390,17 @@ public void OnPluginStart()
 	AddCommandListener(MatchRestore, "mp_backup_restore_load_file");
 	
 	RegConsoleCmd("score", ConsoleScore);
+	
 	RegConsoleCmd("wm_version", WMVersion);
+	
 	RegConsoleCmd("buy", RestrictBuy);
+	
 	RegConsoleCmd("jointeam", ChooseTeam);
 	RegConsoleCmd("spectate", ChooseTeam);
+	
 	RegConsoleCmd("wm_readylist", ReadyList);
 	RegConsoleCmd("wmrl", ReadyList);
+	
 	RegConsoleCmd("wm_cash", AskTeamMoney);
 	
 	RegConsoleCmd("sm_name", SetName, "Sets the name for the team. Only active when wm_require_names 1 and at start of match");
@@ -405,21 +410,27 @@ public void OnPluginStart()
 	RegConsoleCmd("sm_ready", ReadyUp, "Readies up the client");
 	RegConsoleCmd("sm_r", ReadyUp, "Readies up the client");
 	RegConsoleCmd("sm_rdy", ReadyUp, "Readies up the client");
+	
 	RegConsoleCmd("sm_aquecendo", ReadyDown, "Readies down the client");
 	RegConsoleCmd("sm_notready", ReadyDown, "Readies down the client");
 	RegConsoleCmd("sm_nr", ReadyDown, "Readies down the client");
 	RegConsoleCmd("sm_unready", ReadyDown, "Readies down the client");
 	RegConsoleCmd("sm_ur", ReadyDown, "Readies down the client");
 	RegConsoleCmd("sm_urdy", ReadyDown, "Readies down the client");
+	
 	RegConsoleCmd("sm_info", ReadyInfoPriv, "Shows ready info");
 	RegConsoleCmd("sm_i", ReadyInfoPriv, "Shows ready info");
+	
 	RegConsoleCmd("sm_score", ShowScore, "Shows score to client");
 	RegConsoleCmd("sm_s", ShowScore, "Shows score to client");
+	
 	RegConsoleCmd("sm_stay", Stay, "Stay command for knife round");
 	RegConsoleCmd("sm_ficar", Stay, "Stay command for knife round");
+	
 	RegConsoleCmd("sm_switch", Switch, "Switch command for knife round");
 	RegConsoleCmd("sm_trocar", Switch, "Switch command for knife round");
 	RegConsoleCmd("sm_swap", Switch, "Switch command for knife round");
+	
 	RegConsoleCmd("sm_pause", Pause, "Pauses the match");
 	RegConsoleCmd("sm_unpause", Unpause, "Resumes the match");
 	
@@ -2796,11 +2807,11 @@ public void GetScoreMsg(int client, char[] result, int maxlen, int t_score, int 
 		Format(g_ct_name, sizeof(g_ct_name), DEFAULT_CT_NAME);
 	}
 	if (t_score > ct_score) {
-		Format(result, maxlen, "\x02%t \x04%d\x03-\x04%d", "T Winning", g_t_name, t_score, ct_score);
+		Format(result, maxlen, "\x02%t \x04%d\x01-\x04%d", "T Winning", g_t_name, t_score, ct_score);
 	} else if (t_score == ct_score) {
-		Format(result, maxlen, "\x01%t \x04%d\03-\x04%d", "Tied", t_score, ct_score);
+		Format(result, maxlen, "\x01%t \x04%d\x01-\x04%d", "Tied", t_score, ct_score);
 	} else {
-		Format(result, maxlen, "\x0C%t \x04%d\x03-\x04%d", "CT Winning", g_ct_name, ct_score, t_score);
+		Format(result, maxlen, "\x0C%t \x04%d\x01-\x04%d", "CT Winning", g_ct_name, ct_score, t_score);
 	}
 }
 
@@ -6730,25 +6741,7 @@ public Action OnClientSayCommand(int client, const char[]command, const char[]sA
 	ChatAlias(".switch", Switch)
 	ChatAlias(".trocar", Switch)
 	ChatAlias(".swap", Switch)
-	ChatAlias(".pause", Pause)
-	ChatAlias(".unpause", Unpause)
 	ChatAlias(".help", DisplayHelp)
-	ChatAlias(".veto", Veto_Setup)
-	ChatAlias(".vetobo1", Veto_Bo1)
-	ChatAlias(".vetobo2", Veto_Bo2)
-	ChatAlias(".vetobo3", Veto_Bo3)
-	ChatAlias(".vetobo5", Veto_Bo5)
-	ChatAlias(".veto1", Veto_Bo1)
-	ChatAlias(".veto2", Veto_Bo2)
-	ChatAlias(".veto3", Veto_Bo3)
-	ChatAlias(".veto5", Veto_Bo5)
-	ChatAlias(".vetomaps", Veto_Bo3_Maps)
-	ChatAlias(".playout", PlayOut_Offer)
-	ChatAlias(".pl", PlayOut_Offer)
-	ChatAlias(".overtime", OverTime_Offer)
-	ChatAlias(".ot", OverTime_Offer)
-	ChatAlias(".default", Default_Offer)
-	ChatAlias(".def", Default_Offer)
 	
 	if (client == 0)
 	{

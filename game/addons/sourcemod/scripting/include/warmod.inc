@@ -101,7 +101,6 @@ forward void OnLiveOn3();
  */
 forward void OnRoundEnd(const char[] ct_name, int ct_score, int t_score, const char[] t_name);
 
-
 /**
  *  called when a match reaches half time
  *  includes when in overtime
@@ -109,7 +108,6 @@ forward void OnRoundEnd(const char[] ct_name, int ct_score, int t_score, const c
  * @noreturn
  */
 forward void OnHalfTime(const char[] ct_name, int ct_score, int t_score, const char[] t_name);
-
 
 /**
  *  called when a match reaches full time
@@ -119,7 +117,6 @@ forward void OnHalfTime(const char[] ct_name, int ct_score, int t_score, const c
  */
 forward void OnEndMatch(const char[] ct_name, int ct_score, int t_score, const char[] t_name);
 
-
 /**
  *  called when a match half is reset
  *  only occurs if match was currently underway
@@ -127,7 +124,6 @@ forward void OnEndMatch(const char[] ct_name, int ct_score, int t_score, const c
  * @noreturn
  */
 forward void OnResetHalf();
-
 
 /**
  *  called when a match is reset
@@ -143,7 +139,6 @@ forward void OnResetMatch();
  * @param num1    Start Money as an integer.
  * @return        String - error or comfirm setting
  */
-
 stock void WM_PrintToChat(int client, char[] format, any ...)
 {
 	char message[4096];
@@ -187,7 +182,6 @@ stock void GetServerString(char[] format, int size)
  * @return 					-1 on not connected
  *							client index
  */
-
 stock int CS_GetStandardLogString(int client, char[] LogString, int size)
 {
 	if (client == 0)
@@ -215,7 +209,6 @@ stock int CS_GetStandardLogString(int client, char[] LogString, int size)
 	return client;
 }
 
-
 /**
  *  get the warmod logstring for the specified client in json format
  * 
@@ -225,7 +218,6 @@ stock int CS_GetStandardLogString(int client, char[] LogString, int size)
  * @return 					-1 on not connected
  *							client index
  */
-
 stock int CS_GetLogString(int client, char[] LogString, int size)
 {
 	if (client == 0)
@@ -255,7 +247,6 @@ stock int CS_GetLogString(int client, char[] LogString, int size)
 	return client;
 }
 
-
 /**
  *  get the advanced logstring for the specified client in json format
  * 
@@ -265,7 +256,6 @@ stock int CS_GetLogString(int client, char[] LogString, int size)
  * @return 					-1 on not connected
  *							client index
  */
-
 stock int CS_GetAdvLogString(int client, char[] LogString, int size)
 {
 	if (client == 0 || !IsClientInGame(client))
@@ -294,7 +284,6 @@ stock int CS_GetAdvLogString(int client, char[] LogString, int size)
 	return client;
 }
 
-
 /**
  *  get the comma'd string version of an integer
  * 
@@ -303,7 +292,6 @@ stock int CS_GetAdvLogString(int client, char[] LogString, int size)
  * @param  size				the size of the buffer
  * @noreturn
  */
-
 stock void IntToMoney(int OldMoney, char[] NewMoney, int size)
 {
 	char Temp[32];
@@ -330,7 +318,6 @@ stock void IntToMoney(int OldMoney, char[] NewMoney, int size)
 	Format(NewMoney, size, "%s", Temp);
 }
 
-
 /**
  *  get the team index opposite to the specified team
  * 
@@ -338,7 +325,6 @@ stock void IntToMoney(int OldMoney, char[] NewMoney, int size)
  * @return			false on error
  *					team index
  */
-
 stock int GetOtherTeam(int team)
 {
 	if (team == 2)
@@ -355,14 +341,12 @@ stock int GetOtherTeam(int team)
 	}
 }
 
-
 /**
  *  swap all players to the opposite team
  *  allows for skin choice
  * 
  * @noreturn
  */
-
 stock void CS_SwapTeams()
 {
 	for (int i = 1; i <= MaxClients; i++)
@@ -373,7 +357,6 @@ stock void CS_SwapTeams()
 		}
 	}
 }
-
 
 /**
  *  returns number of clients currently playing on a team
@@ -394,13 +377,11 @@ stock int CS_GetPlayingCount()
 	return count;
 }
 
-
 /**
  *  strip all weapons from specified client but the knife
  * 
  * @noreturn
  */
-
 stock bool CS_StripButKnife(int client, bool equip=true)
 {
 	if (!IsClientInGame(client) || GetClientTeam(client) <= 1)
@@ -425,17 +406,14 @@ stock bool CS_StripButKnife(int client, bool equip=true)
 			CS_EquipKnife(client);
 		}
 	}
-
 	return true;
 }
-
 
 /**
  *  return the number of players alive on a given team
  * 
  * @noreturn
  */
-
 stock int GetNumAlive(int team)
 {
 	int count;
@@ -449,25 +427,21 @@ stock int GetNumAlive(int team)
 	return count;
 }
 
-
 /**
  *  equip the specified client with the knife
  * 
  * @noreturn
  */
-
 stock void CS_EquipKnife(int client)
 {
 	ClientCommand(client, "slot3");
 }
-
 
 /**
  *  removing filename invalid characters
  * 
  * @noreturn
  */
-
 stock void StripFilename(char[] filename, int size)
 {
 	char cleanedName[64]; 
@@ -503,13 +477,11 @@ stock void StripFilename(char[] filename, int size)
 	ReplaceString(filename, size, " ", "_");
 }*/
 
-
 /**
  *  converting a string to lowercase
  * 
  * @noreturn
  */
-
 stock void StringToLower(char[] input, int size)
 {
 	for (int i = 0; i < size; i++)
@@ -523,7 +495,6 @@ stock void StringToLower(char[] input, int size)
  * 
  * @noreturn
  */
-
 stock void StringToUpper(char[] input, int size)
 {
 	for (int i = 0; i < size; i++)
@@ -532,13 +503,11 @@ stock void StringToUpper(char[] input, int size)
 	}
 }
 
-
 /**
  *  hide setting an int cvar
  * 
  * @noreturn
- */
- 
+ */ 
 stock void SetConVarIntHidden(Handle cvar, const int value)
 {
 	char cvar_name[64];
@@ -551,13 +520,11 @@ stock void SetConVarIntHidden(Handle cvar, const int value)
 	SetConVarFlags(cvar, flags);
 }
 
-
 /**
  *  hide setting a string cvar
  * 
  * @noreturn
- */
- 
+ */ 
 stock void SetConVarStringHidden(Handle cvar, char[] value)
 {
 	char cvar_name[64];
@@ -568,13 +535,11 @@ stock void SetConVarStringHidden(Handle cvar, char[] value)
 	SetConVarFlags(cvar, flags);
 }
 
-
 /**
  *  escape a string, designed for JSON encoding
  * 
  * @noreturn
  */
-
 stock void EscapeString(char[] value, int size)
 {
 	ReplaceString(value, size, "\\", "\\\\");
@@ -598,7 +563,6 @@ stock void EscapeString(char[] value, int size)
 	ReplaceString(value, size, "~", "");
 }
 
-
 /**
  * get the team name given by the game (e.g. TERRORIST and CT)
  *
@@ -607,7 +571,6 @@ stock void EscapeString(char[] value, int size)
  * @param  size				size of the buffer
  * @noreturn
  */
-
 stock void GetTeamName2(int index,char[] team_name, int size)
 {
 	if (StrEqual(g_team_name_cache[index], ""))
