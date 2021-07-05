@@ -5938,7 +5938,7 @@ void DispInfo(int client, char[] players_unready, int time)
 		char Temp[128];
 		SetGlobalTransTarget(client);
 		g_m_ready_up = CreatePanel();
-		Format(Temp, sizeof(Temp), "WarMod [BFG]- %t", "Ready System");
+		Format(Temp, sizeof(Temp), "WarMod [BFG] - %t", "Ready System");
 		SetPanelTitle(g_m_ready_up, Temp);
 		DrawPanelText(g_m_ready_up, "\n \n");
 		Format(Temp, sizeof(Temp), "%t", "Match Begin Msg", GetConVarInt(wm_min_ready));

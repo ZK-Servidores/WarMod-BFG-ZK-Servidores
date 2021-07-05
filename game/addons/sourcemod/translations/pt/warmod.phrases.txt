@@ -121,7 +121,7 @@
 	"T Winning"
 	{
 		"#format"		"{1:s}"
-		"pt"			"{1} estão ganhando"
+		"pt"			"{1} esta ganhando"
 	}
 	"Tied"
 	{
@@ -130,7 +130,7 @@
 	"CT Winning"
 	{
 		"#format"		"{1:s}"
-		"pt"			"{1} estão ganhando"
+		"pt"			"{1} esta ganhando"
 	}
 	"Change Teams Midgame"
 	{

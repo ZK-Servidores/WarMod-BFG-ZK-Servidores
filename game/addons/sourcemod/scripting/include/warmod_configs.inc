@@ -378,7 +378,7 @@ static void RuleSet_Default(char[] WM_VERSION)
 	WriteFileLine(file, "mp_roundtime_defuse		\"1.92\"		//How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead");
 	WriteFileLine(file, "wm_round_money		\"1\"		//Enable or disable a client's team mates money to be displayed at the start of a round (to him only)");
 	WriteFileLine(file, "");
-	WriteFileLine(file, "say WarMod [BFG] Default Match Config Loaded", false); // no newline at the end
+	WriteFileLine(file, "say Default Match Config Loaded", false); // no newline at the end
 	CloseHandle(file);
 }
 
@@ -405,7 +405,7 @@ static void RuleSet_PlayOut(char[] WM_VERSION)
 	WriteFileLine(file, "mp_roundtime_defuse		\"1.92\"		//How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead");
 	WriteFileLine(file, "wm_round_money		\"1\"		//Enable or disable a client's team mates money to be displayed at the start of a round (to him only)");
 	WriteFileLine(file, "");
-	WriteFileLine(file, "say WarMod [BFG] PlayOut Match Config Loaded", false); // no newline at the end
+	WriteFileLine(file, "say PlayOut Match Config Loaded", false); // no newline at the end
 	CloseHandle(file);
 }
 
@@ -432,7 +432,7 @@ static void RuleSet_OverTime(char[] WM_VERSION)
 	WriteFileLine(file, "mp_roundtime_defuse		\"1.92\"		//How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead");
 	WriteFileLine(file, "wm_round_money		\"1\"		//Enable or disable a client's team mates money to be displayed at the start of a round (to him only)");
 	WriteFileLine(file, "");
-	WriteFileLine(file, "say WarMod [BFG] OverTime Config Loaded", false);// no newline at the end
+	WriteFileLine(file, "say OverTime Config Loaded", false);// no newline at the end
 	CloseHandle(file);
 }
 
@@ -474,7 +474,7 @@ static void RuleSet_WarmUp(char[] WM_VERSION)
 	WriteFileLine(file, "mp_death_drop_gun	\"0\"			// Which gun to drop on player death: 0=none, 1=best, 2=current or best");
 	WriteFileLine(file, "wm_active			\"1\"		//Enable or disable WarMod as active");
 	WriteFileLine(file, "");
-	WriteFileLine(file, "say WarMod [BFG] WarmUp Config Loaded", false); // no newline at the end
+	WriteFileLine(file, "say WarmUp Config Loaded", false); // no newline at the end
 	CloseHandle(file);
 }
 
@@ -511,7 +511,7 @@ static void RuleSet_Practice(char[] WM_VERSION)
 	WriteFileLine(file, "bot_quota			\"0\"		//Determines the total number of bots in the game.");
 	WriteFileLine(file, "wm_active			\"0\"		//Enable or disable WarMod as active");
 	WriteFileLine(file, "");
-	WriteFileLine(file, "say WarMod [BFG] Practice Config Loaded", false); // no newline at the end
+	WriteFileLine(file, "say Practice Config Loaded", false); // no newline at the end
 	CloseHandle(file);
 }
 
@@ -605,7 +605,7 @@ static void RuleSet_Knife(char[] WM_VERSION)
 	WriteFileLine(file, "mp_give_player_c4 \"0\"		// This command would enable the C4, meaning a random player on the terrorist team would receive it at the start of the round");
 	WriteFileLine(file, "wm_round_money		\"0\"		//Enable or disable a client's team mates money to be displayed at the start of a round (to him only)");
 	WriteFileLine(file, "");
-	WriteFileLine(file, "say WarMod [BFG] Knife Match Config Loaded", false); // no newline at the end
+	WriteFileLine(file, "say Round Knife Match Config Loaded", false); // no newline at the end
 	CloseHandle(file);
 }
 
@@ -1336,7 +1336,7 @@ static void UpdateRuleSet_Default(char[] WM_VERSION)
 	WriteFileLine(file, "mp_roundtime_defuse		\"1.92\"		//How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead");
 	WriteFileLine(file, "wm_round_money		\"1\"		//Enable or disable a client's team mates money to be displayed at the start of a round (to him only)");
 	WriteFileLine(file, "");
-	WriteFileLine(file, "say WarMod [BFG] Default Match Config Loaded", false); // no newline at the end
+	WriteFileLine(file, "say Default Match Config Loaded", false); // no newline at the end
 	CloseHandle(file);
 	
 	UpdateRuleSet_PlayOut(WM_VERSION);
@@ -1368,7 +1368,7 @@ static void UpdateRuleSet_PlayOut(char[] WM_VERSION)
 	WriteFileLine(file, "mp_roundtime_defuse		\"1.92\"		//How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead");
 	WriteFileLine(file, "wm_round_money		\"1\"		//Enable or disable a client's team mates money to be displayed at the start of a round (to him only)");
 	WriteFileLine(file, "");
-	WriteFileLine(file, "say WarMod [BFG] Play Out Match Config Loaded", false); // no newline at the end
+	WriteFileLine(file, "say Play Out Match Config Loaded", false); // no newline at the end
 	CloseHandle(file);
 	
 	UpdateRuleSet_OverTime(WM_VERSION);
@@ -1401,7 +1401,7 @@ static void UpdateRuleSet_OverTime(char[] WM_VERSION)
 	WriteFileLine(file, "mp_roundtime_defuse		\"1.92\"		//How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead");
 	WriteFileLine(file, "wm_round_money		\"1\"		//Enable or disable a client's team mates money to be displayed at the start of a round (to him only)");
 	WriteFileLine(file, "");
-	WriteFileLine(file, "say WarMod [BFG] OverTime Config Loaded", false);// no newline at the end
+	WriteFileLine(file, "say OverTime Config Loaded", false);// no newline at the end
 	CloseHandle(file);
 	
 	UpdateWarmUp(WM_VERSION);
@@ -1445,7 +1445,7 @@ static void UpdateWarmUp(char[] WM_VERSION)
 	WriteFileLine(file, "mp_death_drop_gun	\"0\"			// Which gun to drop on player death: 0=none, 1=best, 2=current or best");
 	WriteFileLine(file, "wm_active			\"1\"		//Enable or disable WarMod as active");
 	WriteFileLine(file, "");
-	WriteFileLine(file, "say WarMod [BFG] WarmUp Config Loaded", false); // no newline at the end
+	WriteFileLine(file, "say WarmUp Config Loaded", false); // no newline at the end
 	CloseHandle(file);
 	UpdatePractice(WM_VERSION);
 }
@@ -1483,7 +1483,7 @@ static void UpdatePractice(char[] WM_VERSION)
 	WriteFileLine(file, "bot_quota			\"0\"		//Determines the total number of bots in the game.");
 	WriteFileLine(file, "wm_active			\"0\"		//Enable or disable WarMod as active");
 	WriteFileLine(file, "");
-	WriteFileLine(file, "say WarMod [BFG] Practice Config Loaded", false); // no newline at the end
+	WriteFileLine(file, "say Practice Config Loaded", false); // no newline at the end
 	CloseHandle(file);
 	UpdateRuleSet_Knife(WM_VERSION);
 }
@@ -1513,7 +1513,7 @@ static void UpdateRuleSet_Knife(char[] WM_VERSION)
 	WriteFileLine(file, "mp_give_player_c4 \"0\"		// This command would enable the C4, meaning a random player on the terrorist team would receive it at the start of the round");
 	WriteFileLine(file, "wm_round_money		\"0\"		//Enable or disable a client's team mates money to be displayed at the start of a round (to him only)");
 	WriteFileLine(file, "");
-	WriteFileLine(file, "say WarMod [BFG] Knife Match Config Loaded", false); // no newline at the end
+	WriteFileLine(file, "say Round Knife Match Config Loaded", false); // no newline at the end
 	CloseHandle(file);
 	
 	UpdateOn_Map_Load(WM_VERSION);
