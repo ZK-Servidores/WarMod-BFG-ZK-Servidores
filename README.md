@@ -22,10 +22,10 @@ To use admins commands you must have the **`ADMFLAG_CUSTOM1`** privilege.
 **sm_forceend** | Forces the game to end no matter what the reason. | !forceend, !fe |
 **sm_roundknife** | Remove all weapons except knife for a round knife before the live players choose the team. | !roundknife, !rk |
 **sm_cancelknife** | Cancels the knife round and the restart round. | !cancelknife, !ck |
-**sm_warmup** | Force warmup for everyone. ***(Must be used after !forceend)*** | !warmup, !aquecimento |
+**sm_warmup** | Force warmup for everyone. ***(Must be used after `!forceend`)*** | !warmup, !aquecimento |
 
 All admins commands are in the **`!admin`** menu in the **WarMod Commands** category.
 
 ## Credits
 - [Versalite [BFG]](https://forums.alliedmods.net/member.php?u=171777) - Fork of the orignal plugin;
-- [crashzk](https://github.com/crashzk) - Support for the latest SourceMod and other minor fixes;
+- [crashzk](https://github.com/crashzk) - Update cvars, translations and minor fixes;
