@@ -317,9 +317,12 @@ ConVar sv_kick_ban_duration;
 static char g_teamName[][] = {	"Astralis", 	"Gambit Esports", 	"BIG",	"Cloud9", 	"Counter Logic Gaming", 	"GODSENT", 	"compLexity Gaming", 	"paiN Gaming", 	"Team Dignitas", 	"Endpoint",		"Epsilon eSports", 	"ENCE eSports",		"FURIA Esports", 	"FaZe Clan",	"Team Spirit", 	"fnatic", 	"G2 Esports",	"Gambit Esports",	"HellRaisers", 	"Immortals",	"INTZ eSports", 	"iBUYPOWER", 	"Keyd Stars", 	"Team Liquid",	"Luminosity Gaming", 	"MIBR",	"forZe", 	"North", 	"mousesports", 	"MAD Lions", 	"Natus Vincere", 	"Ninjas in Pyjamas", 	"Team EnVyUs", 	"PENTA Sports", 	"Evil Geniuses", 	"Reason Gaming", 	"SK Gaming", 	"Tempo Storm",	"Triumph",	"TYLOO", 	"OG", 	"Heroic", 	"Team Vitality",	"Virtus.Pro"};
 static char g_teamTag[][] = {	"Astralis", 	"Gambit", 			"BIG",	"Cloud9", 	"CLG", 						"GODSENT", 	"COL", 					"paiN", 		"Dignitas", 		"Endpoint",		"Epsilon", 			"ENCE",				"FURIA", 			"FAZE",			"Spirit", 		"fnatic", 	"G2 Esports",	"Gambit",			"HellRaisers", 	"Immortals", 	"INTZ",				"iBUYPOWER", 	"Keyd Stars", 	"Liquid",		"LG",					"MIBR",	"forZe", 	"North", 	"mousesports", 	"MAD Lions", 	"Na`Vi", 			"NiP", 					"EnVyUs", 		"PENTA", 			"EG", 				"Reason", 			"SK|", 			"TempoStorm",	"Triumph", 	"TyLoo",	"OG", 	"Heroic", 	"Vitality",			"Virtus.Pro"};
 static char g_teamLogo[][] = {	"astr", 		"gamb", 			"big",	"c9", 		"clg", 						"god", 		"col", 					"pain", 		"dig", 				"endp",			"eps", 				"ence",				"furi", 			"faze",			"spir", 		"fntc", 	"g2",			"gamb",				"hlr", 			"imt", 			"intz",				"ibp", 			"keyd", 		"liq",			"lumi",					"mibr",	"forz", 	"nor", 		"mss", 			"madli", 		"navi", 			"nip", 					"nv", 			"penta", 			"eg", 				"rgg", 				"sk", 			"tmps",			"trium", 	"tyl",		"og", 	"heroi", 	"vita",				"vp"};
+
 int g_teamNumber_ct = 0;
 int g_teamNumber_t = 0;
+
 bool g_tag_set = false;
+
 ConVar wm_random_team_names;
 
 bool g_first_load = true;
