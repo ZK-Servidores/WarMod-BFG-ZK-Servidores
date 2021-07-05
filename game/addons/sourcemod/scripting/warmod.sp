@@ -24,14 +24,14 @@ int g_scores[2][2];
 int g_scores_overtime[2][256][2];
 int g_overtime_count = 0;
 
-/* miscellaneous */
+/* Miscellaneous */
 char g_map[64];
 char date[32];
 char startHour[4];
 char startMin[4];
 float g_match_start;
 
-/* SQL and Last Match settings */
+/* SQL & Last Match Settings */
 Handle hDatabase = INVALID_HANDLE;
 ConVar wm_upload_results;
 ConVar wm_table_name;
@@ -63,7 +63,7 @@ int match_id;
 // Offsets
 int g_iAccount = -1;
 
-/* stats */
+/* Stats */
 bool g_log_warmod_dir = false;
 char g_log_filename[128];
 Handle g_log_file = INVALID_HANDLE;
@@ -88,7 +88,7 @@ char g_competition[255];
 char g_event[255];
 char g_server[255];
 
-/* forwards */
+/* Forwards */
 Handle g_f_on_lo3 = INVALID_HANDLE;
 Handle g_f_on_round_end = INVALID_HANDLE;
 Handle g_f_on_half_time = INVALID_HANDLE;
@@ -97,7 +97,7 @@ Handle g_f_on_reset_match = INVALID_HANDLE;
 Handle g_f_on_end_match = INVALID_HANDLE;
 Handle g_f_livewire_log_event = INVALID_HANDLE;
 
-/* cvars */
+/* Cvars */
 ConVar wm_active;
 ConVar wm_stats_enabled;
 ConVar wm_stats_method;
@@ -156,11 +156,11 @@ ConVar wm_ready_panel;
 ConVar mp_startmoney;
 ConVar hostname;
 
-/* ready system */
+/* Ready System */
 Handle g_m_ready_up = INVALID_HANDLE;
 bool g_ready_enabled = false;
 
-/* switches */
+/* Switches */
 bool g_active = true;
 bool g_start = false;
 bool g_match = false;
@@ -191,7 +191,7 @@ bool g_knife_vote = false;
 bool captain_file_checked_t = false;
 bool captain_file_checked_ct = false;
 
-/* FTP Auto upload code [By Thrawn from tAutoDemoUpload] */
+/* FTP Auto Upload Code [By Thrawn from tAutoDemoUpload] */
 ConVar wm_autodemoupload_enable;
 ConVar wm_autodemoupload_bzip2;
 ConVar wm_autodemoupload_ftptargetdemo;
@@ -206,22 +206,22 @@ bool g_bRecording = false;
 ConVar wm_autodemoupload_completed;
 bool g_MatchComplete = false;
 
-/* Warmod safemode */
+/* WarMod Safemode */
 ConVar wm_warmod_safemode;
 
-/* modes */
+/* Modes */
 int g_overtime_mode = 0;
 
-/* chat prefix */
+/* Chat Prefix */
 char chat_prefix[64];
 
-/* teams */
+/* Teams */
 char g_t_name[64];
 char g_t_name_escaped[64]; // pre-escaped for warmod logs
 char g_ct_name[64];
 char g_ct_name_escaped[64]; // pre-escaped for warmod logs
 
-/* clan tag */
+/* Clan Tag */
 char g_clanTags[MAXPLAYERS +1 ][MAX_NAME_LENGTH];
 bool g_clanTagsChecked[MAXPLAYERS + 1] = false;
 
@@ -238,7 +238,7 @@ bool playout_offer_ct = false;
 bool playout_offer_t = false;
 Handle g_h_stored_timer_pl = INVALID_HANDLE;
 
-/* Pause and Unpause */
+/* Pause & Unpause */
 bool g_pause_freezetime = false;
 bool g_pause_offered_t = false;
 bool g_pause_offered_ct = false;
@@ -324,16 +324,18 @@ ConVar wm_random_team_names;
 
 bool g_first_load = true;
 int g_map_loaded = 0;
-/* admin menu */
+
+/* Admin Menu */
 Handle g_h_menu = INVALID_HANDLE;
 
 /* Bug Fixes */
 ConVar mp_halftime_duration;
 ConVar mp_win_panel_display_time;
 
-/* Plugin info */
+/* Plugin Info */
 #define UPDATE_URL		"https://warmod.bitbucket.io/updatefile.txt"
-#define WM_VERSION		"20.07.15.1214 + 4.2.8"
+#define PLUGIN_VERSION	"20.07.15.1214 + 4.2.8fix"
+#define WM_VERSION		PLUGIN_VERSION
 #define WM_DESCRIPTION	"An automative service for CS:GO competition matches"
 
 public Plugin myinfo = {
