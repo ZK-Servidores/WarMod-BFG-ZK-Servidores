@@ -1,5 +1,5 @@
 # WarMod [BFG] | ZK Servidores™
-An automative service for CS:GO competition matches. ***(Modified from [WarMod [BFG] v20.07.15.1214](https://bitbucket.org/warmod/warmod.bitbucket.org/src))***
+An automative service for CS:GO competition matches. ***(Modified from **[WarMod [BFG] v20.07.15.1214](https://bitbucket.org/warmod/warmod.bitbucket.org/src)**)***
 
 ## Commands
 **CVARS** | **Description** | **Commands** |
